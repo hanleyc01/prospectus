@@ -331,3 +331,5 @@ TSWLatexianTemp*
 *.bbl
 *.bcf
 *.blg
+*.vscode
+.vscode
