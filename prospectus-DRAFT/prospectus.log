@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.25)  8 OCT 2025 11:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.25)  8 OCT 2025 11:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -583,16 +583,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/opt/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Reference `sec:general-hebb' on page 2 undefined on input line 121.
+LaTeX Warning: Reference `sec:general-hebb' on page 2 undefined on input line 125.
 
 
-LaTeX Warning: Reference `sec:ham' on page 2 undefined on input line 122.
+LaTeX Warning: Reference `sec:ham' on page 2 undefined on input line 126.
 
 
-LaTeX Warning: Reference `sec:hrr' on page 2 undefined on input line 123.
+LaTeX Warning: Reference `sec:hrr' on page 2 undefined on input line 127.
 
 
-LaTeX Warning: Reference `sec:ham-cap' on page 2 undefined on input line 123.
+LaTeX Warning: Reference `sec:ham-cap' on page 2 undefined on input line 127.
 
 
 
@@ -602,7 +602,7 @@ LaTeX Warning: Reference `sec:ham-cap' on page 2 undefined on input line 123.
 <amari_kohonen_CROPPED.png, id=156, 719.8092pt x 325.9377pt>
 File: amari_kohonen_CROPPED.png Graphic file (type png)
 <use amari_kohonen_CROPPED.png>
-Package pdftex.def Info: amari_kohonen_CROPPED.png  used on input line 214.
+Package pdftex.def Info: amari_kohonen_CROPPED.png  used on input line 230.
 (pdftex.def)             Requested size: 345.0pt x 156.2245pt.
 
 
@@ -612,7 +612,7 @@ Package pdftex.def Info: amari_kohonen_CROPPED.png  used on input line 214.
 
 [6]
 LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 367.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 410.
 
 
 [7]
@@ -622,14 +622,14 @@ LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
 [9]
 
 [10]
-Overfull \hbox (0.35524pt too wide) in paragraph at lines 545--545
+Overfull \hbox (0.35524pt too wide) in paragraph at lines 620--620
 \OT1/cmr/m/n/10 nets of thresh-old el-e-ments. \OT1/cmr/m/it/10 IEEE Trans-ac-tions on Com-put-ers\OT1/cmr/m/n/10 , \OT1/cmr/m/it/10 C-21\OT1/cmr/m/n/10 (11),
  []
 
 
 
 [11]
-Overfull \hbox (0.50336pt too wide) in paragraph at lines 545--545
+Overfull \hbox (0.50336pt too wide) in paragraph at lines 620--620
 \OT1/cmr/m/n/10 Re-trieved Septem-ber 23, 2025, from []$https : / / www . marxists . org / archive /
  []
 
