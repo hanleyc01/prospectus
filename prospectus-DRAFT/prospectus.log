@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.25)  8 OCT 2025 09:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.25)  8 OCT 2025 10:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -599,7 +599,7 @@ LaTeX Warning: Reference `sec:ham-cap' on page 2 undefined on input line 123.
 [2]
 
 [3]
-<amari_kohonen_CROPPED.png, id=155, 719.8092pt x 325.9377pt>
+<amari_kohonen_CROPPED.png, id=156, 719.8092pt x 325.9377pt>
 File: amari_kohonen_CROPPED.png Graphic file (type png)
 <use amari_kohonen_CROPPED.png>
 Package pdftex.def Info: amari_kohonen_CROPPED.png  used on input line 214.
@@ -663,10 +663,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  75i,15n,79p,2034b,5052s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on prospectus.pdf (12 pages, 278494 bytes).
+Output written on prospectus.pdf (12 pages, 278542 bytes).
 PDF statistics:
- 437 PDF objects out of 1000 (max. 8388607)
- 381 compressed objects within 4 object streams
+ 438 PDF objects out of 1000 (max. 8388607)
+ 382 compressed objects within 4 object streams
  111 named destinations out of 1000 (max. 500000)
  110 words of extra memory for PDF output out of 10000 (max. 10000000)
 
