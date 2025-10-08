@@ -1,0 +1,1371 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{amari_learning_1972}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a52d97a4ce02b823196e8f9337e32c7f}{%
+           family={Amari},
+           familyi={A\bibinitperiod},
+           given={S.-I.},
+           giveni={S\bibinithyphendelim I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a52d97a4ce02b823196e8f9337e32c7f}
+      \strng{fullhash}{a52d97a4ce02b823196e8f9337e32c7f}
+      \strng{bibnamehash}{a52d97a4ce02b823196e8f9337e32c7f}
+      \strng{authorbibnamehash}{a52d97a4ce02b823196e8f9337e32c7f}
+      \strng{authornamehash}{a52d97a4ce02b823196e8f9337e32c7f}
+      \strng{authorfullhash}{a52d97a4ce02b823196e8f9337e32c7f}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Various information-processing capabilities of selforganizing nets of threshold elements are studied. A self-organizing net, learning from patterns or pattern sequences given from outside as stimuli, "remembers" some of them as stable equilibrium states or state-transition sequences of the net. A condition where many patterns and pattern sequences are remembered in a net at the same time is shown. The stability degree of their remembrance and recalling under noise disturbances is investigated theoretically. For this purpose, the stability of state transition in an autonomous logical net of threshold elements is studied by the use of characteristics of threshold elements.}
+      \field{issn}{0018-9340, 1557-9956, 2326-3814}
+      \field{journaltitle}{{IEEE} Transactions on Computers}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{11}
+      \field{shortjournal}{{IEEE} Trans. Comput.}
+      \field{title}{Learning Patterns and Pattern Sequences by Self-Organizing Nets of Threshold Elements}
+      \field{urlday}{16}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{volume}{C-21}
+      \field{year}{1972}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1197\bibrangedash 1206}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/T-C.1972.223477
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/Y3Q7L74N/Amari - 1972 - Learning Patterns and Pattern Sequences by Self-Organizing Nets of Threshold Elements.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/1672070/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/1672070/
+      \endverb
+    \endentry
+    \entry{chen_high_1986}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=3b06b756ee1a25a86f2fee86d6075060}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={H.\bibnamedelimi H.},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=85f1d891a1d91d1e45cb6b03c371cce7}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Y.\bibnamedelimi C.},
+           giveni={Y\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b9840f2a745a63bb0438dd1235c80801}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={G.\bibnamedelimi Z.},
+           giveni={G\bibinitperiod\bibinitdelim Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7bb95892ab45c7a86798a000cf3cac44}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={H.\bibnamedelimi Y.},
+           giveni={H\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d94534b314a4e6f9f4810ba8e77270fc}{%
+           family={Maxwell},
+           familyi={M\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95827de7d234678b81f44f7931aee408}{%
+           family={Giles},
+           familyi={G\bibinitperiod},
+           given={C.\bibnamedelimi Lee},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {AIP}%
+      }
+      \strng{namehash}{845d08f214b8f46840cb1c6918f6b243}
+      \strng{fullhash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{bibnamehash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{authorbibnamehash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{authornamehash}{845d08f214b8f46840cb1c6918f6b243}
+      \strng{authorfullhash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A neural network model of associative memory with higher order learning rule is presented. The new model could be fashioned to either the auto-associative or the multiple associative mode. Energy function, asynchronous or synchronous dynamics can be constructed. The retrieval of the stored patterns or pattern sets from an incomplete input is monotonic guaranteed by a convergence theorem. The higher-order correlation model shows dramatic improvement in its storage capacity in comparison to the conventional binary correlation model. It also opens up the possibility of storing spatial-temporal patterns and symmetry invariant patterns.}
+      \field{eventtitle}{{AIP} Conference Proceedings Volume 151}
+      \field{journaltitle}{{AIP} Conference Proceedings}
+      \field{langid}{english}
+      \field{note}{{ISSN}: 0094243X}
+      \field{title}{High order correlation model for associative memory}
+      \field{urlday}{20}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{volume}{151}
+      \field{year}{1986}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{86\bibrangedash 99}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1063/1.36224
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/UM8WPFBA/Chen et al. - 1986 - High order correlation model for associative memory.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://pubs.aip.org/aip/acp/article/151/1/86-99/755722
+      \endverb
+      \verb{url}
+      \verb https://pubs.aip.org/aip/acp/article/151/1/86-99/755722
+      \endverb
+    \endentry
+    \entry{demircigil_model_2017}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=839fb29921ba7611ea0bb51cda04351a}{%
+           family={Demircigil},
+           familyi={D\bibinitperiod},
+           given={Mete},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=036b2c393012f70514f204fa9c27c91a}{%
+           family={Heusel},
+           familyi={H\bibinitperiod},
+           given={Judith},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a8ce025eda58797749e57903dedf7b10}{%
+           family={Löwe},
+           familyi={L\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bd7e6f9536292d673780ebe96957045d}{%
+           family={Upgang},
+           familyi={U\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1bb2ede851584b466c6c6d79009e7d54}{%
+           family={Vermet},
+           familyi={V\bibinitperiod},
+           given={Franck},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3b8cda619a156ab51aa42f13bd4af769}
+      \strng{fullhash}{2659687da165ca2d7ba424360e6672ee}
+      \strng{bibnamehash}{2659687da165ca2d7ba424360e6672ee}
+      \strng{authorbibnamehash}{2659687da165ca2d7ba424360e6672ee}
+      \strng{authornamehash}{3b8cda619a156ab51aa42f13bd4af769}
+      \strng{authorfullhash}{2659687da165ca2d7ba424360e6672ee}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In [7] Krotov and Hopﬁeld suggest a generalized version of the wellknown Hopﬁeld model of associative memory. In their version they consider a polynomial interaction function and claim that this increases the storage capacity of the model. We prove this claim and take the ”limit” as the degree of the polynomial becomes inﬁnite, i.e. an exponential interaction function. With this interaction we prove that model has an exponential storage capacity in the number of neurons, yet the basins of attraction are almost as large as in the standard Hopﬁeld model.}
+      \field{eprinttype}{arxiv}
+      \field{issn}{0022-4715, 1572-9613}
+      \field{journaltitle}{Journal of Statistical Physics}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{2}
+      \field{shortjournal}{J Stat Phys}
+      \field{title}{On a model of associative memory with huge storage capacity}
+      \field{urlday}{17}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{168}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{288\bibrangedash 299}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1007/s10955-017-1806-y
+      \endverb
+      \verb{eprint}
+      \verb 1702.01929 [math]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/AZ7FKLLD/Demircigil et al. - 2017 - On a model of associative memory with huge storage capacity.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1702.01929
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1702.01929
+      \endverb
+      \keyw{Mathematics - Probability}
+    \endentry
+    \entry{haykin_neural_2009}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=dce2f91b769259855fba7bc48b6e063a}{%
+           family={Haykin},
+           familyi={H\bibinitperiod},
+           given={Simon\bibnamedelima S.},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York Munich}%
+      }
+      \list{publisher}{1}{%
+        {Prentice-Hall}%
+      }
+      \strng{namehash}{dce2f91b769259855fba7bc48b6e063a}
+      \strng{fullhash}{dce2f91b769259855fba7bc48b6e063a}
+      \strng{bibnamehash}{dce2f91b769259855fba7bc48b6e063a}
+      \strng{authorbibnamehash}{dce2f91b769259855fba7bc48b6e063a}
+      \strng{authornamehash}{dce2f91b769259855fba7bc48b6e063a}
+      \strng{authorfullhash}{dce2f91b769259855fba7bc48b6e063a}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3. ed}
+      \field{isbn}{978-0-13-147139-9}
+      \field{langid}{english}
+      \field{pagetotal}{934}
+      \field{title}{Neural networks and learning machines}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/2BQ8Y6HK/Haykin - 2009 - Neural networks and learning machines.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{hintzman_minerva_1984}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b25f84bf66787200aed8b33e36963686}{%
+           family={Hintzman},
+           familyi={H\bibinitperiod},
+           given={Douglas\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b25f84bf66787200aed8b33e36963686}
+      \strng{fullhash}{b25f84bf66787200aed8b33e36963686}
+      \strng{bibnamehash}{b25f84bf66787200aed8b33e36963686}
+      \strng{authorbibnamehash}{b25f84bf66787200aed8b33e36963686}
+      \strng{authornamehash}{b25f84bf66787200aed8b33e36963686}
+      \strng{authorfullhash}{b25f84bf66787200aed8b33e36963686}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0743-3808, 1532-5970}
+      \field{journaltitle}{Behavior Research Methods, Instruments, \&amp Computers}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{2}
+      \field{shortjournal}{Behavior Research Methods, Instruments, \& Computers}
+      \field{shorttitle}{{MINERVA} 2}
+      \field{title}{{MINERVA} 2: A simulation model of human memory}
+      \field{urlday}{17}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{16}
+      \field{year}{1984}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{96\bibrangedash 101}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.3758/BF03202365
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/4YII7SP2/Hintzman - 1984 - MINERVA 2 A simulation model of human memory.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.3758/BF03202365
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.3758/BF03202365
+      \endverb
+    \endentry
+    \entry{hopfield_neurons_1984}{article}{}
+      \name{author}{1}{}{%
+        {{un=1,uniquepart=given,hash=9358686fc958d08cb3cffdebe832f513}{%
+           family={Hopfield},
+           familyi={H\bibinitperiod},
+           given={J\bibnamedelima J},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{9358686fc958d08cb3cffdebe832f513}
+      \strng{fullhash}{9358686fc958d08cb3cffdebe832f513}
+      \strng{bibnamehash}{9358686fc958d08cb3cffdebe832f513}
+      \strng{authorbibnamehash}{9358686fc958d08cb3cffdebe832f513}
+      \strng{authornamehash}{9358686fc958d08cb3cffdebe832f513}
+      \strng{authorfullhash}{9358686fc958d08cb3cffdebe832f513}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A model for a large network of "neurons" with a graded response (or sigmoid input-output relation) is studied. This deterministic system has collective properties in very close correspondence with the earlier stochastic model based on {McCulloch}-Pitts neurons. The content-addressable memory and other emergent collective properties of the original model also are present in the graded response model. The idea that such collective properties are used in biological systems is given added credence by the continued presence of such properties for more nearly biological "neurons." Collective analog electrical circuits of the kind described will certainly function. The collective states of the two models have a simple correspondence. The original model will continue to be useful for simulations, because its connection to graded response systems is established. Equations that include the effect of action potentials in the graded response system are also developed.}
+      \field{issn}{0027-8424, 1091-6490}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{10}
+      \field{shortjournal}{Proc. Natl. Acad. Sci. U.S.A.}
+      \field{title}{Neurons with graded response have collective computational properties like those of two-state neurons.}
+      \field{urlday}{17}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{81}
+      \field{year}{1984}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{3088\bibrangedash 3092}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1073/pnas.81.10.3088
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/UYG9FMW8/Hopfield - 1984 - Neurons with graded response have collective computational properties like those of two-state neuron.pdf:application/pdf;PDF:/home/pop-harrier/Zotero/storage/QURL2A3E/Hopfield - 1984 - Neurons with graded response have collective computational properties like those of two-state neuron.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://pnas.org/doi/full/10.1073/pnas.81.10.3088
+      \endverb
+      \verb{url}
+      \verb https://pnas.org/doi/full/10.1073/pnas.81.10.3088
+      \endverb
+    \endentry
+    \entry{hopfield_neural_1982}{article}{}
+      \name{author}{1}{}{%
+        {{un=1,uniquepart=given,hash=3db72ff2280c5a8892bf6a98a0f9b45f}{%
+           family={Hopfield},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{3db72ff2280c5a8892bf6a98a0f9b45f}
+      \strng{fullhash}{3db72ff2280c5a8892bf6a98a0f9b45f}
+      \strng{bibnamehash}{3db72ff2280c5a8892bf6a98a0f9b45f}
+      \strng{authorbibnamehash}{3db72ff2280c5a8892bf6a98a0f9b45f}
+      \strng{authornamehash}{3db72ff2280c5a8892bf6a98a0f9b45f}
+      \strng{authorfullhash}{3db72ff2280c5a8892bf6a98a0f9b45f}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Computational properties of use to biological organisms or to the construction of computers can emerge as collective properties of systems -having a large number of simple equivalent components (or neurons). The physical meaning ofcontent-addressable memory is described by an appropriate phase space flow of the state of a system. A model of such a system is given, based on aspects of neurobiology but readily adapted to integrated circuits. The collective properties of this model produce a content-addressable memory which correctly yields an entire memory from any subpart of sufficient size. The algorithm for the time evolution of the state of the system is based on asynchronous parallel processing. Additional emergent collective properties include some capacity for generalization, familiarity recognition, categorization, error correction, and time sequence retention. The collective properties are only weakly sensitive to details ofthe modeling or the failure of individual devices.}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{title}{Neural networks and physical systems with emergent collective computational abilities.}
+      \field{volume}{79}
+      \field{year}{1982}
+      \field{dateera}{ce}
+      \field{pages}{2554\bibrangedash 2558}
+      \range{pages}{5}
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/TV3XD4QV/Neural networks and physical systems with emergent collective computational abilities..pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{kanerva_sparse_1993}{inbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0e2e7c9c147be0102d8070f2fe7f1dec}{%
+           family={Kanerva},
+           familyi={K\bibinitperiod},
+           given={Pentti},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{0e2e7c9c147be0102d8070f2fe7f1dec}
+      \strng{fullhash}{0e2e7c9c147be0102d8070f2fe7f1dec}
+      \strng{bibnamehash}{0e2e7c9c147be0102d8070f2fe7f1dec}
+      \strng{authorbibnamehash}{0e2e7c9c147be0102d8070f2fe7f1dec}
+      \strng{authornamehash}{0e2e7c9c147be0102d8070f2fe7f1dec}
+      \strng{authorfullhash}{0e2e7c9c147be0102d8070f2fe7f1dec}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Associative Neural Memories: Theory and Implementation}
+      \field{langid}{english}
+      \field{title}{Sparse Distributed Memory and Related Models}
+      \field{year}{1993}
+      \field{dateera}{ce}
+      \field{pages}{50\bibrangedash 76}
+      \range{pages}{27}
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/Q564FQ5Z/Kanerva - Sparse Distributed Memory and Related Models.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{kelly_memory_2017}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=0c39604ba5909d52d5a23ab07be54c1c}{%
+           family={Kelly},
+           familyi={K\bibinitperiod},
+           given={Mary\bibnamedelima Alexandria},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2a71c107762be4d93f2c8cffa2cedce5}{%
+           family={Mewhort},
+           familyi={M\bibinitperiod},
+           given={D.J.K.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37264da0848398b472ddbd5abdd1c332}{%
+           family={West},
+           familyi={W\bibinitperiod},
+           given={Robert\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9c64e4829ddba5e409696f71b20fc7ac}
+      \strng{fullhash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{bibnamehash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{authorbibnamehash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{authornamehash}{9c64e4829ddba5e409696f71b20fc7ac}
+      \strng{authorfullhash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Computational memory models can explain the behaviour of human memory in diverse experimental paradigms. But research has produced a profusion of competing models, and, as different models focus on different phenomena, there is no best model. However, by examining commonalities among models, we can move towards theoretical unification. Computational memory models can be grouped into composite and separate storage models. We prove that {MINERVA} 2, a separate storage model of long-term memory, is mathematically equivalent to composite storage memory implemented as a fourth order tensor, and approximately equivalent to a fourth-order tensor compressed into a holographic vector. Building of these demonstrations, we show that {MINERVA} 2 and related separate storage models can be implemented in neurons. Our work clarifies the relationship between composite and separate storage models of memory, and thereby moves memory models a step closer to theoretical unification.}
+      \field{issn}{00222496}
+      \field{journaltitle}{Journal of Mathematical Psychology}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shortjournal}{Journal of Mathematical Psychology}
+      \field{shorttitle}{The memory tesseract}
+      \field{title}{The memory tesseract: Mathematical equivalence between composite and separate storage memory models}
+      \field{urlday}{17}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{77}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{142\bibrangedash 155}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.jmp.2016.10.006
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/GLZ9F3K5/Kelly et al. - 2017 - The memory tesseract Mathematical equivalence between composite and separate storage memory models.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022249616301122
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022249616301122
+      \endverb
+    \endentry
+    \entry{anderson_correlation_1988}{inbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a239233dfb1d78ba7f02fe9e49b13503}{%
+           family={Kohonen},
+           familyi={K\bibinitperiod},
+           given={Teuvo},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=f08a8a1c8cc94579e3d027591d071994}{%
+           family={Anderson},
+           familyi={A\bibinitperiod},
+           given={James\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=e7dfbb61d597794979da90542c0d7264}{%
+           family={Rosenfeld},
+           familyi={R\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The {MIT} Press}%
+      }
+      \strng{namehash}{a239233dfb1d78ba7f02fe9e49b13503}
+      \strng{fullhash}{a239233dfb1d78ba7f02fe9e49b13503}
+      \strng{bibnamehash}{a239233dfb1d78ba7f02fe9e49b13503}
+      \strng{authorbibnamehash}{a239233dfb1d78ba7f02fe9e49b13503}
+      \strng{authornamehash}{a239233dfb1d78ba7f02fe9e49b13503}
+      \strng{authorfullhash}{a239233dfb1d78ba7f02fe9e49b13503}
+      \strng{editorbibnamehash}{a758f8264c81b0f86e8899564a687f7e}
+      \strng{editornamehash}{a758f8264c81b0f86e8899564a687f7e}
+      \strng{editorfullhash}{a758f8264c81b0f86e8899564a687f7e}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{booktitle}{Neurocomputing, Volume 1}
+      \field{day}{7}
+      \field{isbn}{978-0-262-26713-7}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shorttitle}{(1972) Teuvo Kohonen, "Correlation matrix memories," {IEEE} Transactions on Computers C-21}
+      \field{title}{Correlation matrix memories}
+      \field{urlday}{16}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{1988}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{174\bibrangedash 180}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.7551/mitpress/4943.003.0075
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/MGRGLU2W/Kohonen - 1988 - (1972) Teuvo Kohonen, Correlation matrix memories, IEEE Transactions on Computers C-21 353-359.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://direct.mit.edu/books/book/5431/chapter/4468693/1972-Teuvo-Kohonen-Correlation-matrix-memories
+      \endverb
+      \verb{url}
+      \verb https://direct.mit.edu/books/book/5431/chapter/4468693/1972-Teuvo-Kohonen-Correlation-matrix-memories
+      \endverb
+    \endentry
+    \entry{krotov_hierarchical_2021}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=16d4ee4fa8cb17d32a97be7f8c529007}{%
+           family={Krotov},
+           familyi={K\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{fullhash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{bibnamehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{authorbibnamehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{authornamehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{authorfullhash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Dense Associative Memories or Modern Hopﬁeld Networks have many appealing properties of associative memory. They can do pattern completion, store a large number of memories, and can be described using a recurrent neural network with a degree of biological plausibility and rich feedback between the neurons. At the same time, up until now all the models of this class have had only one hidden layer, and have only been formulated with densely connected network architectures, two aspects that hinder their machine learning applications. This paper tackles this gap and describes a fully recurrent model of associative memory with an arbitrary large number of layers, some of which can be locally connected (convolutional), and a corresponding energy function that decreases on the dynamical trajectory of the neurons’ activations. The memories of the full network are dynamically “assembled” using primitives encoded in the synaptic weights of the lower layers, with the “assembling rules” encoded in the synaptic weights of the higher layers. In addition to the bottom-up propagation of information, typical of commonly used feedforward neural networks, the model described has rich top-down feedback from higher layers that help the lower-layer neurons to decide on their response to the input stimuli.}
+      \field{day}{14}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{{arXiv}:2107.06446}
+      \field{title}{Hierarchical Associative Memory}
+      \field{urlday}{18}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2107.06446
+      \endverb
+      \verb{eprint}
+      \verb 2107.06446 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/9A2T635M/Krotov - 2021 - Hierarchical Associative Memory.pdf:application/pdf;PDF:/home/pop-harrier/Zotero/storage/Y6FZZ37D/Krotov - 2021 - Hierarchical Associative Memory.pdf:application/pdf;PDF:/home/pop-harrier/Zotero/storage/F6VVTFP2/Krotov - 2021 - Hierarchical Associative Memory.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2107.06446
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2107.06446
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning,Computer Science - Neural and Evolutionary Computing,Quantitative Biology - Neurons and Cognition,Condensed Matter - Disordered Systems and Neural Networks}
+    \endentry
+    \entry{krotov_modern_2025}{misc}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=16d4ee4fa8cb17d32a97be7f8c529007}{%
+           family={Krotov},
+           familyi={K\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bf17f8c0acea31ab679cbcbd83151ef1}{%
+           family={Hoover},
+           familyi={H\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7ed296e5fad6e9dbdd63568f683a9568}{%
+           family={Ram},
+           familyi={R\bibinitperiod},
+           given={Parikshit},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7125141c5a01fc4f9970d0aff3af9a98}{%
+           family={Pham},
+           familyi={P\bibinitperiod},
+           given={Bao},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{1ab17a95cf09e4f11f97f21d4594ac7d}
+      \strng{fullhash}{935b7c0d6507b3770b92ccf41eefd855}
+      \strng{bibnamehash}{935b7c0d6507b3770b92ccf41eefd855}
+      \strng{authorbibnamehash}{935b7c0d6507b3770b92ccf41eefd855}
+      \strng{authornamehash}{1ab17a95cf09e4f11f97f21d4594ac7d}
+      \strng{authorfullhash}{935b7c0d6507b3770b92ccf41eefd855}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Associative Memories like the famous Hopfield Networks are elegant models for describing fully recurrent neural networks whose fundamental job is to store and retrieve information. In the past few years they experienced a surge of interest due to novel theoretical results pertaining to their information storage capabilities, and their relationship with {SOTA} {AI} architectures, such as Transformers and Diffusion Models. These connections open up possibilities for interpreting the computation of traditional {AI} networks through the theoretical lens of Associative Memories. Additionally, novel Lagrangian formulations of these networks make it possible to design powerful distributed models that learn useful representations and inform the design of novel architectures. This tutorial provides an approachable introduction to Associative Memories, emphasizing the modern language and methods used in this area of research, with practical hands-on mathematical derivations and coding notebooks.}
+      \field{day}{8}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{{arXiv}:2507.06211}
+      \field{title}{Modern Methods in Associative Memory}
+      \field{urlday}{17}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2507.06211
+      \endverb
+      \verb{eprint}
+      \verb 2507.06211 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/FHAK5767/Krotov et al. - 2025 - Modern Methods in Associative Memory.pdf:application/pdf;PDF:/home/pop-harrier/Zotero/storage/7JYQ3GJN/Krotov et al. - 2025 - Modern Methods in Associative Memory.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2507.06211
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2507.06211
+      \endverb
+      \keyw{Computer Science - Machine Learning}
+    \endentry
+    \entry{krotov_dense_2016}{misc}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=16d4ee4fa8cb17d32a97be7f8c529007}{%
+           family={Krotov},
+           familyi={K\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=91977512c54b3df2eb57914d939cde02}{%
+           family={Hopfield},
+           familyi={H\bibinitperiod},
+           given={John\bibnamedelima J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=1}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{0e2df5d401e0379b10d8f0f61c989651}
+      \strng{fullhash}{0e2df5d401e0379b10d8f0f61c989651}
+      \strng{bibnamehash}{0e2df5d401e0379b10d8f0f61c989651}
+      \strng{authorbibnamehash}{0e2df5d401e0379b10d8f0f61c989651}
+      \strng{authornamehash}{0e2df5d401e0379b10d8f0f61c989651}
+      \strng{authorfullhash}{0e2df5d401e0379b10d8f0f61c989651}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A model of associative memory is studied, which stores and reliably retrieves many more patterns than the number of neurons in the network. We propose a simple duality between this dense associative memory and neural networks commonly used in deep learning. On the associative memory side of this duality, a family of models that smoothly interpolates between two limiting cases can be constructed. One limit is referred to as the feature-matching mode of pattern recognition, and the other one as the prototype regime. On the deep learning side of the duality, this family corresponds to feedforward neural networks with one hidden layer and various activation functions, which transmit the activities of the visible neurons to the hidden layer. This family of activation functions includes logistics, rectiﬁed linear units, and rectiﬁed polynomials of higher degrees. The proposed duality makes it possible to apply energy-based intuition from associative memory to analyze computational properties of neural networks with unusual activation functions – the higher rectiﬁed polynomials which until now have not been used in deep learning. The utility of the dense memories is illustrated for two test cases: the logical gate {XOR} and the recognition of handwritten digits from the {MNIST} data set.}
+      \field{day}{27}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{{arXiv}:1606.01164}
+      \field{title}{Dense Associative Memory for Pattern Recognition}
+      \field{urlday}{17}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1606.01164
+      \endverb
+      \verb{eprint}
+      \verb 1606.01164 [cs]
+      \endverb
+      \verb{file}
+      \verb dense_associative_memories_for_pattern_recognition:/home/pop-harrier/Zotero/storage/DCDZIQXM/dense_associative_memories_for_pattern_recognition.pdf:application/pdf;PDF:/home/pop-harrier/Zotero/storage/IQFDFM8J/dense_associative_memories_for_pattern_recognition.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1606.01164
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1606.01164
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning,Computer Science - Neural and Evolutionary Computing,Quantitative Biology - Neurons and Cognition,Condensed Matter - Disordered Systems and Neural Networks}
+    \endentry
+    \entry{millidge_predictive_2022}{misc}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=dcf103531a4bb5a439a2233cf52e9703}{%
+           family={Millidge},
+           familyi={M\bibinitperiod},
+           given={Beren},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=46c46bec1eeabae216ff72636eddb251}{%
+           family={Seth},
+           familyi={S\bibinitperiod},
+           given={Anil},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6ba2af6672c84ba8cffc8b86bc35d608}{%
+           family={Buckley},
+           familyi={B\bibinitperiod},
+           given={Christopher\bibnamedelima L.},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{2e8ad0bb84d8b5b82f50bc744f5626e2}
+      \strng{fullhash}{786e53bfa4ef3ba7d4a10aba45c33b1a}
+      \strng{bibnamehash}{786e53bfa4ef3ba7d4a10aba45c33b1a}
+      \strng{authorbibnamehash}{786e53bfa4ef3ba7d4a10aba45c33b1a}
+      \strng{authornamehash}{2e8ad0bb84d8b5b82f50bc744f5626e2}
+      \strng{authorfullhash}{786e53bfa4ef3ba7d4a10aba45c33b1a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Predictive coding offers a potentially unifying account of cortical function – postulating that the core function of the brain is to minimize prediction errors with respect to a generative model of the world. The theory is closely related to the Bayesian brain framework and, over the last two decades, has gained substantial inﬂuence in the ﬁelds of theoretical and cognitive neuroscience. A large body of research has arisen based on both empirically testing improved and extended theoretical and mathematical models of predictive coding, as well as in evaluating their potential biological plausibility for implementation in the brain and the concrete neurophysiological and psychological predictions made by the theory. Despite this enduring popularity, however, no comprehensive review of predictive coding theory, and especially of recent developments in this ﬁeld, exists. Here, we provide a comprehensive review both of the core mathematical structure and logic of predictive coding, thus complementing recent tutorials in the literature (Bogacz, 2017; Buckley, Kim, {McGregor}, \& Seth, 2017). We also review a wide range of classic and recent work within the framework, ranging from the neurobiologically realistic microcircuits that could implement predictive coding, to the close relationship between predictive coding and the widely-used backpropagation of error algorithm, as well as surveying the close relationships between predictive coding and modern machine learning techniques.}
+      \field{day}{12}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{{arXiv}:2107.12979}
+      \field{shorttitle}{Predictive Coding}
+      \field{title}{Predictive Coding: a Theoretical and Experimental Review}
+      \field{urlday}{19}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2107.12979
+      \endverb
+      \verb{eprint}
+      \verb 2107.12979 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/SQQPR297/Millidge et al. - 2022 - Predictive Coding a Theoretical and Experimental Review.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2107.12979
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2107.12979
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Computer Science - Neural and Evolutionary Computing,Quantitative Biology - Neurons and Cognition}
+    \endentry
+    \entry{mimura_dynamical_2025}{misc}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=da8fc238d56ffe6796c0f39a14c5154f}{%
+           family={Mimura},
+           familyi={M\bibinitperiod},
+           given={Kazushi},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c3e17112499edb4c705802fb3498f2c2}{%
+           family={Takeuchi},
+           familyi={T\bibinitperiod},
+           given={Jun'ichi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=950c6ad3048a4d61906a4adff89d01d7}{%
+           family={Sumikawa},
+           familyi={S\bibinitperiod},
+           given={Yuto},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=197279d06c0cef401a5035aa777dcf72}{%
+           family={Kabashima},
+           familyi={K\bibinitperiod},
+           given={Yoshiyuki},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=57890bb7e0760567138167e1b28a498c}{%
+           family={Coolen},
+           familyi={C\bibinitperiod},
+           given={Anthony\bibnamedelimb C.\bibnamedelimi C.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{4fba1934134cff9a2a0e90a3429eb35a}
+      \strng{fullhash}{81928988e28188e10e98b7d5ed287eaa}
+      \strng{bibnamehash}{81928988e28188e10e98b7d5ed287eaa}
+      \strng{authorbibnamehash}{81928988e28188e10e98b7d5ed287eaa}
+      \strng{authornamehash}{4fba1934134cff9a2a0e90a3429eb35a}
+      \strng{authorfullhash}{81928988e28188e10e98b7d5ed287eaa}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The dense associative memory is one of the basic modern Hopfield networks and can store large numbers of memory patterns. While the stationary state storage capacity has been investigated so far, its dynamical properties have not been discussed. In this paper, we analyze the dynamics by means of an exact approach based on generating functional analysis. It allows us to investigate convergence properties as well as the size of the attraction basins. We also analyze the stationary state of the updating rule.}
+      \field{day}{1}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{{arXiv}:2506.00851}
+      \field{title}{Dynamical Properties of Dense Associative Memory}
+      \field{urlday}{20}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2506.00851
+      \endverb
+      \verb{eprint}
+      \verb 2506.00851 [cond-mat]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/EVVKBEXG/Mimura et al. - 2025 - Dynamical Properties of Dense Associative Memory.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2506.00851
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2506.00851
+      \endverb
+      \keyw{Condensed Matter - Disordered Systems and Neural Networks}
+    \endentry
+    \entry{nakano_associatron-model_1972}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=20ed0223ade6a14f6117f99255953d4d}{%
+           family={Nakano},
+           familyi={N\bibinitperiod},
+           given={Kaoru},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{20ed0223ade6a14f6117f99255953d4d}
+      \strng{fullhash}{20ed0223ade6a14f6117f99255953d4d}
+      \strng{bibnamehash}{20ed0223ade6a14f6117f99255953d4d}
+      \strng{authorbibnamehash}{20ed0223ade6a14f6117f99255953d4d}
+      \strng{authornamehash}{20ed0223ade6a14f6117f99255953d4d}
+      \strng{authorfullhash}{20ed0223ade6a14f6117f99255953d4d}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Thinking in the human brain greatly depends upon association mechanisms which can be utilized in machine intelligence. An associative memory device, called "Associatron," is proposed. The Associatron stores entities represented by bit patterns in a distributed manner and recalls the whole of any entity from a part of it. If the part is large, the recalled entity will be accurate; on the other hand, if the part is small, the recalled entity will be rather ambiguous. Any number of entities can be stored, but the accuracy of the recalled entity decreases as the number of entities increases. The Associatron is considered to be a simplified model of the neural network and can be constructed as a cellular structure, where each cell is connected to only its neighbor cells and all cells run in parallel. From its mechanisms some properties are derived that are expected to be utilized for human-like information processing. After these properties have been analyzed, an Associatron which deals with entities composed of less than 180 bits is simulated by a computer. Simple examples of its applications for concept formation and game playing are presented and the thinking process by the sequence of associations is described.}
+      \field{issn}{0018-9472, 2168-2909}
+      \field{journaltitle}{{IEEE} Transactions on Systems, Man, and Cybernetics}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{3}
+      \field{shortjournal}{{IEEE} Trans. Syst., Man, Cybern.}
+      \field{title}{Associatron-A Model of Associative Memory}
+      \field{urlday}{16}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{volume}{{SMC}-2}
+      \field{year}{1972}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{380\bibrangedash 388}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/TSMC.1972.4309133
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/VMFZXXF7/Nakano - 1972 - Associatron-A Model of Associative Memory.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/4309133/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/4309133/
+      \endverb
+    \endentry
+    \entry{psaltis_nonlinear_1986}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=6c04754ca07875c8afcb23747d66721e}{%
+           family={Psaltis},
+           familyi={P\bibinitperiod},
+           given={Demetri},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=959e733052eeb53e1046189143f835bf}{%
+           family={{Cheol Hoon Park}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {AIP}%
+      }
+      \strng{namehash}{0c84fabe45c0e4663b640684f72826b5}
+      \strng{fullhash}{0c84fabe45c0e4663b640684f72826b5}
+      \strng{bibnamehash}{0c84fabe45c0e4663b640684f72826b5}
+      \strng{authorbibnamehash}{0c84fabe45c0e4663b640684f72826b5}
+      \strng{authornamehash}{0c84fabe45c0e4663b640684f72826b5}
+      \strng{authorfullhash}{0c84fabe45c0e4663b640684f72826b5}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eventtitle}{{AIP} Conference Proceedings Volume 151}
+      \field{journaltitle}{{AIP} Conference Proceedings}
+      \field{langid}{english}
+      \field{note}{{ISSN}: 0094243X}
+      \field{title}{Nonlinear discriminant functions and associative memories}
+      \field{urlday}{20}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{volume}{151}
+      \field{year}{1986}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{370\bibrangedash 375}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1063/1.36241
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/N3QVUP85/Psaltis and Cheol Hoon Park - 1986 - Nonlinear discriminant functions and associative memories.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://pubs.aip.org/aip/acp/article/151/1/370-375/755664
+      \endverb
+      \verb{url}
+      \verb https://pubs.aip.org/aip/acp/article/151/1/370-375/755664
+      \endverb
+    \endentry
+    \entry{ramsauer_hopfield_2021}{misc}{}
+      \name{author}{16}{}{%
+        {{un=0,uniquepart=base,hash=f7ddff2d58ece37233af8650f706e499}{%
+           family={Ramsauer},
+           familyi={R\bibinitperiod},
+           given={Hubert},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a51c94d4907b0807915103a6edf992d6}{%
+           family={Schäfl},
+           familyi={S\bibinitperiod},
+           given={Bernhard},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5975ec99dbd3b842ab21f2ab0ac4ae3b}{%
+           family={Lehner},
+           familyi={L\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=199f93e9036c0826afbdd1f1d3a0e4a7}{%
+           family={Seidl},
+           familyi={S\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6bbe4b724e61ee3566ee6103bdd8b6bd}{%
+           family={Widrich},
+           familyi={W\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5fac86ca6e6b82166085795ec1b1cee8}{%
+           family={Adler},
+           familyi={A\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b9ded32a88a8a005a3d19eb472e63d7f}{%
+           family={Gruber},
+           familyi={G\bibinitperiod},
+           given={Lukas},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d115442cb1e7d6828c4eb445ae35e09}{%
+           family={Holzleitner},
+           familyi={H\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bf8ac6f796dfe901e6255449ef9d0794}{%
+           family={Pavlović},
+           familyi={P\bibinitperiod},
+           given={Milena},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=563f412962e47abb351da8376e8c7d0b}{%
+           family={Sandve},
+           familyi={S\bibinitperiod},
+           given={Geir\bibnamedelima Kjetil},
+           giveni={G\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e91de498b2b27f3f9f58736395f5c9ac}{%
+           family={Greiff},
+           familyi={G\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3f039034477ef7ec25f2822c0706c426}{%
+           family={Kreil},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d93f88df1acd17907db2b3033322d2dc}{%
+           family={Kopp},
+           familyi={K\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dd69f2d35665eb16375f92c741a26393}{%
+           family={Klambauer},
+           familyi={K\bibinitperiod},
+           given={Günter},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4954f897f0e2228c69f8903b2e1e25d1}{%
+           family={Brandstetter},
+           familyi={B\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={Sepp},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{a62173d0ba59e357adbb69a0bfd8d4bc}
+      \strng{fullhash}{7a726b7f6b8d01dc62668791e7436754}
+      \strng{bibnamehash}{7a726b7f6b8d01dc62668791e7436754}
+      \strng{authorbibnamehash}{7a726b7f6b8d01dc62668791e7436754}
+      \strng{authornamehash}{a62173d0ba59e357adbb69a0bfd8d4bc}
+      \strng{authorfullhash}{7a726b7f6b8d01dc62668791e7436754}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We introduce a modern Hopfield network with continuous states and a corresponding update rule. The new Hopfield network can store exponentially (with the dimension of the associative space) many patterns, retrieves the pattern with one update, and has exponentially small retrieval errors. It has three types of energy minima (fixed points of the update): (1) global fixed point averaging over all patterns, (2) metastable states averaging over a subset of patterns, and (3) fixed points which store a single pattern. The new update rule is equivalent to the attention mechanism used in transformers. This equivalence enables a characterization of the heads of transformer models. These heads perform in the first layers preferably global averaging and in higher layers partial averaging via metastable states. The new modern Hopfield network can be integrated into deep learning architectures as layers to allow the storage of and access to raw input data, intermediate results, or learned prototypes. These Hopfield layers enable new ways of deep learning, beyond fully-connected, convolutional, or recurrent networks, and provide pooling, memory, association, and attention mechanisms. We demonstrate the broad applicability of the Hopfield layers across various domains. Hopfield layers improved state-of-the-art on three out of four considered multiple instance learning problems as well as on immune repertoire classification with several hundreds of thousands of instances. On the {UCI} benchmark collections of small classification tasks, where deep learning methods typically struggle, Hopfield layers yielded a new state-of-the-art when compared to different machine learning methods. Finally, Hopfield layers achieved state-of-the-art on two drug design datasets. The implementation is available at: https://github.com/ml-jku/hopfield-layers}
+      \field{day}{28}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{{arXiv}:2008.02217}
+      \field{title}{Hopfield Networks is All You Need}
+      \field{urlday}{17}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2008.02217
+      \endverb
+      \verb{eprint}
+      \verb 2008.02217 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/2H7ZEF9U/Ramsauer et al. - 2021 - Hopfield Networks is All You Need.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2008.02217
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2008.02217
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning,Computer Science - Neural and Evolutionary Computing,Computer Science - Computation and Language}
+    \endentry
+    \entry{salvatori_associative_2021}{misc}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=6806cf5d623b63da2083f9fffa2b27d7}{%
+           family={Salvatori},
+           familyi={S\bibinitperiod},
+           given={Tommaso},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9494ce7c867dfb3ec8424510373998df}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Yuhang},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7bbc56db8d8b6515291448a12053d3ed}{%
+           family={Hong},
+           familyi={H\bibinitperiod},
+           given={Yujian},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a7de2d81759aa81aced45d055685c3ad}{%
+           family={Frieder},
+           familyi={F\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cbc9ff099e00d80fa6b5b58d0de29ef5}{%
+           family={Sha},
+           familyi={S\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d5516d4d7fad11b9f08ec4099e90a7e2}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Zhenghua},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9e7da25f8bbab1f942bbdedf221c9970}{%
+           family={Bogacz},
+           familyi={B\bibinitperiod},
+           given={Rafal},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b1a2f24812f2f716eb7865fa724e74b1}{%
+           family={Lukasiewicz},
+           familyi={L\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{722ac9459ee6e84ad0636aa5ace58ea2}
+      \strng{fullhash}{d125f33ef4b84842a9e326cf913bda57}
+      \strng{bibnamehash}{d125f33ef4b84842a9e326cf913bda57}
+      \strng{authorbibnamehash}{d125f33ef4b84842a9e326cf913bda57}
+      \strng{authornamehash}{722ac9459ee6e84ad0636aa5ace58ea2}
+      \strng{authorfullhash}{d125f33ef4b84842a9e326cf913bda57}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Associative memories in the brain receive and store patterns of activity registered by the sensory neurons, and are able to retrieve them when necessary. Due to their importance in human intelligence, computational models of associative memories have been developed for several decades now. They include autoassociative memories, which allow for storing data points and retrieving a stored data point s when provided with a noisy or partial variant of s, and heteroassociative memories, able to store and recall multi-modal data. In this paper, we present a novel neural model for realizing associative memories, based on a hierarchical generative network that receives external stimuli via sensory neurons. This model is trained using predictive coding, an error-based learning algorithm inspired by information processing in the cortex. To test the capabilities of this model, we perform multiple retrieval experiments from both corrupted and incomplete data points. In an extensive comparison, we show that this new model outperforms in retrieval accuracy and robustness popular associative memory models, such as autoencoders trained via backpropagation, and modern Hopﬁeld networks. In particular, in completing partial data points, our model achieves remarkable results on natural image datasets, such as {ImageNet}, with a surprisingly high accuracy, even when only a tiny fraction of pixels of the original images is presented. Furthermore, we show that this method is able to handle multi-modal data, retrieving images from descriptions, and vice versa. We conclude by discussing the possible impact of this work in the neuroscience community, by showing that our model provides a plausible framework to study learning and retrieval of memories in the brain, as it closely mimics the behavior of the hippocampus as a memory index and generative model.}
+      \field{day}{16}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{{arXiv}:2109.08063}
+      \field{title}{Associative Memories via Predictive Coding}
+      \field{urlday}{15}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2109.08063
+      \endverb
+      \verb{eprint}
+      \verb 2109.08063 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/5T8FDEUA/Salvatori et al. - 2021 - Associative Memories via Predictive Coding.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2109.08063
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2109.08063
+      \endverb
+      \keyw{Computer Science - Machine Learning}
+    \endentry
+    \entry{vaswani_attention_2023}{misc}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=7f28e84700536646dd6620a0db07ad09}{%
+           family={Vaswani},
+           familyi={V\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=62efade83d70f0323fe248755e6c90c5}{%
+           family={Shazeer},
+           familyi={S\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=06649ebab1ea5cac0250746a19764975}{%
+           family={Parmar},
+           familyi={P\bibinitperiod},
+           given={Niki},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=831027ee0ebf22375e2a86afc1881909}{%
+           family={Uszkoreit},
+           familyi={U\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2fd2982e30ebcec93ec1cf76e0d797fd}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Llion},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=27b07e4eacbf4ef7a1438e3badb7dd8d}{%
+           family={Gomez},
+           familyi={G\bibinitperiod},
+           given={Aidan\bibnamedelima N.},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f2bc899b1160163417da7bf510f15d33}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={Lukasz},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95595a0fefb86187cbc36e551017d332}{%
+           family={Polosukhin},
+           familyi={P\bibinitperiod},
+           given={Illia},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{fullhash}{f82970bbd2bdd7a002d2af62b743d5cc}
+      \strng{bibnamehash}{f82970bbd2bdd7a002d2af62b743d5cc}
+      \strng{authorbibnamehash}{f82970bbd2bdd7a002d2af62b743d5cc}
+      \strng{authornamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authorfullhash}{f82970bbd2bdd7a002d2af62b743d5cc}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The dominant sequence transduction models are based on complex recurrent or convolutional neural networks that include an encoder and a decoder. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 {BLEU} on the {WMT} 2014 Englishto-German translation task, improving over the existing best results, including ensembles, by over 2 {BLEU}. On the {WMT} 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art {BLEU} score of 41.8 after training for 3.5 days on eight {GPUs}, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.}
+      \field{day}{2}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{{arXiv}:1706.03762}
+      \field{title}{Attention Is All You Need}
+      \field{urlday}{17}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1706.03762
+      \endverb
+      \verb{eprint}
+      \verb 1706.03762 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/pop-harrier/Zotero/storage/KAA8QA8A/Vaswani et al. - 2023 - Attention Is All You Need.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1706.03762
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1706.03762
+      \endverb
+      \keyw{Computer Science - Machine Learning,Computer Science - Computation and Language}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

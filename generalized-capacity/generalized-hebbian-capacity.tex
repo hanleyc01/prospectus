@@ -1,0 +1,129 @@
+\documentclass[nobib]{tufte-handout}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[style=apa]{biblatex}
+\bibliography{sources.bib}
+
+\newtheorem{example}{Example}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\title{Generalized Capacity Estimation of Hebbian Auto-associative Networks}
+\author{CH}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+    Dense Associative Memory models dramatically expand the capacity of
+    traditional Hopfield networks. This is demonstrated by initializing
+    the network with random patterns, and estimating the signal to noise
+    ratio of recalling a desired pattern. Using similar methods, we 
+    provide a general theory of auto-associative networks trained 
+    using Hebbian learning rules.
+\end{abstract}
+
+\section{Introduction}
+
+Dense Associative Memory (DAM) networks are content-addressable memory models
+which generalize Hopfield networks \parencites{hopfield_neural_1982,krotov_dense_2016}.
+Let $K$ be the number of patterns that the network will store, and let $D$
+be the dimensionality of the patterns. Further, $F_n (\cdot) = \frac{1}{n} (\cdot)^n$
+be the \textit{polynomial} function. The energy of the network, with current
+state buffer $\sigma$, and memories $\xi^\mu$, $\mu = 1, 2, \dots, K$ is given
+by the following general formula:
+\begin{equation}
+    E(\sigma) = - \sum^K_{\mu} F_n (\xi^\mu_i \sigma_i).
+\end{equation}
+It is shown in \textcites{demircigil_model_2017,krotov_dense_2016} that 
+capacity of the memory model, $K^\text{max}$, scales exponentially as a function
+of $D$, in particular:
+\begin{equation}
+K^\text{max} \propto D^{n-1}.
+\end{equation}
+This substantially improves the capacity of traditional Hopfield networks,
+where $K^\text{max} \approx 0.14 D$ \parencite{hopfield_neural_1982}.
+
+However, one thing lost with the general DAM model is the intuitive
+weight update rule of Hopfield networks. Recall that a Hopfield network
+contains $D$ units with full, lateral connections between each unit. Weighting
+these connections is a $D \times D$ matrix, $W$, with a vanishing diagonal,
+as the network has no recursive connections. Single-pass recall for the 
+traditional network is:
+\begin{align}
+    \sigma^{(t+1)} &= W \sigma^{(t)} = \Xi^\top (\Xi x) \\
+        &= \xi^1 (\xi^1 \cdot \sigma) + \xi^2 (\xi^2 \cdot \sigma) + \dots + \xi^K (\xi^K \cdot x) \nonumber,
+\end{align}\label{hopfield:singlepass}
+where $\Xi$ is the $K \times D$ pattern, or, design matrix. Naively reproducing
+this single-pass update rule can be achieved with the \textit{activity product rule}
+\parencite{haykin_neural_2009}:
+\begin{equation}
+    \Delta W = \xi^\mu \otimes \xi^\mu,
+\end{equation}
+where $(\cdot \otimes \cdot)$ denotes the outer product. Informally, for each
+time step $t = 1, 2, \dots, K$ we present a new pattern $\xi^{(\mu = t)}$
+to the network, and update the weights by its self-correlation (hence, the 
+name of \textit{correlation matrix} memories \parencite{kohonen_correlation_1988}).
+
+This simple weight update rule however opens a new door for potentially
+many different kinds of weight update rules. In particular, we will be 
+investigating Hebbian weight update rules. A Hebbian learning rule is entirely
+local \parencite{gerstner_mathematical_2002}, which means that they are biologically
+plausible. 
+
+\section{Related Work}
+
+%% FILL OUT RELATED WORK HERE
+\parencites{kozachkov_neuron-astrocyte_2024,hu_provably_2024,salvatori_associative_2024,hoover_dense_2024}.
+
+\section{Hebbian Learning Rules}
+
+A \textit{Hebbian} learning rule is a general characterization of local 
+update rules:
+\begin{definition}[Local layers; Hebbian Learning Rule]\label{def:hebb-learning}
+    For a neural network of layers $x_i$, $i = 1, 2, \dots, K$ layers of
+    dimensions $d_i$, layer $x_i$ is \textit{local} to layer $x_j$ if 
+    $i = 1 \pm j$. A \textit{Hebbian learning rule} is an update rule
+    for the $d_i \times d_j$ weight matrix connection layers $x_i$ and
+    $x_j$:
+    $$
+    W^{(t+1)} = f(W^{(t)};~x_i, x_j).
+    $$
+\end{definition}
+
+\textcite{gerstner_mathematical_2002} generalizes the Hebbian learning
+rule using a Taylor expansion of $f$ about $(0, 0)$:
+\begin{definition}[Expanded Hebbian Learning Rule]\label{def:expanded-hebb}
+Expanding $f$ from Definition \ref{def:hebb-learning}, we get:
+\begin{align*}
+f(W; x_i, x_j) &= f(W; 0, 0) + \frac{\partial f}{\partial x_i} \big|_{(0, 0)} x_i + \frac{\partial f}{\partial x_j} 
+\big|_{(0, 0)} x_j \\
+&+ \frac{1}{2} \frac{\partial^2 f}{\partial v^2_i} \big|_{(0, 0)} x_i^2 + \frac{1}{2} \frac{\partial^2 f}{\partial v^2_j}\big|_{(0, 0)} x_j^2 \\
+&+ \frac{\partial^2 f}{\partial x_i \partial x_j}\big|_{(0, 0)} x_i x_j + \mathcal{O}(v).
+\end{align*}
+More simply denoted, we can refer to the coefficients using $c_i$, getting us:
+\begin{align*}
+W^{(t+1)} &= f(W^{(t)}; x_i, x_j) =
+    c_0 (W^{(t)}) + c_1^\text{pre} (W^{(t)}) x_j + c_1^\text{post} x_i \\
+    &+ c_2^\text{pre} (W^{(t)}) x_j^2 + c_2^\text{post} (W^{(t)}) x_i^2 + c_2^\text{corr} (W^{(t)}) x_i x_j \\
+    &+ \mathcal{O} (x).
+\end{align*}
+\end{definition}
+
+\begin{example}[Activity Product Rule]
+    The \textit{Activity Product Rule} \parencite{haykin_neural_2009},
+    $$
+    W^{(t+1)} = \eta x_i x_j^\top,
+    $$
+    where $\eta$ is the \textit{learning rate},
+    is identical to Definition~\ref{def:expanded-hebb} with $c_2^\text{corr}$
+    set to some value, and all other coefficients set to $0$:
+    $$
+    W^{(t+1)} = c_2^\text{corr} (W^{(t)}) x_i x_j^T.
+    $$
+\end{example}
+
+\printbibliography
+\end{document}

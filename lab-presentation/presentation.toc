@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Associative Memories}{3}{0}{1}
+\beamer@sectionintoc {2}{Correlation Matrix based AMs}{5}{0}{2}
+\beamer@sectionintoc {3}{Hebbian Learning}{9}{0}{3}
+\beamer@sectionintoc {4}{Energy Minimization, Energy Descent}{11}{0}{4}
+\beamer@sectionintoc {5}{Dense Associative Memories}{18}{0}{5}
+\beamer@sectionintoc {6}{Capacity}{23}{0}{6}
+\beamer@sectionintoc {7}{Problem: Hebbian Dense Associative Memory?}{27}{0}{7}

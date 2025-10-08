@@ -1,0 +1,511 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[style=apa]{biblatex}
+\usepackage[shortlabels]{enumitem}
+\usepackage{graphicx}
+\bibliography{sources.bib}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Prospectus DRAFT}
+\author{Connor Hanley}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+    Dense Associative Memories generalize traditional Hopfield networks, and
+    provide a mechanism to drastically improve their theoretical storage
+    capacity. To do this, they perform a non-linear operation on the 
+    similarities between cue or query patterns with memorized patterns. These
+    improvements come at the cost of the simple intuitions of Hopfield networks.
+    We discuss contemporary and historical research in the field, and provide
+    desiderata for a Hebbian model model which retains the intuition and 
+    simplicity of Hopfield networks, without sacrificing theoretical storage
+    capacity.
+\end{abstract}
+
+\section{Introduction}
+
+Humans are able to recognize and retrieve patterns of data using distorted, 
+noisy, and partial patterns \parencite{rumelhart_general_1986}. This 
+capacity of human memory is known as \textit{content-addressability}: patterns 
+which are stored in memory are able to be ``looked up'' by themselves or their
+parts. Modeling this property is a classical task in computational cognitive 
+and neuro- science (see \textcites{marr_simple_1971,little_existence_1974,
+amari_learning_1972,nakano_associatron-model_1972,stanley_simulation_1976}).
+The family of models which implement content-addressability are known 
+as \textit{associative memory models} (AMs). AMs are able to account for many
+cognitive tasks, (INSERT EXAMPLES HERE) \parencite{hintzman_minerva_1984}.
+A recent revival of interest AMs in machine learning research, 
+driven by their equivalence with ``attention'' layers in the transformer 
+architecture \parencites{vaswani_attention_2023, ramsauer_hopfield_2021}, 
+has led to drastic advances in the storage capacity of AMs 
+\parencites{demircigil_model_2017,krotov_dense_2016,hu_provably_2024}. 
+
+Traditional models of Associative Memory rely on Hebbian update rules 
+to memorize stored patterns in the weights of lateral connections
+\parencites{amari_learning_1972,hopfield_neural_1982,kohonen_correlation_1988,
+nakano_associatron-model_1972,}. Hebbian update rules are appealing for cognitive
+and neuro-science as the weight updates are both entirely \textit{local} and 
+the representation of content is \textit{distributed}. By local, we mean
+that the interactions between artificial neurons are entirely defined by 
+local connections between other neurons. By distributed content, we mean that 
+the representations of features, stimuli, and patterns are not defined in terms
+of single memory locations (like conventional digital computers), but rather 
+are represented in the interactions over many artificial neurons (for motivation
+see \textcite{mcclelland_appeal_1986}).
+
+While traditional models have desireable properties, they suffer from small 
+storage capacities \parencites{hopfield_neural_1982,amit_storing_1985},
+scaling linearly with the dimension of patterns stored. Dense
+Associative Memories have generalized traditional models, providing a theoretical
+storage capacity which scales exponentially with the dimension of the patterns
+stored \parencites{krotov_dense_2016,demircigil_model_2017}. This discovery
+has been incredibly fruitful, leading to increased interpretability of 
+large language models based on the Transformer architecture 
+\parencites{vaswani_attention_2023,ramsauer_hopfield_2021}, as well as the shift
+from memorization to generalization in modern deep learning architectures
+\parencite{pham_memorization_2025}. However, in spite of these gains, the Hebbian
+intuition and plausibility is lost \parencite{mcalister_sequential_2025}. 
+Instead of relying on local update rules, Dense Associative Memories
+train using backpropagation of error. 
+
+%% I think that holographic memories are out of scope, but should be conisdered
+%% they're not necessarily hebbian ? I need to think about that : and it would
+%% be fruitful to include them in rigorous testing of the memories either way
+In the following, we will investigate what a Hebbian alternative to Dense
+Associative Memory must look like in order to maintain biological plausibility
+and inherent interpretability without sacrificing theoretical capacity. To begin,
+we will review traditional Associative Memory models, starting with 
+models similar to or based on Hopfield networks \parencite{hopfield_neural_1982}.
+After, we will review Dense Associative Memory, which generalizes on Hopfield
+networks and improves their capacity, with the loss of Hebbian weight updates.
+We will then review holographic associative memory models, which are 
+similarly local (INSERT RESEARCH INTO HOLOGRAPHIC MEMORY HERE). 
+
+
+\section{Background}
+
+\begin{quote}
+    ``Men make their own history, but they do not make it as they please; they 
+    do not make it under self-selected circumstances, but under circumstances 
+    existing already, given and transmitted from the past. The tradition of all 
+    dead generations weighs like a nightmare on the brains of the living.''
+    \parencite{marx_eighteenth_1852}
+\end{quote}
+
+Dense Associative Memories build on a vast wealth of previous research, and
+while the desire for a simple and intuitive network which mirrors its qualities
+is straightforward, understanding how we get to this point requires 
+an explanation of the thinking that got to where we are now. In this section
+we will detail the background information necessary for understanding Dense
+Associative Memories. To begin, we will discuss traditional Associative Memory
+models in~\autoref{sec:trad-assc}; next, we will discuss Correlation Matrix
+Associative Memories in~\autoref{sec:correl}, which are the framework behind
+Hopfield networks, discussed in~\autoref{sec:hopfield}. We will then discuss
+the theoretical capacity of Hopfield networks in~\autoref{sec:hopfield-cap}.
+Next we will discuss the theory behind Dense Associative Memories, and the 
+energy-based framework developed behind them in~\autoref{sec:dam} 
+and~\autoref{sec:uhn}. We will discuss their capacity as well 
+in~\autoref{sec:dam-cap}. After, we will discuss local Hebbian learning,
+the theory behind the simplicity of Hopfield networks in~\autoref{sec:hebb}
+and~\autoref{sec:general-hebb}. Finally, we will discuss related associative
+memory research: Holographic Associative Memories in~\autoref{sec:ham},~
+\autoref{sec:hrr}, and~\autoref{sec:ham-cap}. Finally, 
+
+\subsection{Associative Memories}\label{sec:trad-assc}
+
+Associative Memory (AM) models are a family of architectures designed to
+learn to associate tuples of patterns $(x, y)$ such that one can recover
+$y$ from partially distorted, masked, or noisy forms of $x$. In order to 
+generalize here, the following formal definition suffices:
+\begin{definition}[Associative Memories; auto-association; hetero-association]\label{def:assoc-memory}
+    An \textit{associative memory} is a $3$-tuple $\langle f, A, C \rangle$
+    obeying the following properties:
+    \begin{enumerate}[(i)]
+        \item The \textit{address} matrix $A$ is an $N \times D$ matrix of 
+        patterns we wish to learn as \textit{cues} or \textit{queries};\label{def:assoc:cond1}
+        \item The \textit{content} matrix $C$ is an $N \times M$ matrix of
+        patterns we wish to learn as \textit{responses}, or associate with 
+        each $a_i$, $i = 1, 2, \dots, N$; and, \label{def:assoc:cond2}
+        \item The \textit{recall} function 
+        $f_{A, C} : \mathbb{R}^D \to \mathbb{R}^M$ maps $D$-dimensional query or 
+        cue patterns $x$ to memorized $M$-dimensional patterns $y$. \label{def:assoc:cond3}
+    \end{enumerate}
+    An associative memory $\mathcal{M}$ is said to be \textit{auto-associative}
+    iff the address matrix is equivalent to the content matrix, i.e. $A=C$. 
+    It is sufficient, then, to only specify a recall function and address matrix for 
+    auto-associative memories.  Associative memories are said to be \textit{hetero-associative} otherwise.
+\end{definition}
+Another typical property of AMs is \textit{content-addressability}, which 
+describes the task of recovering a stored content based on a partial subset
+of the information with it's associated query 
+\parencites{mcclelland_appeal_1986,haykin_neural_2009}. This is in contrast
+to other memory models, for example in the C programming language (INSERT K\&R citation here), where data
+is accessed in memory by arbitrary addresses unrelated to the data itself.
+
+Another important aspect to the study of AMs is the distinction between 
+\textit{recall} and \textit{learning}. In recall, we apply the function 
+$f_{A,C}$ to some $D$-dimensional pattern $x$ to recover its associated
+content $\hat y$. This can be done by a single-pass of $x$ through
+a neural network implementing $f_{A,C}$, or by asynchronous energy minimization
+(see,~\autoref{sec:hopfield}). In the learning phase, the network adjusts
+$f_{A,C}$ via a learning algorithm so as to minimize the difference between 
+between the estimated content associated with a query, $\hat y$, and the desired
+associated content, $y$. This can be done via any learning algorithm that we 
+choose.
+
+AMs are not able to store an infinite amount of patterns. There is a critical
+capacity $N^\text{max}$ for AMs
+(being the first dimension of the address and content matrices) at which 
+recall can no longer adequately produce a $\hat y$ which corresponds with 
+the desired associated pattern $y$. Critical capacity is
+influenced by the kind of data being learned. For example, a real-world
+dataset like MNIST \parencite{lecun_mnist_2010} contains images which are
+highly correlated with one another. High correlation between stored patterns
+requires effective AMs to somehow be sensitive to fine-grain differences, which
+will be discussed in~\autoref{sec:dam} and~\autoref{sec:uhn}.
+
+\subsection{Correlation Matrix AMs}\label{sec:correl}
+
+Correlation Matrix AMs are a class of auto-associative AMs which learn to 
+associate bipolar patterns via a correlation matrix of desired patterns with themselves,
+originally presented in \parencites{kohonen_correlation_1988,amari_learning_1972,nakano_associatron-model_1972}:
+\begin{definition}[Correlation Matrix Associative Memory]\label{def:correl-mem}
+    A \textit{Correlation Matrix} associative memory is an auto-associative
+    memory $\langle f, \Xi \rangle$, where:
+    \begin{enumerate}[(a)]
+        \item The $N \times D$ address matrix $\Xi$ contains $N$ patterns $\xi_i$
+        of $D$-dimension; and,
+        \item the recall function is:
+        $$
+        f_\Xi (x) = g \left(\Xi^\top \Xi x\right),
+        $$
+        and $g$ is some function.
+    \end{enumerate}
+\end{definition}
+Correlation Matrix AMs are so-called as they recall values via the correlation
+matrix (in the simplest case) $W = \Xi^\top \Xi$. For \textcite{kohonen_correlation_1988},
+$g$ is just the identify function $g (x) = x$. In \textcites{amari_learning_1972,hopfield_neural_1982},
+$g$ is the \textit{signum} function:
+$$
+\text{sgn} \left[  n \right] = \begin{cases}
+    -1,&~\text{if}~n < 0, \\
+    0,&~\text{if}~n = 0, \\
+    1,&~\text{if}~n > 0.
+\end{cases}
+$$
+For a difference between the two $g$ functions, see~\autoref{fig:amari-kohonen}.
+With a non-linear $g$ function, have a clarified result which is forced to chose
+between the bipolar values $\{-1, 1\}$. Whereas, with $g(x) = x$, it becomes
+clear that the reconstructed value is a linear combination of the stored patterns
+weighted by their dot product with the query.
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{amari_kohonen_CROPPED.png}
+\caption{Left-to-right: Masked query presented to the networks. Single-pass recall 
+with $g(x) = \text{sgn}[x]$ (``Amari Recall''). Single-pass recall with $g(x) = x$ (``Kohonen Recall'').}
+\end{figure}\label{fig:amari-kohonen}
+To see how this is the case, suppose that we have pattern matrix $\Xi = [\xi_1, \xi_2, \dots, \xi_N]$,
+and we wish to recall a query pattern $\sigma$. Recall, then, is:
+\begin{equation}\label{eq:correl:recall}
+\begin{split}
+f_\Xi (\sigma) &= \Xi^\top \Xi \sigma \\
+&= (\xi_1 \xi_1^\top + \xi_2 \xi_2^\top + \dots + \xi_N \xi_N^\top) \sigma \\
+&= (\xi_1 \xi_1^\top \sigma) + (\xi_2 \xi_2^\top \sigma) + \dots + (\xi_N \xi_N^\top \sigma) \\
+&= \sum^N_{i=1} \xi_i \left(\xi_i^\top \sigma\right).
+\end{split}
+\end{equation}
+
+The structure of \autoref{eq:correl:recall} also shows us how one could simply
+learn new representations over a period of time $T = N$. To begin, at time $t = 0$,
+we set the weight matrix $W$ to zeros:
+\begin{equation}
+    W^{(0)} \gets [0]_{D \times D}.
+\end{equation}
+At each new time step $t + 1$, we update the weights with the corresponding
+pattern we wish to store:
+\begin{equation}
+    W^{(t+1)} \gets W^{(t)} + \xi_{(t+1)} \xi_{(t+1)}^\top.
+\end{equation}
+This definition gives us the following \textit{Activity Product Rule} 
+\parencite{haykin_neural_2009},
+\begin{equation}
+    \Delta W = \xi_i \xi_i^\top.
+\end{equation}
+We will discuss the Activity Product Rule and other Hebbian learning 
+rules in~\autoref{sec:hebb}.
+
+\subsection{Hopfield Networks}\label{sec:hopfield}
+
+The main contribution of the work of \textcite{hopfield_neural_1982} is not 
+the correlation-matrix structure of the associative memory. We have already
+discussed the idea of a single layer model with full, lateral connections above
+in~\autoref{sec:correl}. Rather, the main contribution of Hopfield was the 
+introduction of the notion of \textit{energy}, and \textit{energy descent}. 
+Hopfield networks are characterized by an \textit{energy function}, $E(\sigma^{(t)})$ which 
+describes the current state of the network. If the energy function 
+is a Lyapunov function (INSERT DISCUSSION OF LYAPUNOV FUNCTIONS HERE),
+and is well-designed, then the local minima of the range of the function 
+will correspond up to a certain critical capacity with patterns that we wish the network to store.
+
+More informally, the intuition is that we want to create an ``energy landscape''
+via the energy function with dips and divots corresponding to patterns
+that we wish to store. ``Energy descent'' is so called because we start with 
+an initial state of the network, and continuously lower the energy until 
+it can be no longer lowered. In the same way that a ball set on the incline 
+of a hill will fall till it reaches the lowest point, so too does an energy-based
+associative memory perform recall.
+
+\begin{definition}[Hopfield network]
+\label{def:hopfield}
+    A \textit{Hopfield network} is a single-layer neural network
+    which as $D$ computational units with full, lateral connections.
+    The state of the $D$ computational units. Let the $N \times D$
+    matrix $\Xi = [\xi_1, \xi_2, \dots, \xi_N]$ be the pattern matrix.
+    The state of the $D$ computational units, $\sigma^{(t)}$, depends on 
+    an \textit{energy function}:
+    \begin{equation}
+    E(\sigma) = - \frac{1}{2} \sum^N_{i=1} (\xi_i \cdot \sigma)^2;
+    \end{equation}
+    as,
+    \begin{equation}
+    \sigma_i^{(t+1)} = \arg\min_{b \in \{-1, 1\}} \{ E(\sigma_i^-), E(\sigma_i^+) \}
+    \end{equation}
+    with $\sigma_i^\pm$ being $\sigma^{(t)}$ with the $i$'th element
+    multiplied by $\pm 1$ ($b$).
+\end{definition}
+
+We can in fact directly demonstrate that Hopfield networks are approximately equivalent
+to Correlation Matrix AMs. This proof is essential for understanding later 
+developments in the theory of AMs in the same family as Hopfield networks, and will be
+discussed in \autoref{sec:dam}.
+\begin{theorem}[Hopfield networks are Correlation Matrix AMs]
+    Let us have $D$ computational units $\sigma$ and $N \times D$
+    pattern matrix. Then, updating all elements $\sigma_i$, $i = 1,2,\dots D$ 
+    of the state vector by flipping their bit and keeping it if it lowers the 
+    energy is approximately equivalent to the single-pass update rule of 
+    correlation matrix AMs.
+\end{theorem}
+
+\begin{proof}
+    Derivation and intuition come from \textcite{krotov_modern_2025}.
+    Recall that by Definition~\ref{def:hopfield} the one-step update rule of a 
+    single random bit is:
+    \begin{equation}\label{proof:random-update}
+    \sigma_i^{(t+1)} = \arg\min_{b \in \{-1, 1\}} \{ E(\sigma_i^-), E(\sigma_i^+) \}
+    \end{equation}
+    Let $F_n (\cdot) = \frac{1}{n} (\cdot)^n$, so $F_2 = \frac{1}{2} (\cdot)^2$.
+    With $F_2$, we can reformulate the energy function of a Hopfield network as:
+    \begin{equation}\label{hopfield:f_n}
+        E(\sigma) = \sum^N_{i=1} F_2 (\xi_i \cdot \sigma).
+    \end{equation}
+    By \textcite{krotov_modern_2025}, we can make a single pass update rule:
+    \begin{equation}\label{eq:krotov-energy-deriv}
+    \forall i \in \{1, \dots, D\},~\sigma_i^{(t+1)} \approx \text{sgn} \left[ \sum^N_{j=1} \xi_{ji} F_2' \left( \xi_j \cdot \sigma^{(t)}  \right) \right],
+    \end{equation}
+    or,
+    \begin{equation}
+        \sigma^{(t+1)} = f_\Xi (\sigma^{(t)}) = \text{sgn} \left[ \Xi^T \Xi \sigma^{(t)} \right],
+    \end{equation}
+    with $\Xi = [\xi_1, \xi_2, \dots, \xi_N]$.
+    This is just the single-pass update rule from Definition~\ref{def:correl-mem}
+    using the \textit{signum} function for $g$.
+\end{proof}
+
+\subsection{Hopfield Network Capacity}\label{sec:hopfield-cap}
+
+While the simplicity and appeal of Hopfield networks is clear, there is a problem
+for their plausibility as a computational model of the mechanisms for memory in 
+the brain. Namely, their limited capacity, with the famous result from 
+\textcite{hopfield_neural_1982} that the critical capacity of patterns 
+that the network can reliably retrieve is around 15 per cent of the number of computational
+units of the network. Of relevance for our discussion is how we can systematically
+arrive at a critical capacity estimate for any associative memory. Therefore,
+here we will see how one can arrive at the capacity result for Hopfield networks.
+
+The critical capacity of a Hopfield network can be derived by deriving
+on upper bound on the number of patterns that the network can store while
+still having that any pattern stored in the network will be recalled with minimal
+errors \parencites{krotov_dense_2016,demircigil_model_2017,krotov_modern_2025}.
+More formally, let $\Xi = [\xi_1, \dots, \xi_N]$ be the set of $D$-dimensional desired
+patterns that we wish for the network to store, and let $\sigma$ be the
+$D$-dimensional vector representing the current state of the network at time $t$.
+Then, we initialize $\sigma^{(t=0)}$ to some pattern $\xi_i$, and let the 
+network evolve. If $\sigma^{(t+1)}$ is roughly equivalent to $\sigma^{(t=0)}$
+(w.r.t. some distance function $d(\sigma^{(t+1)}, \sigma^{(t=0)}) > \epsilon$, where $\epsilon$
+is a constant) then the network is at an energy equilibrium, i.e., a desired stored pattern.
+
+\subsection{Dense Associative Memories}\label{sec:dam}
+
+\begin{definition}[Dense Associative Memory]
+    \textit{Dense Associative Memory} is a generalization of Hopfield networks,
+    with $N \times D$ pattern matrix $\Xi = [\xi_1, \xi_2, \dots, \xi_N]$,
+    $D$-dimensional state vector $\sigma^{(t)}$, and an energy function of the form:
+    \begin{equation}
+    E(\sigma) = - \sum^N_{i=1} F_n \left( \xi_i \cdot \sigma \right),
+    \end{equation}
+    where $F_n$ is a \textit{polynomial} function $F_n(\cdot) = \frac{1}{n}(\cdot)^{n}$ (of the same form 
+    as~\autoref{hopfield:f_n}).
+\end{definition}
+
+\begin{corollary}
+    Hopfield networks of the form given in Definition~\ref{def:hopfield}
+    are Dense Associative Memories, with polynomial function $F_2$.
+\end{corollary}
+
+\begin{corollary}
+    The memory model \textsf{Minerva2} from \textcite{hintzman_minerva_1984} is approximately
+    a Dense Associative Memory with polynomial function $F_4$.
+\end{corollary}
+
+\begin{proof}
+    With polynomial function $F_4$, the energy function becomes:
+    \begin{equation}
+    E(\sigma) = - \frac{1}{4} \sum^N_{i=1} (\xi_i \cdot \sigma)^4.
+    \end{equation}
+    By \textcite{krotov_modern_2025}, the update-rule for $\sigma^{(t+1)}$
+    is (using the same move as in~\autoref{eq:krotov-energy-deriv}):
+    \begin{equation}\label{dam:minerva2-update}
+    \sigma^{(t+1)}_i = \text{sgn} \left[ \sum^N_{j=1} \xi_{ji} (\xi_j \cdot \sigma^{(t)})^3 \right].
+    \end{equation}
+    Compare the transmission function of \textsf{Minerva2}:
+    \begin{equation}\label{minerva2-update}
+    \sigma^{(t+1)} = \text{sgn} \left[ \sum^N_{i=1} \xi_i \left(\frac{\xi_i^\top \sigma^{(t)}}{\|\xi_i\| \|\sigma^{(t)}\|}\right)^3 \right].
+    \end{equation}
+    If every $\xi_i$, $i=1, 2, \dots, N$ and $\sigma^{(t)}$ are vectors of magnitude $1$,
+    then \autoref{dam:minerva2-update} and \autoref{minerva2-update} are directly equivalent.
+\end{proof}
+
+The insights of Dense Associative Memories are not limited to binary vectors,
+and have been shown to apply to multi-head attention in transformer networks
+\parencites{ramsauer_hopfield_2021,vaswani_attention_2023}.
+
+\begin{theorem}
+    Any DAM with polynomial function $F_n$, with $n > 2$, is not Hebbian.
+\end{theorem}
+
+\begin{proof}
+    We say that an architecture is Hebbian if the connections between 
+    every layer $x_i$ and $x_j$, $i \neq 0$ and $j = i + 1$, is entirely
+    determined by by the prior activity of $x_i$, $x_j$, and the previous connection
+    weights between them. But, \textcite{krotov_large_2021} notes that 
+    $n \geq 3$ requires many-body neuron interactions, which are non-Hebbian.
+\end{proof}
+
+One solution, to be discussed in~\autoref{sec:related-work}, is Neuron-astrocyte
+memory \parencite{kozachkov_neuron-astrocyte_2024}.
+
+\begin{enumerate}[(a)]
+    \item Define DAM
+    \item define general energy function
+    \item link to modern hopfield networks
+    \item emphasize loss of hebbian plausibility
+    \item Mention neuron-astrocyte memories as one potential previous solution
+\end{enumerate}
+
+\subsection{Dense Associative Memory Capacity}\label{sec:dam-cap}
+
+\begin{theorem}
+    The critical capacity, $N^\text{max}$ of any DAM with polynomial 
+    function $F_n$ scales proportionally to $D^{n-1}$,
+    $$
+    N^\text{max} \propto D^{n-1}.
+    $$
+\end{theorem}
+
+\begin{proof}
+    See \textcites{demircigil_model_2017,krotov_dense_2016}.
+\end{proof}
+
+Previous work talks about the number of connections affecting the number of 
+memories that are capable of being stored \parencite{little_analytic_1978}.
+
+\begin{enumerate}[(a)]
+    \item More concrete proof here, reproduce from \parencites{krotov_dense_2016,demircigil_model_2017}
+    \item Talk about maximizing capacity with kernel methods, link to section in related work
+\end{enumerate}
+
+\subsection{Universal Hopfield Networks}\label{sec:uhn}
+
+\begin{definition}[Universal Hopfield Networks]
+    \textit{Universal Hopfield Networks} (UHNs) are a general theory 
+    of associative memories, where the recall function $f$ can be broken into
+    three parts:
+    $$
+    f_{A,C}(\sigma) = \underbrace{C^T}_{\text{Projection}} \left( \underbrace{\text{sep}}_{\text{Separation function}} 
+    \left[ \underbrace{\text{sim}(A, \sigma)}_{\text{Similarity function}} \right] \right).
+    $$
+    Namely:
+    \begin{enumerate}[(1)]
+        \item A \textit{similarity function}, that computes the relevant distance between stored
+        patterns and query patterns;
+        \item A \textit{separation function}, which is typically non-linear, which maximizes 
+        high similarity values and minimizes low similarity scores; and,
+        \item A \textit{projection function}, which generates vectors in the row 
+        space of the content matrix, formed by the basis vectors of the row space of the
+        column matrix weighted by their respective separated similarity scores.
+    \end{enumerate}
+\end{definition}
+
+While investigation into DAMs has revealed that their capacity scales with 
+the $F_n$, with $F'_n$ being their separation function; informal experimentation
+reveals that another important way of increasing capacity is the similarity function
+of the associative memory \parencites{millidge_predictive_2022,hu_provably_2024}.
+
+\begin{enumerate}[(a)]
+    \item Talk about one-shot UHNs as a theory
+    \item Insight: capacity gains from maximizing separation of similarity values
+    \item This is shown in the energy function, regular $\to$ tensor-based weight matrices
+\end{enumerate}
+
+\subsection{Hebbian and Local Learning Rules}\label{sec:hebb}
+
+\begin{enumerate}
+    \item Introduce Hebbian learning
+    \item Biological literature on the subject
+    \item Some basic Hebbian learning rules
+    \item \textcite{gerstner_mathematical_2002} explanation of Hebbian learning
+\end{enumerate}
+
+\subsection{Related Work}\label{sec:related-work}
+
+\begin{enumerate}[(a)]
+    \item Neuron-astrocyte networks
+    \item DAM in feature space
+    \item Kernel-based DAMS
+    \item Predictive Coding Networks
+\end{enumerate}
+
+\section{Work Plan}
+
+\begin{enumerate}[(a)]
+    \item Theoretical investigation into minimum and maximum capacity of Hebbian AMs 
+    as a function of (1) the form of the Hebbian learning rule, (2) the number of neurons in the network
+    \item Experimentation with different single-layer Hebbian AMs on real-world tasks; 
+    find interesting datasets for prediction/memorization
+\end{enumerate}
+
+\section{Timeline}
+
+\begin{enumerate}[(a)]
+    \item Theoretical investigation by December, paper to follow
+    \item Option to either split the experimentation from the theory for confirmation as a separate
+    paper, or as a single paper
+    \item Fitting in Hebbian AMs into Transformer networks; or something similar; do they hold
+    water to DAMs in sequence prediction/image generation?
+    \item Do we see similar memorization $\to$ generalization as DAMs exhibit?
+\end{enumerate}
+
+\printbibliography
+
+\end{document}

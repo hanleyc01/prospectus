@@ -1,0 +1,19 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'generalized-hebbian-capacity.blg'
+[28] biber:342> INFO - === Thu Oct  2, 2025, 17:58:51
+[35] Biber.pm:421> INFO - Reading 'generalized-hebbian-capacity.bcf'
+[67] Biber.pm:1002> INFO - Found 10 citekeys in bib section 0
+[75] Biber.pm:4487> INFO - Processing section 0
+[80] Biber.pm:4678> INFO - Looking for bibtex file 'sources.bib' for section 0
+[84] bibtex.pm:1713> INFO - LaTeX decoding ...
+[171] bibtex.pm:1519> INFO - Found BibTeX data source 'sources.bib'
+[233] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[233] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[233] Biber.pm:4307> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[233] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[245] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[245] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[245] Biber.pm:4307> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[245] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[252] bbl.pm:676> INFO - Writing 'generalized-hebbian-capacity.bbl' with encoding 'UTF-8'
+[258] bbl.pm:779> INFO - Output to generalized-hebbian-capacity.bbl
