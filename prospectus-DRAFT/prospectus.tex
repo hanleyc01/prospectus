@@ -28,7 +28,7 @@
   similarities between cue or query patterns with memorized patterns. These
   improvements come at the cost of the simple intuitions of Hopfield networks.
   We discuss contemporary and historical research in the field, and provide
-  desiderata for a Hebbian model model which retains the intuition and
+  desiderata for a Hebbian model which retains the intuition and
   simplicity of Hopfield networks, without sacrificing theoretical storage
   capacity.
 \end{abstract}
@@ -40,7 +40,7 @@ noisy, and partial patterns \parencite{rumelhart_general_1986}. This
 capacity of human memory is known as \textit{content-addressability}: patterns
 which are stored in memory are able to be ``looked up'' by themselves or their
 parts. Modeling this property is a classical task in computational cognitive
-and neuro- science (see \textcites{marr_simple_1971,little_existence_1974,
+and neuroscience (see \textcites{marr_simple_1971,little_existence_1974,
 amari_learning_1972,nakano_associatron-model_1972,stanley_simulation_1976}).
 The family of models which implement content-addressability are known
 as \textit{associative memory models} (AMs). AMs are able to account for many
@@ -54,9 +54,9 @@ has led to drastic advances in the storage capacity of AMs
 Traditional models of Associative Memory rely on Hebbian update rules
 to memorize stored patterns in the weights of lateral connections
 \parencites{amari_learning_1972,hopfield_neural_1982,kohonen_correlation_1988,
-nakano_associatron-model_1972,}. Hebbian update rules are appealing
+nakano_associatron-model_1972}. Hebbian update rules are appealing
 for cognitive
-and neuro-science as the weight updates are both entirely \textit{local} and
+and neuroscience as the weight updates are both entirely \textit{local} and
 the representation of content is \textit{distributed}. By local, we mean
 that the interactions between artificial neurons are entirely defined by
 local connections between other neurons. By distributed content, we mean that
@@ -65,7 +65,7 @@ of single memory locations (like conventional digital computers), but rather
 are represented in the interactions over many artificial neurons (for motivation
 see \textcite{mcclelland_appeal_1986}).
 
-While traditional models have desireable properties, they suffer from small
+While traditional models have desirable properties, they suffer from small
 storage capacities \parencites{hopfield_neural_1982,amit_storing_1985},
 scaling linearly with the dimension of patterns stored. Dense
 Associative Memories have generalized traditional models, providing a
@@ -80,7 +80,7 @@ from memorization to generalization in modern deep learning architectures
 the Hebbian
 intuition and plausibility is lost \parencite{mcalister_sequential_2025}.
 Instead of relying on local update rules, Dense Associative Memories
-train using backpropagation of error.
+train using back-propagation of error.
 
 %% I think that holographic memories are out of scope, but should be conisdered
 %% they're not necessarily hebbian ? I need to think about that : and it would
@@ -169,7 +169,7 @@ $f_{A,C}$ to some $D$-dimensional pattern $x$ to recover its associated
 content $\hat y$. This can be done by a single-pass of $x$ through
 a neural network implementing $f_{A,C}$, or by asynchronous energy minimization
 (see,~\autoref{sec:hopfield}). In the learning phase, the network adjusts
-$f_{A,C}$ via a learning algorithm so as to minimize the difference between
+$f_{A,C}$ via a learning algorithm to minimize the difference
 between the estimated content associated with a query, $\hat y$, and the desired
 associated content, $y$. This can be done via any learning algorithm that we
 choose.
@@ -326,34 +326,32 @@ discussed in \autoref{sec:dam}.
   correlation matrix AMs.
 \end{theorem}
 
-\begin{proof}
-  Derivation and intuition come from \textcite{krotov_modern_2025}.
-  Recall that by Definition~\ref{def:hopfield} the one-step update rule of a
-  single random bit is:
-  \begin{equation}\label{proof:random-update}
-    \sigma_i^{(t+1)} = \arg\min_{b \in \{-1, 1\}} \{ E(\sigma_i^-),
-    E(\sigma_i^+) \}
-  \end{equation}
-  Let $F_n (\cdot) = \frac{1}{n} (\cdot)^n$, so $F_2 = \frac{1}{2} (\cdot)^2$.
-  With $F_2$, we can reformulate the energy function of a Hopfield network as:
-  \begin{equation}\label{hopfield:f_n}
-    E(\sigma) = \sum^N_{i=1} F_2 (\xi_i \cdot \sigma).
-  \end{equation}
-  By \textcite{krotov_modern_2025}, we can make a single pass update rule:
-  \begin{equation}\label{eq:krotov-energy-deriv}
-    \forall i \in \{1, \dots, D\},~\sigma_i^{(t+1)} \approx
-    \text{sgn} \left[ \sum^N_{j=1} \xi_{ji} F_2' \left( \xi_j \cdot
-    \sigma^{(t)}  \right) \right],
-  \end{equation}
-  or,
-  \begin{equation}
-    \sigma^{(t+1)} = f_\Xi (\sigma^{(t)}) = \text{sgn} \left[ \Xi^T
-    \Xi \sigma^{(t)} \right],
-  \end{equation}
-  with $\Xi = [\xi_1, \xi_2, \dots, \xi_N]$.
-  This is just the single-pass update rule from Definition~\ref{def:correl-mem}
-  using the \textit{signum} function for $g$.
-\end{proof}
+Derivation and intuition come from \textcite{krotov_modern_2025}.
+Recall that by Definition~\ref{def:hopfield} the one-step update rule of a
+single random bit is:
+\begin{equation}\label{proof:random-update}
+  \sigma_i^{(t+1)} = \arg\min_{b \in \{-1, 1\}} \{ E(\sigma_i^-),
+  E(\sigma_i^+) \}
+\end{equation}
+Let $F_n (\cdot) = \frac{1}{n} (\cdot)^n$, so $F_2 = \frac{1}{2} (\cdot)^2$.
+With $F_2$, we can reformulate the energy function of a Hopfield network as:
+\begin{equation}\label{hopfield:f_n}
+  E(\sigma) = \sum^N_{i=1} F_2 (\xi_i \cdot \sigma).
+\end{equation}
+By \textcite{krotov_modern_2025}, we can make a single pass update rule:
+\begin{equation}\label{eq:krotov-energy-deriv}
+  \forall i \in \{1, \dots, D\},~\sigma_i^{(t+1)} \approx
+  \text{sgn} \left[ \sum^N_{j=1} \xi_{ji} F_2' \left( \xi_j \cdot
+  \sigma^{(t)}  \right) \right],
+\end{equation}
+or,
+\begin{equation}
+  \sigma^{(t+1)} = f_\Xi (\sigma^{(t)}) = \text{sgn} \left[ \Xi^T
+  \Xi \sigma^{(t)} \right],
+\end{equation}
+with $\Xi = [\xi_1, \xi_2, \dots, \xi_N]$.
+This is just the single-pass update rule from Definition~\ref{def:correl-mem}
+using the \textit{signum} function for $g$.
 
 \subsection{Hopfield Network Capacity}\label{sec:hopfield-cap}
 
@@ -389,6 +387,26 @@ desired stored pattern.
 
 \subsection{Dense Associative Memories}\label{sec:dam}
 
+Hopfield networks are certainly simple and intuitive. But their strength
+is also their weakness: their simplicity leads to low storage capacity,
+as we have seen above. This problem, as well as convergent theoretical
+work in the study of associative memories unrelated to Hopfield networks,
+found an interesting solution: applying a non-linear function to the
+dot product scores between the desired stored patterns $x_i$ and the
+query pattern $\sigma$.
+
+Early models that used this technique are: \textsf{Minerva2}
+\parencite{hintzman_minerva_1984},
+which computes the cosine similarity between the query pattern
+and stored patterns, and then sums the rows of the element-wise
+product of these weighted similarity scores and our desired patterns.
+Similar work investigated energy functions with tensor-based
+interaction terms \parencites{psaltis_higher_1988,chen_high_1986},
+with a unifying approach found in \textcite{kelly_memory_2017}.
+
+A general theory can be found in \textcite{krotov_dense_2016},
+later expanded in \textcites{demircigil_model_2017},
+and to arbitrarily sized neural networks in \textcite{krotov_hierarchical_2021}.
 \begin{definition}[Dense Associative Memory]
   \textit{Dense Associative Memory} is a generalization of Hopfield networks,
   with $N \times D$ pattern matrix $\Xi = [\xi_1, \xi_2, \dots, \xi_N]$,
@@ -402,39 +420,46 @@ desired stored pattern.
   as~\autoref{hopfield:f_n}).
 \end{definition}
 
+The form of the polynomial function $F_n$ is non-trivial, as it relates
+to the single-pass rule, by the fact used in~\autoref{eq:krotov-energy-deriv}.
+Namely, the \textit{single-pass} rule uses the derivative of $F_n$, $F_n'$,
+as its non-linear function. From this definition immediately
+follows the next two corollaries.
+
 \begin{corollary}
   Hopfield networks of the form given in Definition~\ref{def:hopfield}
   are Dense Associative Memories, with polynomial function $F_2$.
 \end{corollary}
+\noindent
+To see why this is the case, note that $\frac{d}{dx} F_2' =
+\frac{1}{2}(2) (x)^{2-1} = x$.
 
 \begin{corollary}
   The memory model \textsf{Minerva2} from
   \textcite{hintzman_minerva_1984} is approximately
   a Dense Associative Memory with polynomial function $F_4$.
 \end{corollary}
-
-\begin{proof}
-  With polynomial function $F_4$, the energy function becomes:
-  \begin{equation}
-    E(\sigma) = - \frac{1}{4} \sum^N_{i=1} (\xi_i \cdot \sigma)^4.
-  \end{equation}
-  By \textcite{krotov_modern_2025}, the update-rule for $\sigma^{(t+1)}$
-  is (using the same move as in~\autoref{eq:krotov-energy-deriv}):
-  \begin{equation}\label{dam:minerva2-update}
-    \sigma^{(t+1)}_i = \text{sgn} \left[ \sum^N_{j=1} \xi_{ji} (\xi_j
-    \cdot \sigma^{(t)})^3 \right].
-  \end{equation}
-  Compare the transmission function of \textsf{Minerva2}:
-  \begin{equation}\label{minerva2-update}
-    \sigma^{(t+1)} = \text{sgn} \left[ \sum^N_{i=1} \xi_i
-      \left(\frac{\xi_i^\top \sigma^{(t)}}{\|\xi_i\|
-    \|\sigma^{(t)}\|}\right)^3 \right].
-  \end{equation}
-  If every $\xi_i$, $i=1, 2, \dots, N$ and $\sigma^{(t)}$ are vectors
-  of magnitude $1$,
-  then \autoref{dam:minerva2-update} and \autoref{minerva2-update}
-  are directly equivalent.
-\end{proof}
+\noindent
+With polynomial function $F_4$, the energy function becomes:
+\begin{equation}
+  E(\sigma) = - \frac{1}{4} \sum^N_{i=1} (\xi_i \cdot \sigma)^4.
+\end{equation}
+By \textcite{krotov_modern_2025}, the update-rule for $\sigma^{(t+1)}$
+is (using the same move as in~\autoref{eq:krotov-energy-deriv}):
+\begin{equation}\label{dam:minerva2-update}
+  \sigma^{(t+1)}_i = \text{sgn} \left[ \sum^N_{j=1} \xi_{ji} (\xi_j
+  \cdot \sigma^{(t)})^3 \right].
+\end{equation}
+Compare the transmission function of \textsf{Minerva2}:
+\begin{equation}\label{minerva2-update}
+  \sigma^{(t+1)} = \text{sgn} \left[ \sum^N_{i=1} \xi_i
+    \left(\frac{\xi_i^\top \sigma^{(t)}}{\|\xi_i\|
+  \|\sigma^{(t)}\|}\right)^3 \right].
+\end{equation}
+If every $\xi_i$, $i=1, 2, \dots, N$ and $\sigma^{(t)}$ are vectors
+of magnitude $1$,
+then \autoref{dam:minerva2-update} and \autoref{minerva2-update}
+are directly equivalent.
 
 The insights of Dense Associative Memories are not limited to binary vectors,
 and have been shown to apply to multi-head attention in transformer networks
@@ -444,25 +469,16 @@ and have been shown to apply to multi-head attention in transformer networks
   Any DAM with polynomial function $F_n$, with $n > 2$, is not Hebbian.
 \end{theorem}
 
-\begin{proof}
-  We say that an architecture is Hebbian if the connections between
-  every layer $x_i$ and $x_j$, $i \neq 0$ and $j = i + 1$, is entirely
-  determined by by the prior activity of $x_i$, $x_j$, and the
-  previous connection
-  weights between them. But, \textcite{krotov_large_2021} notes that
-  $n \geq 3$ requires many-body neuron interactions, which are non-Hebbian.
-\end{proof}
+We say that an architecture is Hebbian if the connections between
+every layer $x_i$ and $x_j$, $i \neq 0$ and $j = i + 1$, is entirely
+determined by the prior activity of $x_i$, $x_j$, and the
+previous connection
+weights between them. But, \textcite{krotov_large_2021} notes that
+$n \geq 3$ requires many-body neuron interactions, which are non-Hebbian.
 
 One solution, to be discussed in~\autoref{sec:related-work}, is Neuron-astrocyte
-memory \parencite{kozachkov_neuron-astrocyte_2024}.
-
-\begin{enumerate}[(a)]
-  \item Define DAM
-  \item define general energy function
-  \item link to modern hopfield networks
-  \item emphasize loss of hebbian plausibility
-  \item Mention neuron-astrocyte memories as one potential previous solution
-\end{enumerate}
+memory \parencite{kozachkov_neuron-astrocyte_2024}. Related work
+\parencite{ramsauer_hopfield_2021}
 
 \subsection{Dense Associative Memory Capacity}\label{sec:dam-cap}
 
@@ -474,26 +490,20 @@ memory \parencite{kozachkov_neuron-astrocyte_2024}.
   $$
 \end{theorem}
 
-\begin{proof}
-  See \textcites{demircigil_model_2017,krotov_dense_2016}.
-\end{proof}
+See \textcites{demircigil_model_2017,krotov_dense_2016}.
 
 Previous work talks about the number of connections affecting the number of
 memories that are capable of being stored \parencite{little_analytic_1978}.
-
-\begin{enumerate}[(a)]
-  \item More concrete proof here, reproduce from
-    \parencites{krotov_dense_2016,demircigil_model_2017}
-  \item Talk about maximizing capacity with kernel methods, link to
-    section in related work
-  \item Signal-to-noise ratio and expected noise estimation
-\end{enumerate}
+More concrete proof here, reproduce from
+\parencites{krotov_dense_2016,demircigil_model_2017}.
+Signal-to-noise estimation.
 
 \subsection{Universal Hopfield Networks}\label{sec:uhn}
 
 \begin{definition}[Universal Hopfield Networks]
   \textit{Universal Hopfield Networks} (UHNs) are a general theory
-  of associative memories, where the recall function $f$ can be broken into
+  of single-pass associative memories, where the recall function $f$
+  can be broken into
   three parts:
   $$
   f_{A,C}(\sigma) = \underbrace{C^T}_{\text{Projection}} \left(
@@ -522,13 +532,6 @@ reveals that another important way of increasing capacity is the
 similarity function
 of the associative memory
 \parencites{millidge_predictive_2022,hu_provably_2024}.
-
-\begin{enumerate}[(a)]
-  \item Talk about one-shot UHNs as a theory
-  \item Insight: capacity gains from maximizing separation of similarity values
-  \item This is shown in the energy function, regular $\to$
-    tensor-based weight matrices
-\end{enumerate}
 
 \subsection{Hebbian and Local Learning Rules}\label{sec:hebb}
 
@@ -603,13 +606,6 @@ of the associative memory
   \end{align*}
 \end{corollary}
 
-\begin{enumerate}
-  \item Introduce Hebbian learning
-  \item Biological literature on the subject
-  \item Some basic Hebbian learning rules
-  \item \textcite{gerstner_mathematical_2002} explanation of Hebbian learning
-\end{enumerate}
-
 \subsection{Related Work}\label{sec:related-work}
 
 \begin{enumerate}[(a)]
@@ -628,7 +624,7 @@ alternatives
 to Dense Associative Memories. The second is large-scale experimentation
 on real-world datasets We will discuss the theoretical task in
 \autoref{subsec:theoretical},
-the the experimental work in \autoref{subsec:experimental}.
+the experimental work in \autoref{subsec:experimental}.
 
 \subsection{Theoretical Work}\label{subsec:theoretical}
 
@@ -639,7 +635,7 @@ and therefore biologically plausible. There are established methods for
 deriving the theoretical capacity of associative memories, as we have
 seen in~\autoref{sec:hopfield-cap} and~\autoref{sec:dam-cap}. Therefore,
 the goal in this part of the section is to come up with a general theorem
-about the critical capacity of assocaitive memories with Hebbian update
+about the critical capacity of associative memories with Hebbian update
 rules.
 Importantly, the goal here is to provide a parameterized theorem: \textit{how
   do the choices of coefficients in the Expanded Hebbian learning rule
@@ -652,7 +648,7 @@ it would be extensive, and maybe lead to insight from fresh eyes on the problem.
 The second way of approaching the problem is to start from extant Hebbian
 learning algorithms. Then, we would prove (or find a proof)
 for each a critical capacity as a learning rule for an associative memory. This
-would be less time consuming, and provide the project with clearer milestones
+would be less time-consuming, and provide the project with clearer milestones
 and goals. For this approach to be novel, it is not sufficient to just
 reiterate the proofs of each update rule's critical capacity. Rather,
 after finding or writing each proof, it would be helpful to create a general
@@ -660,17 +656,29 @@ theorem for all of them based on common insights.
 
 \subsection{Experimental Work}\label{subsec:experimental}
 
-\begin{enumerate}[(a)]
-  \item Theoretical investigation into minimum and maximum capacity
-    of Hebbian AMs
-    as a function of (1) the form of the Hebbian learning rule, (2)
-    the number of neurons in the network
-  \item Experimentation with different single-layer Hebbian AMs on
-    real-world tasks;
-    find interesting datasets for prediction/memorization
-\end{enumerate}
+The second part of the work is experimentation with different Hebbian
+learning based associative memories, and comparing their performance to
+contemporary models of associative memory. The performance metric by which
+to compare each model highly depends on the task. The conventional task
+for introducing associative memory models is to do a qualitative evaluation
+of their ability to do pattern completion from partially obscured or noisy
+queries. While this approach does provide intuitive results, it is hardly
+an objective measure beyond broad statements like: the results of
+this associative memory ``look'' better than the results of some other.
+
+The second approach for evaluating the performance of associative memories
+is to use them for some task as part of a larger network. For example, we can
+evaluate the associative memory in a classification task as a part of
+a larger network where we input into the network partial or obscured
+representations of our domain of interest, and classify the results of the
+recall. This latter approach seems to be a better fit for the scientific
+evaluation of differing associative memories.
 
 \section{Timeline}
+
+\begin{quote}
+  ``The war will be over by Christmas!'' (Many)
+\end{quote}
 
 \begin{enumerate}[(a)]
   \item Theoretical investigation by December, paper to follow

@@ -221,8 +221,8 @@ INPUT ./amari_kohonen_CROPPED.png
 INPUT ./amari_kohonen_CROPPED.png
 INPUT ./amari_kohonen_CROPPED.png
 INPUT ./amari_kohonen_CROPPED.png
-INPUT /opt/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmssi10.tfm
 INPUT /opt/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
+INPUT /opt/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmssi10.tfm
 INPUT /opt/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /opt/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT prospectus.aux

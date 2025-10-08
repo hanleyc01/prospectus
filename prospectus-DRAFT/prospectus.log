@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.25)  8 OCT 2025 14:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.25)  8 OCT 2025 15:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -611,11 +611,11 @@ Package pdftex.def Info: amari_kohonen_CROPPED.png  used on input line 231.
 [5 <./amari_kohonen_CROPPED.png>]
 
 [6]
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 411.
-
 
 [7]
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 438.
+
 
 [8]
 
@@ -624,14 +624,14 @@ LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
 [10]
 
 [11]
-Overfull \hbox (0.35524pt too wide) in paragraph at lines 687--687
+Overfull \hbox (0.35524pt too wide) in paragraph at lines 695--695
 \OT1/cmr/m/n/10 nets of thresh-old el-e-ments. \OT1/cmr/m/it/10 IEEE Trans-ac-tions on Com-put-ers\OT1/cmr/m/n/10 , \OT1/cmr/m/it/10 C-21\OT1/cmr/m/n/10 (11),
  []
 
 
 
 [12]
-Overfull \hbox (0.50336pt too wide) in paragraph at lines 687--687
+Overfull \hbox (0.50336pt too wide) in paragraph at lines 695--695
 \OT1/cmr/m/n/10 Re-trieved Septem-ber 23, 2025, from []$https : / / www . marxists . org / archive /
  []
 
@@ -655,18 +655,18 @@ Package logreq Info: Writing requests to 'prospectus.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18571 strings out of 467797
- 327507 string characters out of 5406801
- 1260164 words of memory out of 5000000
- 46911 multiletter control sequences out of 15000+600000
+ 18583 strings out of 467797
+ 328479 string characters out of 5406801
+ 1261504 words of memory out of 5000000
+ 46936 multiletter control sequences out of 15000+600000
  637000 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,15n,79p,2034b,5052s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on prospectus.pdf (14 pages, 289870 bytes).
+Output written on prospectus.pdf (14 pages, 292600 bytes).
 PDF statistics:
  474 PDF objects out of 1000 (max. 8388607)
  415 compressed objects within 5 object streams
- 122 named destinations out of 1000 (max. 500000)
+ 109 named destinations out of 1000 (max. 500000)
  126 words of extra memory for PDF output out of 10000 (max. 10000000)
 

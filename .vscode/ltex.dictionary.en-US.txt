@@ -1,0 +1,4 @@
+Hopfield
+Hebbian
+AMs
+MNIST

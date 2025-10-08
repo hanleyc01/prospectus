@@ -139,6 +139,91 @@
       \verb https://link.aps.org/doi/10.1103/PhysRevLett.55.1530
       \endverb
     \endentry
+    \entry{chen_high_1986}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=3b06b756ee1a25a86f2fee86d6075060}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={H.\bibnamedelimi H.},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=85f1d891a1d91d1e45cb6b03c371cce7}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Y.\bibnamedelimi C.},
+           giveni={Y\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b9840f2a745a63bb0438dd1235c80801}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={G.\bibnamedelimi Z.},
+           giveni={G\bibinitperiod\bibinitdelim Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7bb95892ab45c7a86798a000cf3cac44}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={H.\bibnamedelimi Y.},
+           giveni={H\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d94534b314a4e6f9f4810ba8e77270fc}{%
+           family={Maxwell},
+           familyi={M\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95827de7d234678b81f44f7931aee408}{%
+           family={Giles},
+           familyi={G\bibinitperiod},
+           given={C.\bibnamedelimi Lee},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {AIP}%
+      }
+      \strng{namehash}{845d08f214b8f46840cb1c6918f6b243}
+      \strng{fullhash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{fullhashraw}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{bibnamehash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{authorbibnamehash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{authornamehash}{845d08f214b8f46840cb1c6918f6b243}
+      \strng{authorfullhash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{authorfullhashraw}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A neural network model of associative memory with higher order learning rule is presented. The new model could be fashioned to either the auto-associative or the multiple associative mode. Energy function, asynchronous or synchronous dynamics can be constructed. The retrieval of the stored patterns or pattern sets from an incomplete input is monotonic guaranteed by a convergence theorem. The higher-order correlation model shows dramatic improvement in its storage capacity in comparison to the conventional binary correlation model. It also opens up the possibility of storing spatial-temporal patterns and symmetry invariant patterns.}
+      \field{eventtitle}{{AIP} Conference Proceedings Volume 151}
+      \field{journaltitle}{{AIP} Conference Proceedings}
+      \field{langid}{english}
+      \field{note}{{ISSN}: 0094243X}
+      \field{title}{High order correlation model for associative memory}
+      \field{urlday}{20}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{volume}{151}
+      \field{year}{1986}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{86\bibrangedash 99}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1063/1.36224
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/UM8WPFBA/Chen et al. - 1986 - High order correlation model for associative memory.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://pubs.aip.org/aip/acp/article/151/1/86-99/755722
+      \endverb
+      \verb{url}
+      \verb https://pubs.aip.org/aip/acp/article/151/1/86-99/755722
+      \endverb
+    \endentry
     \entry{demircigil_model_2017}{article}{}{}
       \name{author}{5}{}{%
         {{un=0,uniquepart=base,hash=839fb29921ba7611ea0bb51cda04351a}{%
@@ -484,6 +569,72 @@
       \endverb
       \keyw{Computer Science - Artificial Intelligence,Computer Science - Neural and Evolutionary Computing,Computer Science - Machine Learning,Statistics - Machine Learning}
     \endentry
+    \entry{kelly_memory_2017}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=0c39604ba5909d52d5a23ab07be54c1c}{%
+           family={Kelly},
+           familyi={K\bibinitperiod},
+           given={Mary\bibnamedelima Alexandria},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2a71c107762be4d93f2c8cffa2cedce5}{%
+           family={Mewhort},
+           familyi={M\bibinitperiod},
+           given={D.J.K.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37264da0848398b472ddbd5abdd1c332}{%
+           family={West},
+           familyi={W\bibinitperiod},
+           given={Robert\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9c64e4829ddba5e409696f71b20fc7ac}
+      \strng{fullhash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{fullhashraw}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{bibnamehash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{authorbibnamehash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{authornamehash}{9c64e4829ddba5e409696f71b20fc7ac}
+      \strng{authorfullhash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{authorfullhashraw}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Computational memory models can explain the behaviour of human memory in diverse experimental paradigms. But research has produced a profusion of competing models, and, as different models focus on different phenomena, there is no best model. However, by examining commonalities among models, we can move towards theoretical unification. Computational memory models can be grouped into composite and separate storage models. We prove that {MINERVA} 2, a separate storage model of long-term memory, is mathematically equivalent to composite storage memory implemented as a fourth order tensor, and approximately equivalent to a fourth-order tensor compressed into a holographic vector. Building of these demonstrations, we show that {MINERVA} 2 and related separate storage models can be implemented in neurons. Our work clarifies the relationship between composite and separate storage models of memory, and thereby moves memory models a step closer to theoretical unification.}
+      \field{issn}{00222496}
+      \field{journaltitle}{Journal of Mathematical Psychology}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shortjournal}{Journal of Mathematical Psychology}
+      \field{shorttitle}{The memory tesseract}
+      \field{title}{The memory tesseract: Mathematical equivalence between composite and separate storage memory models}
+      \field{urlday}{17}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{77}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{142\bibrangedash 155}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.jmp.2016.10.006
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/GLZ9F3K5/Kelly et al. - 2017 - The memory tesseract Mathematical equivalence between composite and separate storage memory models.pdf:application/pdf;PDF:/home/connorh/Zotero/storage/QM7VB5KK/Kelly et al. - 2017 - The memory tesseract Mathematical equivalence between composite and separate storage memory models.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022249616301122
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022249616301122
+      \endverb
+    \endentry
     \entry{kohonen_correlation_1988}{inbook}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=a239233dfb1d78ba7f02fe9e49b13503}{%
@@ -623,6 +774,63 @@
       \verb http://arxiv.org/abs/2311.08135
       \endverb
       \keyw{Quantitative Biology - Neurons and Cognition}
+    \endentry
+    \entry{krotov_hierarchical_2021}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=16d4ee4fa8cb17d32a97be7f8c529007}{%
+           family={Krotov},
+           familyi={K\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{fullhash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{fullhashraw}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{bibnamehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{authorbibnamehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{authornamehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{authorfullhash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{authorfullhashraw}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Dense Associative Memories or Modern Hopﬁeld Networks have many appealing properties of associative memory. They can do pattern completion, store a large number of memories, and can be described using a recurrent neural network with a degree of biological plausibility and rich feedback between the neurons. At the same time, up until now all the models of this class have had only one hidden layer, and have only been formulated with densely connected network architectures, two aspects that hinder their machine learning applications. This paper tackles this gap and describes a fully recurrent model of associative memory with an arbitrary large number of layers, some of which can be locally connected (convolutional), and a corresponding energy function that decreases on the dynamical trajectory of the neurons’ activations. The memories of the full network are dynamically “assembled” using primitives encoded in the synaptic weights of the lower layers, with the “assembling rules” encoded in the synaptic weights of the higher layers. In addition to the bottom-up propagation of information, typical of commonly used feedforward neural networks, the model described has rich top-down feedback from higher layers that help the lower-layer neurons to decide on their response to the input stimuli.}
+      \field{day}{14}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{{arXiv}:2107.06446}
+      \field{title}{Hierarchical Associative Memory}
+      \field{urlday}{18}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2107.06446
+      \endverb
+      \verb{eprint}
+      \verb 2107.06446 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/F6VVTFP2/Krotov - 2021 - Hierarchical Associative Memory.pdf:application/pdf;PDF:/home/connorh/Zotero/storage/Y6FZZ37D/Krotov - 2021 - Hierarchical Associative Memory.pdf:application/pdf;PDF:/home/connorh/Zotero/storage/9A2T635M/Krotov - 2021 - Hierarchical Associative Memory.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2107.06446
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2107.06446
+      \endverb
+      \keyw{Computer Science - Neural and Evolutionary Computing,Quantitative Biology - Neurons and Cognition,Computer Science - Machine Learning,Statistics - Machine Learning,Condensed Matter - Disordered Systems and Neural Networks}
     \endentry
     \entry{krotov_large_2021}{misc}{}{}
       \name{author}{2}{}{%
@@ -1437,6 +1645,72 @@
       \verb http://arxiv.org/abs/2505.21777
       \endverb
       \keyw{Quantitative Biology - Neurons and Cognition,Computer Science - Machine Learning,Statistics - Machine Learning,Condensed Matter - Disordered Systems and Neural Networks,Computer Science - Computer Vision and Pattern Recognition}
+    \endentry
+    \entry{psaltis_higher_1988}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=6c04754ca07875c8afcb23747d66721e}{%
+           family={Psaltis},
+           familyi={P\bibinitperiod},
+           given={Demetri},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=04527432b8308f38bbf9de6b5a270516}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Cheol\bibnamedelima Hoon},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7bde2e655929e85e523d877a7a4aee3f}{%
+           family={Hong},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{97f999ba593ea0195eca6f63cc98519b}
+      \strng{fullhash}{8883a158bc625866245208bcc0739585}
+      \strng{fullhashraw}{8883a158bc625866245208bcc0739585}
+      \strng{bibnamehash}{8883a158bc625866245208bcc0739585}
+      \strng{authorbibnamehash}{8883a158bc625866245208bcc0739585}
+      \strng{authornamehash}{97f999ba593ea0195eca6f63cc98519b}
+      \strng{authorfullhash}{8883a158bc625866245208bcc0739585}
+      \strng{authorfullhashraw}{8883a158bc625866245208bcc0739585}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The properties of higher order memories are described. The non-redundant, up to Nth order polynomial expansion of N-dimensional binary vectors is shown to yield orthogonal feature vectors. The properties of expansions that contain only a single order are investigated in detail and the use of the sum of outer product algorithm for training higher order memories is analyzed. Optical implementations of quadratic associative memories"are described using volume holograms for the general case and planar holograms for shift invariant memories.}
+      \field{issn}{08936080}
+      \field{journaltitle}{Neural Networks}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{2}
+      \field{shortjournal}{Neural Networks}
+      \field{title}{Higher order associative memories and their optical implementations}
+      \field{urlday}{22}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{volume}{1}
+      \field{year}{1988}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{149\bibrangedash 163}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/0893-6080(88)90017-2
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/G9UV54YF/Psaltis et al. - 1988 - Higher order associative memories and their optical implementations.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0893608088900172
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0893608088900172
+      \endverb
     \endentry
     \entry{ramsauer_hopfield_2021}{misc}{}{}
       \name{author}{16}{}{%
@@ -1920,6 +2194,91 @@
       \verb https://link.aps.org/doi/10.1103/PhysRevLett.55.1530
       \endverb
     \endentry
+    \entry{chen_high_1986}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=3b06b756ee1a25a86f2fee86d6075060}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={H.\bibnamedelimi H.},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=85f1d891a1d91d1e45cb6b03c371cce7}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Y.\bibnamedelimi C.},
+           giveni={Y\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b9840f2a745a63bb0438dd1235c80801}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={G.\bibnamedelimi Z.},
+           giveni={G\bibinitperiod\bibinitdelim Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7bb95892ab45c7a86798a000cf3cac44}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={H.\bibnamedelimi Y.},
+           giveni={H\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d94534b314a4e6f9f4810ba8e77270fc}{%
+           family={Maxwell},
+           familyi={M\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95827de7d234678b81f44f7931aee408}{%
+           family={Giles},
+           familyi={G\bibinitperiod},
+           given={C.\bibnamedelimi Lee},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {AIP}%
+      }
+      \strng{namehash}{845d08f214b8f46840cb1c6918f6b243}
+      \strng{fullhash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{fullhashraw}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{bibnamehash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{authorbibnamehash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{authornamehash}{845d08f214b8f46840cb1c6918f6b243}
+      \strng{authorfullhash}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \strng{authorfullhashraw}{ccea530d7783a8594e2e6cdfec5ecc2a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A neural network model of associative memory with higher order learning rule is presented. The new model could be fashioned to either the auto-associative or the multiple associative mode. Energy function, asynchronous or synchronous dynamics can be constructed. The retrieval of the stored patterns or pattern sets from an incomplete input is monotonic guaranteed by a convergence theorem. The higher-order correlation model shows dramatic improvement in its storage capacity in comparison to the conventional binary correlation model. It also opens up the possibility of storing spatial-temporal patterns and symmetry invariant patterns.}
+      \field{eventtitle}{{AIP} Conference Proceedings Volume 151}
+      \field{journaltitle}{{AIP} Conference Proceedings}
+      \field{langid}{english}
+      \field{note}{{ISSN}: 0094243X}
+      \field{title}{High order correlation model for associative memory}
+      \field{urlday}{20}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{volume}{151}
+      \field{year}{1986}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{86\bibrangedash 99}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1063/1.36224
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/UM8WPFBA/Chen et al. - 1986 - High order correlation model for associative memory.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://pubs.aip.org/aip/acp/article/151/1/86-99/755722
+      \endverb
+      \verb{url}
+      \verb https://pubs.aip.org/aip/acp/article/151/1/86-99/755722
+      \endverb
+    \endentry
     \entry{demircigil_model_2017}{article}{}{}
       \name{author}{5}{}{%
         {{un=0,uniquepart=base,hash=839fb29921ba7611ea0bb51cda04351a}{%
@@ -2265,6 +2624,72 @@
       \endverb
       \keyw{Computer Science - Artificial Intelligence,Computer Science - Neural and Evolutionary Computing,Computer Science - Machine Learning,Statistics - Machine Learning}
     \endentry
+    \entry{kelly_memory_2017}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=0c39604ba5909d52d5a23ab07be54c1c}{%
+           family={Kelly},
+           familyi={K\bibinitperiod},
+           given={Mary\bibnamedelima Alexandria},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2a71c107762be4d93f2c8cffa2cedce5}{%
+           family={Mewhort},
+           familyi={M\bibinitperiod},
+           given={D.J.K.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37264da0848398b472ddbd5abdd1c332}{%
+           family={West},
+           familyi={W\bibinitperiod},
+           given={Robert\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9c64e4829ddba5e409696f71b20fc7ac}
+      \strng{fullhash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{fullhashraw}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{bibnamehash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{authorbibnamehash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{authornamehash}{9c64e4829ddba5e409696f71b20fc7ac}
+      \strng{authorfullhash}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \strng{authorfullhashraw}{13bcf7b5798f356b3ee53e8a0deddfce}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Computational memory models can explain the behaviour of human memory in diverse experimental paradigms. But research has produced a profusion of competing models, and, as different models focus on different phenomena, there is no best model. However, by examining commonalities among models, we can move towards theoretical unification. Computational memory models can be grouped into composite and separate storage models. We prove that {MINERVA} 2, a separate storage model of long-term memory, is mathematically equivalent to composite storage memory implemented as a fourth order tensor, and approximately equivalent to a fourth-order tensor compressed into a holographic vector. Building of these demonstrations, we show that {MINERVA} 2 and related separate storage models can be implemented in neurons. Our work clarifies the relationship between composite and separate storage models of memory, and thereby moves memory models a step closer to theoretical unification.}
+      \field{issn}{00222496}
+      \field{journaltitle}{Journal of Mathematical Psychology}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shortjournal}{Journal of Mathematical Psychology}
+      \field{shorttitle}{The memory tesseract}
+      \field{title}{The memory tesseract: Mathematical equivalence between composite and separate storage memory models}
+      \field{urlday}{17}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{77}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{142\bibrangedash 155}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.jmp.2016.10.006
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/GLZ9F3K5/Kelly et al. - 2017 - The memory tesseract Mathematical equivalence between composite and separate storage memory models.pdf:application/pdf;PDF:/home/connorh/Zotero/storage/QM7VB5KK/Kelly et al. - 2017 - The memory tesseract Mathematical equivalence between composite and separate storage memory models.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022249616301122
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022249616301122
+      \endverb
+    \endentry
     \entry{kohonen_correlation_1988}{inbook}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=a239233dfb1d78ba7f02fe9e49b13503}{%
@@ -2404,6 +2829,63 @@
       \verb http://arxiv.org/abs/2311.08135
       \endverb
       \keyw{Quantitative Biology - Neurons and Cognition}
+    \endentry
+    \entry{krotov_hierarchical_2021}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=16d4ee4fa8cb17d32a97be7f8c529007}{%
+           family={Krotov},
+           familyi={K\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{fullhash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{fullhashraw}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{bibnamehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{authorbibnamehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{authornamehash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{authorfullhash}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \strng{authorfullhashraw}{16d4ee4fa8cb17d32a97be7f8c529007}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Dense Associative Memories or Modern Hopﬁeld Networks have many appealing properties of associative memory. They can do pattern completion, store a large number of memories, and can be described using a recurrent neural network with a degree of biological plausibility and rich feedback between the neurons. At the same time, up until now all the models of this class have had only one hidden layer, and have only been formulated with densely connected network architectures, two aspects that hinder their machine learning applications. This paper tackles this gap and describes a fully recurrent model of associative memory with an arbitrary large number of layers, some of which can be locally connected (convolutional), and a corresponding energy function that decreases on the dynamical trajectory of the neurons’ activations. The memories of the full network are dynamically “assembled” using primitives encoded in the synaptic weights of the lower layers, with the “assembling rules” encoded in the synaptic weights of the higher layers. In addition to the bottom-up propagation of information, typical of commonly used feedforward neural networks, the model described has rich top-down feedback from higher layers that help the lower-layer neurons to decide on their response to the input stimuli.}
+      \field{day}{14}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{{arXiv}:2107.06446}
+      \field{title}{Hierarchical Associative Memory}
+      \field{urlday}{18}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2107.06446
+      \endverb
+      \verb{eprint}
+      \verb 2107.06446 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/F6VVTFP2/Krotov - 2021 - Hierarchical Associative Memory.pdf:application/pdf;PDF:/home/connorh/Zotero/storage/Y6FZZ37D/Krotov - 2021 - Hierarchical Associative Memory.pdf:application/pdf;PDF:/home/connorh/Zotero/storage/9A2T635M/Krotov - 2021 - Hierarchical Associative Memory.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2107.06446
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2107.06446
+      \endverb
+      \keyw{Computer Science - Neural and Evolutionary Computing,Quantitative Biology - Neurons and Cognition,Computer Science - Machine Learning,Statistics - Machine Learning,Condensed Matter - Disordered Systems and Neural Networks}
     \endentry
     \entry{krotov_modern_2025}{misc}{}{}
       \name{author}{4}{}{%
@@ -3218,6 +3700,72 @@
       \verb http://arxiv.org/abs/2505.21777
       \endverb
       \keyw{Quantitative Biology - Neurons and Cognition,Computer Science - Machine Learning,Statistics - Machine Learning,Condensed Matter - Disordered Systems and Neural Networks,Computer Science - Computer Vision and Pattern Recognition}
+    \endentry
+    \entry{psaltis_higher_1988}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=6c04754ca07875c8afcb23747d66721e}{%
+           family={Psaltis},
+           familyi={P\bibinitperiod},
+           given={Demetri},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=04527432b8308f38bbf9de6b5a270516}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Cheol\bibnamedelima Hoon},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7bde2e655929e85e523d877a7a4aee3f}{%
+           family={Hong},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{97f999ba593ea0195eca6f63cc98519b}
+      \strng{fullhash}{8883a158bc625866245208bcc0739585}
+      \strng{fullhashraw}{8883a158bc625866245208bcc0739585}
+      \strng{bibnamehash}{8883a158bc625866245208bcc0739585}
+      \strng{authorbibnamehash}{8883a158bc625866245208bcc0739585}
+      \strng{authornamehash}{97f999ba593ea0195eca6f63cc98519b}
+      \strng{authorfullhash}{8883a158bc625866245208bcc0739585}
+      \strng{authorfullhashraw}{8883a158bc625866245208bcc0739585}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The properties of higher order memories are described. The non-redundant, up to Nth order polynomial expansion of N-dimensional binary vectors is shown to yield orthogonal feature vectors. The properties of expansions that contain only a single order are investigated in detail and the use of the sum of outer product algorithm for training higher order memories is analyzed. Optical implementations of quadratic associative memories"are described using volume holograms for the general case and planar holograms for shift invariant memories.}
+      \field{issn}{08936080}
+      \field{journaltitle}{Neural Networks}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{2}
+      \field{shortjournal}{Neural Networks}
+      \field{title}{Higher order associative memories and their optical implementations}
+      \field{urlday}{22}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{volume}{1}
+      \field{year}{1988}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{149\bibrangedash 163}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/0893-6080(88)90017-2
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/G9UV54YF/Psaltis et al. - 1988 - Higher order associative memories and their optical implementations.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0893608088900172
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0893608088900172
+      \endverb
     \endentry
     \entry{ramsauer_hopfield_2021}{misc}{}{}
       \name{author}{16}{}{%
