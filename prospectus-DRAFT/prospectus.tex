@@ -8,11 +8,11 @@
 \usepackage{graphicx}
 \bibliography{sources.bib}
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{corollary}{Corollary}
-\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}{Lemma}[subsection]
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
+\newtheorem{definition}{Definition}[subsection]
 
 \title{Prospectus DRAFT}
 \author{Connor Hanley}
@@ -469,6 +469,41 @@ of the associative memory \parencites{millidge_predictive_2022,hu_provably_2024}
 \end{enumerate}
 
 \subsection{Hebbian and Local Learning Rules}\label{sec:hebb}
+
+\begin{definition}[Hebbian update]
+    A \textit{Hebbian update rule} or \textit{Hebbian learning} rule is an update
+    rule which is entirely local. By \textit{local weight update}, we mean that 
+    the weights connecting layers $x_i$ and $x_j$, $j = i + 1$, are defined 
+    in terms of: the activity of $x_i$, the activity of $x_j = g(x_i)$, and
+    the weights $w_{ij}$:
+    \begin{equation}
+    \Delta w_{ij} = f (w_{ij}; x_i, x_j).
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Expanded Hebbian update rule]
+    The \textit{expanded} Hebbian learning rule is the Taylor expansion
+    of the weight update rule about $(0, 0)$ \parencite{gerstner_mathematical_2002}:
+    \begin{align*}
+        \Delta w_{ij} &= f(w_{ij}; x_i, x_j) \\
+        &= f(w_{ij}; 0, 0) + \frac{\partial f}{\partial x_i} \big|_{(0, 0)} x_i + \frac{\partial f}{\partial x_j} 
+\big|_{(0, 0)} x_j \\
+&+ \frac{1}{2} \frac{\partial^2 f}{\partial v^2_i} \big|_{(0, 0)} x_i^2 + \frac{1}{2} \frac{\partial^2 f}{\partial v^2_j}\big|_{(0, 0)} x_j^2 \\
+&+ \frac{\partial^2 f}{\partial x_i \partial x_j}\big|_{(0, 0)} x_i x_j + \mathcal{O}(x).
+    \end{align*}
+    We denote the Taylor coefficients by $c_n^{\{\text{corr},~\text{pre},~\text{post}\}}$, with 
+    $n$ denoting the order of the coefficient, $\text{corr}$ denoting the coefficient 
+    weighting the correlation between the pre- and post-synaptic neural layers, and 
+    $\text{pre}$ and $\text{post}$ to denote the coefficients of the pre- and post-synaptic
+    layers themselves (respectively).
+    This gets us:
+    \begin{align*}
+    \Delta w_{ij} &= f(w_{ij}; x_i, x_j) =
+    c_0 (w_{ij}) + c_1^\text{pre} (w_{ij}) x_j + c_1^\text{post} x_i \\
+    &+ c_2^\text{pre} (w_{ij}) x_j^2 + c_2^\text{post} (w_{ij}) x_i^2 + c_2^\text{corr} (w_{ij}) x_i x_j \\
+    &+ \mathcal{O} (x).
+    \end{align*}
+\end{definition}
 
 \begin{enumerate}
     \item Introduce Hebbian learning
