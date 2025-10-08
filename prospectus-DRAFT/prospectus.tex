@@ -191,7 +191,8 @@ Correlation Matrix AMs are a class of auto-associative AMs which learn to
 associate bipolar patterns via a correlation matrix of desired
 patterns with themselves,
 originally presented in
-\parencites{kohonen_correlation_1988,amari_learning_1972,nakano_associatron-model_1972}:
+\parencites{kohonen_correlation_1988,amari_learning_1972,
+nakano_associatron-model_1972}:
 \begin{definition}[Correlation Matrix Associative Memory]\label{def:correl-mem}
   A \textit{Correlation Matrix} associative memory is an auto-associative
   memory $\langle f, \Xi \rangle$, where:
@@ -261,7 +262,7 @@ pattern we wish to store:
 \end{equation}
 This definition gives us the following \textit{Activity Product Rule}
 \parencite{haykin_neural_2009},
-\begin{equation}
+\begin{equation}\label{eq:hopfield:apr}
   \Delta W = \xi_i \xi_i^\top.
 \end{equation}
 We will discuss the Activity Product Rule and other Hebbian learning
@@ -292,7 +293,7 @@ energy-based
 associative memory perform recall.
 
 \begin{definition}[Hopfield network]
-    \label{def:hopfield}
+  \label{def:hopfield}
   A \textit{Hopfield network} is a single-layer neural network
   which as $D$ computational units with full, lateral connections.
   The state of the $D$ computational units. Let the $N \times D$
@@ -485,6 +486,7 @@ memories that are capable of being stored \parencite{little_analytic_1978}.
     \parencites{krotov_dense_2016,demircigil_model_2017}
   \item Talk about maximizing capacity with kernel methods, link to
     section in related work
+  \item Signal-to-noise ratio and expected noise estimation
 \end{enumerate}
 
 \subsection{Universal Hopfield Networks}\label{sec:uhn}
@@ -541,7 +543,7 @@ of the associative memory
   \end{equation}
 \end{definition}
 
-\begin{definition}[Expanded Hebbian update rule]
+\begin{definition}[Expanded Hebbian update rule]\label{def:expanded-hebb}
   The \textit{expanded} Hebbian learning rule is the Taylor expansion
   of the weight update rule about $(0, 0)$
   \parencite{gerstner_mathematical_2002}:
@@ -575,6 +577,32 @@ of the associative memory
   \end{align*}
 \end{definition}
 
+\begin{corollary}[Activity Product Rule]
+  We can derive the Activity Product Rule in~\autoref{eq:hopfield:apr}
+  by setting $c_2^\text{corr}$ to some constant, and letting all other
+  coefficients be zero, getting us an update rule:
+  $$
+  \Delta w_{ij} = c_2^\text{corr} (w_{ij}) x_i x_j.
+  $$
+  Typically, we denote $c_2^\text{corr} (w_{ij})$ by $\eta$,
+  the \textit{learning rate}.
+\end{corollary}
+
+%% TODO: fix the notation here: is x_i pre- or post-synaptic neuron?
+%% previously we refer to x_i as the pre and x_j as the post, with x_j = g(x_i).
+\begin{corollary}[Oja's Rule]
+  \textit{Oja's rule} \parencite{oja_simplified_1982} is a competitive Hebbian
+  learning algorithm where the weights are naturally normalized. We can
+  derive it from Definition~\ref{def:expanded-hebb} by setting
+  $c_2^\text{corr} = \eta_0 > 0$,
+  and $c_2^\text{post} = - \eta_0 w_{ij}$, with all other
+  coefficients set to $0$:
+  \begin{align*}
+    f(w_{ij}; x_i, x_j) &= \eta_0 x_i x_j - \eta_0 w_{ij} x_i^2 \\
+    &= \eta_0 x_i (x_j - w_{ij} x_i).
+  \end{align*}
+\end{corollary}
+
 \begin{enumerate}
   \item Introduce Hebbian learning
   \item Biological literature on the subject
@@ -592,6 +620,45 @@ of the associative memory
 \end{enumerate}
 
 \section{Work Plan}
+
+Completing this project requires two tasks which are interrelated but
+practically independent in their execution. The first is the theoretical
+work involved in finding a general theory of the capacity of Hebbian
+alternatives
+to Dense Associative Memories. The second is large-scale experimentation
+on real-world datasets We will discuss the theoretical task in
+\autoref{subsec:theoretical},
+the the experimental work in \autoref{subsec:experimental}.
+
+\subsection{Theoretical Work}\label{subsec:theoretical}
+
+Following Definition~\ref{def:expanded-hebb}, we can generate a range of
+different Hebbian learning algorithms for a single-layer
+network with full lateral connections. All of which are entirely local,
+and therefore biologically plausible. There are established methods for
+deriving the theoretical capacity of associative memories, as we have
+seen in~\autoref{sec:hopfield-cap} and~\autoref{sec:dam-cap}. Therefore,
+the goal in this part of the section is to come up with a general theorem
+about the critical capacity of assocaitive memories with Hebbian update
+rules.
+Importantly, the goal here is to provide a parameterized theorem: \textit{how
+  do the choices of coefficients in the Expanded Hebbian learning rule
+each affect the critical capacity.}
+
+There are two ways of approaching this goal: the first is to ignore
+previous Hebbian learning rule research and attack the problem through
+permutation of coefficient values. While this approach would be time-consuming,
+it would be extensive, and maybe lead to insight from fresh eyes on the problem.
+The second way of approaching the problem is to start from extant Hebbian
+learning algorithms. Then, we would prove (or find a proof)
+for each a critical capacity as a learning rule for an associative memory. This
+would be less time consuming, and provide the project with clearer milestones
+and goals. For this approach to be novel, it is not sufficient to just
+reiterate the proofs of each update rule's critical capacity. Rather,
+after finding or writing each proof, it would be helpful to create a general
+theorem for all of them based on common insights.
+
+\subsection{Experimental Work}\label{subsec:experimental}
 
 \begin{enumerate}[(a)]
   \item Theoretical investigation into minimum and maximum capacity

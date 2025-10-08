@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber prospectus"] 0 "prospectus.bcf" "prospectus.bbl" "prospectus" 1759938710.65133 -1
-  "prospectus.bcf" 1759938710.602 139890 4116d62531384fbf904cdd28738ed052 "pdflatex"
-  "sources.bib" 1759872433.75742 152821 39bbcbf4e49b3fb6d59ae9b0b4f69bf2 ""
+["biber prospectus"] 1759945983.57125 "prospectus.bcf" "prospectus.bbl" "prospectus" 1759948243.46837 0
+  "prospectus.bcf" 1759948243.42458 139965 02fbb5f5723f050ec20967cff4d60bcc "pdflatex"
+  "sources.bib" 1759943560.44094 153920 4a3d32c49f409979746f6fcda02f9952 ""
   (generated)
   "prospectus.bbl"
   "prospectus.blg"
   (rewritten before read)
-["pdflatex"] 1759938709.41908 "/home/connorh/Documents/prospectus/prospectus-DRAFT/prospectus.tex" "prospectus.pdf" "prospectus" 1759938710.65164 0
-  "/home/connorh/Documents/prospectus/prospectus-DRAFT/prospectus.tex" 1759938709.25701 27716 0a89f99ec2b149c2fe8b549534ae4d2a ""
+["pdflatex"] 1759948242.15144 "/home/connorh/Documents/prospectus/prospectus-DRAFT/prospectus.tex" "prospectus.pdf" "prospectus" 1759948243.46866 0
+  "/home/connorh/Documents/prospectus/prospectus-DRAFT/prospectus.tex" 1759948241.99659 31079 a68eb0b2949aaa1284c50b67fb6902d0 ""
   "/opt/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1758782808 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1758782808 1004 54797486969f23fa377b128694d548df ""
   "/opt/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1758782808 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -125,11 +125,11 @@
   "/opt/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1758782808 3621914 8c8a29f0bfbd7a28635a0ccecf11e081 ""
   "/opt/texlive/2025/texmf.cnf" 1758782808 585 81f10441804f05cc9107aafbbb0bcd23 ""
   "amari_kohonen_CROPPED.png" 1759860189.23964 11660 db3aa7ea196c85028141de04724a9a4b ""
-  "prospectus.aux" 1759938710.59889 16766 58a96f760700f1d5a093edbc006850b2 "pdflatex"
-  "prospectus.bbl" 1759938095.265 176810 d794a4fbef9f8a10bf0ab47f514ebb3c "biber prospectus"
-  "prospectus.out" 1759938710.601 2011 160fc9fd8f2eb349a87db215170ce8c3 "pdflatex"
-  "prospectus.run.xml" 1759938710.6029 2466 ddaf4790ccc9bd80635c54b89c71e12c "pdflatex"
-  "prospectus.tex" 1759938709.25701 27716 0a89f99ec2b149c2fe8b549534ae4d2a ""
+  "prospectus.aux" 1759948243.42166 17604 ba3d784d7b50e43dbf886043ff0ca538 "pdflatex"
+  "prospectus.bbl" 1759945984.41256 180510 fc999e8ad326435395c0f8e929afdb29 "biber prospectus"
+  "prospectus.out" 1759948243.42358 2298 be10d96c2c74fde81665ee16812d211b "pdflatex"
+  "prospectus.run.xml" 1759948243.42574 2466 ddaf4790ccc9bd80635c54b89c71e12c "pdflatex"
+  "prospectus.tex" 1759948241.99659 31079 a68eb0b2949aaa1284c50b67fb6902d0 ""
   (generated)
   "prospectus.aux"
   "prospectus.bcf"

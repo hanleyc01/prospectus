@@ -1313,6 +1313,43 @@
       \verb http://ieeexplore.ieee.org/document/4309133/
       \endverb
     \endentry
+    \entry{oja_simplified_1982}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d2ed0997ec1c0ceecf1f302a65c3e0c9}{%
+           family={Oja},
+           familyi={O\bibinitperiod},
+           given={Erkki},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{fullhash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{fullhashraw}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{bibnamehash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{authorbibnamehash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{authornamehash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{authorfullhash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{authorfullhashraw}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A simple linear neuron model with constrained Hebbian-type synaptic modification is analyzed and a new class of unconstrained learning rules is derived. It is shown that the model neuron tends to extract the principal component from a stationary input vector sequence.}
+      \field{journaltitle}{Journal of Mathematical Biology}
+      \field{langid}{english}
+      \field{title}{Simplified neuron model as a principal component analyzer}
+      \field{volume}{15}
+      \field{year}{1982}
+      \field{dateera}{ce}
+      \field{pages}{267\bibrangedash 273}
+      \range{pages}{7}
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/Z4EBMCT3/Oja - Simplified neuron model as a principal component analyzer.pdf:application/pdf
+      \endverb
+    \endentry
     \entry{pham_memorization_2025}{misc}{}{}
       \name{author}{6}{}{%
         {{un=0,uniquepart=base,hash=7125141c5a01fc4f9970d0aff3af9a98}{%
@@ -3055,6 +3092,43 @@
       \endverb
       \verb{url}
       \verb http://ieeexplore.ieee.org/document/4309133/
+      \endverb
+    \endentry
+    \entry{oja_simplified_1982}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d2ed0997ec1c0ceecf1f302a65c3e0c9}{%
+           family={Oja},
+           familyi={O\bibinitperiod},
+           given={Erkki},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{fullhash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{fullhashraw}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{bibnamehash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{authorbibnamehash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{authornamehash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{authorfullhash}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \strng{authorfullhashraw}{d2ed0997ec1c0ceecf1f302a65c3e0c9}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A simple linear neuron model with constrained Hebbian-type synaptic modification is analyzed and a new class of unconstrained learning rules is derived. It is shown that the model neuron tends to extract the principal component from a stationary input vector sequence.}
+      \field{journaltitle}{Journal of Mathematical Biology}
+      \field{langid}{english}
+      \field{title}{Simplified neuron model as a principal component analyzer}
+      \field{volume}{15}
+      \field{year}{1982}
+      \field{dateera}{ce}
+      \field{pages}{267\bibrangedash 273}
+      \range{pages}{7}
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/Z4EBMCT3/Oja - Simplified neuron model as a principal component analyzer.pdf:application/pdf
       \endverb
     \endentry
     \entry{pham_memorization_2025}{misc}{}{}
