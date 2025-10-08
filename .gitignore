@@ -12,6 +12,7 @@
 *.cb2
 .*.lb
 
+
 ## Intermediate documents:
 *.dvi
 *.xdv
@@ -324,3 +325,9 @@ TSWLatexianTemp*
 *.log
 *.fdb_latexmk
 *.synctex.gz
+*.nav
+*.run.xml
+*.out
+*.bbl
+*.bcf
+*.blg
