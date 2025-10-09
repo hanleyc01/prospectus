@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.25)  8 OCT 2025 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.25)  9 OCT 2025 18:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -599,7 +599,7 @@ LaTeX Warning: Reference `sec:ham-cap' on page 2 undefined on input line 127.
 [2]
 
 [3]
-<amari_kohonen_CROPPED.png, id=164, 719.8092pt x 325.9377pt>
+<amari_kohonen_CROPPED.png, id=160, 719.8092pt x 325.9377pt>
 File: amari_kohonen_CROPPED.png Graphic file (type png)
 <use amari_kohonen_CROPPED.png>
 Package pdftex.def Info: amari_kohonen_CROPPED.png  used on input line 231.
@@ -617,6 +617,10 @@ LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 438.
 
 
+LaTeX Warning: Reference `sec:related-work' on page 8 undefined on input line 483.
+
+
+
 [8]
 
 [9]
@@ -624,22 +628,24 @@ LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
 [10]
 
 [11]
-Overfull \hbox (0.35524pt too wide) in paragraph at lines 695--695
+Overfull \hbox (0.35524pt too wide) in paragraph at lines 722--722
 \OT1/cmr/m/n/10 nets of thresh-old el-e-ments. \OT1/cmr/m/it/10 IEEE Trans-ac-tions on Com-put-ers\OT1/cmr/m/n/10 , \OT1/cmr/m/it/10 C-21\OT1/cmr/m/n/10 (11),
  []
 
 
 
 [12]
-Overfull \hbox (0.50336pt too wide) in paragraph at lines 695--695
+
+[13]
+Overfull \hbox (0.50336pt too wide) in paragraph at lines 722--722
 \OT1/cmr/m/n/10 Re-trieved Septem-ber 23, 2025, from []$https : / / www . marxists . org / archive /
  []
 
 
 
-[13]
+[14]
 
-[14] (./prospectus.aux)
+[15] (./prospectus.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -649,24 +655,24 @@ L3 programming layer <2025-09-02>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `prospectus.out' has not changed.
-(rerunfilecheck)             Checksum: BE10D96C2C74FDE81665EE16812D211B;2298.
+(rerunfilecheck)             Checksum: 2B194DD312CF51A010524953F2426113;2177.
 Package logreq Info: Writing requests to 'prospectus.run.xml'.
 \openout1 = `prospectus.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18583 strings out of 467797
- 328479 string characters out of 5406801
- 1261504 words of memory out of 5000000
- 46936 multiletter control sequences out of 15000+600000
+ 18584 strings out of 467797
+ 328697 string characters out of 5406801
+ 1261586 words of memory out of 5000000
+ 46939 multiletter control sequences out of 15000+600000
  637000 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,15n,79p,2034b,5052s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on prospectus.pdf (14 pages, 292600 bytes).
+Output written on prospectus.pdf (15 pages, 295825 bytes).
 PDF statistics:
- 474 PDF objects out of 1000 (max. 8388607)
- 415 compressed objects within 5 object streams
- 109 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 473 PDF objects out of 1000 (max. 8388607)
+ 413 compressed objects within 5 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

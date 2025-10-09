@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[style=apa]{biblatex}
+\usepackage[shortlabels]{enumitem}
+\usepackage{graphicx}
+\bibliography{sources.bib}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\title{Notes on \textcite{bao_capacity_2022}}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Dense Associative Memory]\label{def:dam}
+  For a \textit{Dense Associative Memory} (DAM), let
+   $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$ be the set of desired patterns
+  to store in the associative memory, and let $M$ be the dimension of each 
+  $\xi^i$. We define the energy function:
+  \begin{equation}
+    E (\sigma^{(t)}) = - \sum^N_{\mu=1} F_n \left(\sum^M_{i=1} \xi^\mu_i \sigma_i^{(t)} \right),
+  \end{equation}
+  where $\sigma^{(t)}$ is the current state of the network at time $t$, and 
+  $F_n$ is a polynomial ``transmission'' function:
+  \begin{equation}
+    F_n (x) = x^n,~n \geq 2.
+  \end{equation}
+  The update rule $T$ of the DAM is a sequence of functions $(T_1, T_2, \dots, T_M)$,
+  where each $T_i$ updates the state vector $\sigma^{(t)}$ at index $i$ by,
+  \begin{equation}
+    T_i (\sigma^{(t)}) = \text{sgn} \left[ E_{i^-}(\sigma^{(t)}) - E_{i^+} (\sigma^{(t)}) \right],
+  \end{equation}
+  where,
+  \begin{align}
+  E_{i^\pm} (\sigma^{(t)}) = - \sum^N_{\mu=1} F_n \left( (\pm 1) \xi^\mu_i + \sum_{j \neq 1} \xi^\mu_j \sigma^{(t)}_j \right).
+  \end{align}
+  The full update rule is then,
+  \begin{equation}\label{def:dam:update}
+  T(\sigma^{(t)}) = [T_1 (\sigma^{(t)}), \dots, T_N (\sigma^{(t)})] = \sigma^{(t+1)}.
+  \end{equation}
+\end{definition}
+
+We can show that the update rule always reduces the energy of the state vector,
+but we won't here.
+
+\begin{lemma}
+  The update rule in Def.~\ref{def:dam:update} can be expressed for even $n$
+  (even polynomial function $F_n$):
+  \begin{equation}
+    T_i (\sigma^{(t)}) = \text{sgn} \left[ 2 \sum^N_{\mu=1} \sum^M_{k=1}
+     \begin{pmatrix}
+      n \\
+      2 k - 1
+     \end{pmatrix}
+     (\xi^\mu_i)^{n - 2k + 1}
+     \left(
+      \sum_{j \neq i} \xi^\mu_j \sigma^{(t)}_j
+     \right)^{2k - 1}
+     \right].
+  \end{equation}
+  For odd $n$:
+  \begin{equation}
+    T_i (\sigma^{(t)}) = \text{sgn} \left[ 
+      2 \sum^N_{\mu = 1} \sum^{(n-1) / 2}_{k=0}
+      \begin{pmatrix}
+        n \\
+        2k
+      \end{pmatrix}
+      (\xi^\mu_i)^{n - 2k}
+      \left(
+        \sum_{j\neq i} \xi^\mu_j \sigma^{(t)}_j
+      \right)^{2k}
+    \right].
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  Recall that,
+  \begin{equation}
+  E_{i^\pm} (\sigma^{(t)}) = - \sum^N_{\mu=1} F_n \left( (\pm 1) \xi^\mu_i + \sum_{j \neq 1} \xi^\mu_j \sigma^{(t)}_j \right).
+  \end{equation}
+  For the positive case, this is:
+  \begin{equation}
+  E_{i^+} (\sigma^{(t)}) = - \sum^N_{\mu=1} \left( \xi^\mu_i + \sum_{j \neq 1} \xi^\mu_j \sigma^{(t)}_j \right)^n.
+  \end{equation}
+  This is equivalent to:
+  \begin{equation}
+    - \sum^N_{\mu=1} \sum^n_{k=1} \begin{pmatrix}
+      n \\ k
+    \end{pmatrix}
+    (\xi^\mu_i)^{n-k} \left( \sum_{j \neq i} \xi^\mu_j \sigma_j\right)
+  \end{equation}
+  By the binomial theorem,
+  this is:
+  \begin{equation}
+  E_{i^+}
+  \end{equation}
+\end{proof}
+
+\printbibliography
+\end{document}

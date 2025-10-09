@@ -336,7 +336,7 @@ single random bit is:
 Let $F_n (\cdot) = \frac{1}{n} (\cdot)^n$, so $F_2 = \frac{1}{2} (\cdot)^2$.
 With $F_2$, we can reformulate the energy function of a Hopfield network as:
 \begin{equation}\label{hopfield:f_n}
-  E(\sigma) = \sum^N_{i=1} F_2 (\xi_i \cdot \sigma).
+  E(\sigma) = - \sum^N_{i=1} F_2 (\xi_i \cdot \sigma).
 \end{equation}
 By \textcite{krotov_modern_2025}, we can make a single pass update rule:
 \begin{equation}\label{eq:krotov-energy-deriv}
@@ -465,11 +465,15 @@ The insights of Dense Associative Memories are not limited to binary vectors,
 and have been shown to apply to multi-head attention in transformer networks
 \parencites{ramsauer_hopfield_2021,vaswani_attention_2023}.
 
+We will discuss this in more detail in~\autoref{sec:dam-cap}, we will
+shortly note a problem with Dense Associative Memories, at least for
+biological plausibility. Most DAMs are \textit{not} Hebbian.
 \begin{theorem}
   Any DAM with polynomial function $F_n$, with $n > 2$, is not Hebbian.
 \end{theorem}
-
-We say that an architecture is Hebbian if the connections between
+\noindent
+We say that an architecture is Hebbian (Definition \ref{def:hebb}) if
+the connections between
 every layer $x_i$ and $x_j$, $i \neq 0$ and $j = i + 1$, is entirely
 determined by the prior activity of $x_i$, $x_j$, and the
 previous connection
@@ -477,10 +481,26 @@ weights between them. But, \textcite{krotov_large_2021} notes that
 $n \geq 3$ requires many-body neuron interactions, which are non-Hebbian.
 
 One solution, to be discussed in~\autoref{sec:related-work}, is Neuron-astrocyte
-memory \parencite{kozachkov_neuron-astrocyte_2024}. Related work
-\parencite{ramsauer_hopfield_2021}
+memory \parencite{kozachkov_neuron-astrocyte_2024}. Rather than having
+many connections between cells, represented by a weight tensor
+\parencites{kelly_memory_2017},
+Kozachkov et al. propose that we can include non-linear interaction and weight
+updates via modelling synapses which have both neural and astrocyte connections.
+This kind of model builds on a general theme in contemporary research into
+non-Hebbian learning rules in the brain: namely Behavioral Timescale Dependent
+Plasticity \parencite{bittner_behavioral_2017}. While this is a promising
+and interesting field of research, further discussion is out of the scope of
+this investigation.
 
 \subsection{Dense Associative Memory Capacity}\label{sec:dam-cap}
+
+Dense Associative Memories of $n > 2$ are capable of storing
+more patterns than simple Hopfield networks. Exactly how many more,
+and how does their capacity scale proportional to the dimension of
+the patterns stored? The surprising result that forms the basis
+for interest in DAMs is that their capacity scales exponentially,
+and depends not only on the dimension of the data, but also the exponent
+used in the polynomial function.
 
 \begin{theorem}
   The critical capacity, $N^\text{max}$ of any DAM with polynomial
@@ -489,14 +509,30 @@ memory \parencite{kozachkov_neuron-astrocyte_2024}. Related work
   N^\text{max} \propto D^{n-1}.
   $$
 \end{theorem}
+\noindent
+In~\autoref{sec:hopfield-cap} we outlined the kind of proof required for
+demonstrating this fact. There is informal discussion in
+\textcites{krotov_dense_2016,krotov_dense_2016}, and a formal discussion in 
+\textcite{bao_capacity_2022}.
 
-See \textcites{demircigil_model_2017,krotov_dense_2016}.
+Let us have $\Xi = [\xi_1, \xi_2, \dots, \xi_N]$ be an $N \times D$
+pattern matrix. Let each element $j = 1, 2, \dots, D$ of $\xi_i$ be
+either $-1$ or $1$ with equal probability (i.e., $\mathbb{P}(\xi_{ij}
+= 1) = 1/2 = \mathbb{P}(\xi_{ij} = -1)$). For some constant
+$\delta$, we define the $\delta$-perturbation of pattern $\xi_i$
+by flipping the sign of each component of $\xi_i$ with a probability 
+of $\delta$, and denote this by $\overline{\xi_i}$. We define the 
+capacity of the network $C_\delta$, such that $C_\delta$ is the 
+\textit{maximum} number of traces $N$ that can be reliably retrieved.
+I.e., maximum number of traces $N$ such that,
+after setting $\sigma^{(t=0)} = \overline \xi_i$, the probability of 
+$\sigma^{(t=1)} \neq \sigma_i$ is less than some number $\varepsilon$:
+\begin{equation}
+  \mathbb{P}(\sigma^{(t=1)} \neq \xi_i) < \varepsilon.
+\end{equation}
 
-Previous work talks about the number of connections affecting the number of
-memories that are capable of being stored \parencite{little_analytic_1978}.
-More concrete proof here, reproduce from
-\parencites{krotov_dense_2016,demircigil_model_2017}.
-Signal-to-noise estimation.
+Like \autoref{sec:hopfield-cap}
+
 
 \subsection{Universal Hopfield Networks}\label{sec:uhn}
 
@@ -535,7 +571,7 @@ of the associative memory
 
 \subsection{Hebbian and Local Learning Rules}\label{sec:hebb}
 
-\begin{definition}[Hebbian update]
+\begin{definition}[Hebbian update]\label{def:hebb}
   A \textit{Hebbian update rule} or \textit{Hebbian learning} rule is an update
   rule which is entirely local. By \textit{local weight update}, we mean that
   the weights connecting layers $x_i$ and $x_j$, $j = i + 1$, are defined
@@ -605,15 +641,6 @@ of the associative memory
     &= \eta_0 x_i (x_j - w_{ij} x_i).
   \end{align*}
 \end{corollary}
-
-\subsection{Related Work}\label{sec:related-work}
-
-\begin{enumerate}[(a)]
-  \item Neuron-astrocyte networks
-  \item DAM in feature space
-  \item Kernel-based DAMS
-  \item Predictive Coding Networks
-\end{enumerate}
 
 \section{Work Plan}
 

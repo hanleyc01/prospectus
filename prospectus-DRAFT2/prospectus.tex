@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[style=apa]{biblatex}
+\usepackage[shortlabels]{enumitem}
+\usepackage{graphicx}
+\bibliography{sources.bib}
+
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}{Lemma}[subsection]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[subsection]
+
+\title{Investigating Hebbian Alternatives to Dense Associative Memory}
+\author{Connor Hanley}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  Dense Associative Memories generalize traditional Hopfield networks
+  while providing a substantially increased capacity. To do this,
+  they show that by increasing the separation of similarity scores
+  between query patterns and stored patterns. The cost of increased
+  capacity is simplicity and biological plausibility. We propose
+  to investigate the capacity characteristics of all Hebbian 
+  associative memories, to see if there exists any alternative to 
+  Dense Associative Memories which maintains the simplicity and 
+  appeal of Hopfield networks.
+\end{abstract}
+
+Humans are able to recognize and retrieve patterns of data using distorted,
+noisy, and partial patterns \parencite{rumelhart_general_1986}. This
+capacity of human memory is known as \textit{content-addressability}: patterns
+which are stored in memory are able to be ``looked up'' by themselves or their
+parts. Modeling this property is a classical task in computational cognitive
+and neuroscience (see \textcites{marr_simple_1971,little_existence_1974,
+amari_learning_1972,nakano_associatron-model_1972,stanley_simulation_1976}).
+The family of models which implement content-addressability are known
+as \textit{associative memory models} (AMs).
+A recent revival of interest AMs in machine learning research,
+driven by their equivalence with ``attention'' layers in the transformer
+architecture \parencites{vaswani_attention_2023, ramsauer_hopfield_2021},
+has led to drastic advances in the storage capacity of AMs
+\parencites{demircigil_model_2017,krotov_dense_2016,hu_provably_2024}.
+
+
+\printbibliography
+\end{document}

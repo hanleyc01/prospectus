@@ -3148,18 +3148,17 @@
     <bcf:citekey order="49" intorder="1">krotov_large_2021</bcf:citekey>
     <bcf:citekey order="50" intorder="1">krotov_large_2021</bcf:citekey>
     <bcf:citekey order="51" intorder="1">kozachkov_neuron-astrocyte_2024</bcf:citekey>
-    <bcf:citekey order="52" intorder="1">ramsauer_hopfield_2021</bcf:citekey>
-    <bcf:citekey order="53" intorder="1">demircigil_model_2017</bcf:citekey>
-    <bcf:citekey order="53" intorder="2">krotov_dense_2016</bcf:citekey>
-    <bcf:citekey order="54" intorder="1">demircigil_model_2017</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">kelly_memory_2017</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">bittner_behavioral_2017</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">krotov_dense_2016</bcf:citekey>
     <bcf:citekey order="54" intorder="2">krotov_dense_2016</bcf:citekey>
-    <bcf:citekey order="55" intorder="1">little_analytic_1978</bcf:citekey>
-    <bcf:citekey order="56" intorder="1">krotov_dense_2016</bcf:citekey>
-    <bcf:citekey order="56" intorder="2">demircigil_model_2017</bcf:citekey>
-    <bcf:citekey order="57" intorder="1">millidge_predictive_2022</bcf:citekey>
-    <bcf:citekey order="57" intorder="2">hu_provably_2024</bcf:citekey>
-    <bcf:citekey order="58" intorder="1">gerstner_mathematical_2002</bcf:citekey>
-    <bcf:citekey order="59" intorder="1">oja_simplified_1982</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">krotov_dense_2016</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">bao_capacity_2022</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">bao_capacity_2022</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">millidge_predictive_2022</bcf:citekey>
+    <bcf:citekey order="58" intorder="2">hu_provably_2024</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">gerstner_mathematical_2002</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">oja_simplified_1982</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

@@ -139,6 +139,150 @@
       \verb https://link.aps.org/doi/10.1103/PhysRevLett.55.1530
       \endverb
     \endentry
+    \entry{bao_capacity_2022}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=891f65259ec1b5f8827b3cbbfd9ecf13}{%
+           family={Bao},
+           familyi={B\bibinitperiod},
+           given={Han},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=407991508af70d8d4f43a43402ec4cb1}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Richong},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c5d80ab014ac992593f8643c9abf3d89}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Yongyi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b22c06a061f878256eb565394b9f0e47}
+      \strng{fullhash}{2a6ca52a9e27fd254a398b86aab754c9}
+      \strng{fullhashraw}{2a6ca52a9e27fd254a398b86aab754c9}
+      \strng{bibnamehash}{2a6ca52a9e27fd254a398b86aab754c9}
+      \strng{authorbibnamehash}{2a6ca52a9e27fd254a398b86aab754c9}
+      \strng{authornamehash}{b22c06a061f878256eb565394b9f0e47}
+      \strng{authorfullhash}{2a6ca52a9e27fd254a398b86aab754c9}
+      \strng{authorfullhashraw}{2a6ca52a9e27fd254a398b86aab754c9}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper revisits the dense associative memory ({DAM}) networks and studies rigorously the capacity of the {DAM} networks. We present the capacity theorem of the {DAM} networks with an attraction radius or a noise level from the messages and prove that the probe can converge to the targeted message just after the one-step update. Under this convergence, the capacity of {DAM} networks is between a lower bound and an upper bound. Although when the attraction radius is 0:0 away from the messages, i.e. noiseless, previous literature provides an approximate result. However, a rigorous proof is not given in this study. In addition, we consider a more general notion of capacity which allows the retrieval of messages from noisy probes (the attraction radius is not 0:0). We demonstrates that the convergence result can be acquired just after the one-step update when the probe is a corrupted version with a Gaussian noise from one message. We further provide simulated experiments to validate theorems herein.}
+      \field{issn}{09252312}
+      \field{journaltitle}{Neurocomputing}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{shortjournal}{Neurocomputing}
+      \field{title}{The capacity of the dense associative memory networks}
+      \field{urlday}{9}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{469}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{198\bibrangedash 208}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/j.neucom.2021.10.058
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/P2NSIYPP/Bao et al. - 2022 - The capacity of the dense associative memory networks.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0925231221015447
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0925231221015447
+      \endverb
+    \endentry
+    \entry{bittner_behavioral_2017}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=ba630826a54304187758dc10a5e32377}{%
+           family={Bittner},
+           familyi={B\bibinitperiod},
+           given={Katie\bibnamedelima C.},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f4788db62aeec0fb399545c661f49b89}{%
+           family={Milstein},
+           familyi={M\bibinitperiod},
+           given={Aaron\bibnamedelima D.},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=93676a8e2956901f2e282a9f15164927}{%
+           family={Grienberger},
+           familyi={G\bibinitperiod},
+           given={Christine},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0a3d7cd05914859062f36d0686191850}{%
+           family={Romani},
+           familyi={R\bibinitperiod},
+           given={Sandro},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=79a235a5c6869647eda4042e6cf48abc}{%
+           family={Magee},
+           familyi={M\bibinitperiod},
+           given={Jeffrey\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{abf75a92234989701a19970a1ca9131c}
+      \strng{fullhash}{75506c396b86fb170adb8b8066f8c0e2}
+      \strng{fullhashraw}{75506c396b86fb170adb8b8066f8c0e2}
+      \strng{bibnamehash}{75506c396b86fb170adb8b8066f8c0e2}
+      \strng{authorbibnamehash}{75506c396b86fb170adb8b8066f8c0e2}
+      \strng{authornamehash}{abf75a92234989701a19970a1ca9131c}
+      \strng{authorfullhash}{75506c396b86fb170adb8b8066f8c0e2}
+      \strng{authorfullhashraw}{75506c396b86fb170adb8b8066f8c0e2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A different form of synaptic plasticity How do synaptic or other neuronal changes support learning? This subject has been dominated by Hebb's postulate of synaptic change. Although there is strong experimental support for Hebbian plasticity in a number of preparations, alternative ideas have also been developed over the years. Bittner et al. provide in vivo, in vitro, and modeling data to support the view that non-Hebbian plasticity may underlie the formation of hippocampal place fields (see the Perspective by Krupic). Instead of multiple pairings, a single strong Ca 2+ plateau potential in neuronal dendrites paired with spatial inputs may be sufficient to produce place cells. Science , this issue p. 1033 ; see also p. 974 , A particular type of long–time scale plasticity shapes the formation of stable place fields in the hippocampus. , Learning is primarily mediated by activity-dependent modifications of synaptic strength within neuronal circuits. We discovered that place fields in hippocampal area {CA}1 are produced by a synaptic potentiation notably different from Hebbian plasticity. Place fields could be produced in vivo in a single trial by potentiation of input that arrived seconds before and after complex spiking. The potentiated synaptic input was not initially coincident with action potentials or depolarization. This rule, named behavioral time scale synaptic plasticity, abruptly modifies inputs that were neither causal nor close in time to postsynaptic activation. In slices, five pairings of subthreshold presynaptic activity and calcium (Ca 2+ ) plateau potentials produced a large potentiation with an asymmetric seconds-long time course. This plasticity efficiently stores entire behavioral sequences within synaptic weights to produce predictive place cell activity.}
+      \field{day}{8}
+      \field{issn}{0036-8075, 1095-9203}
+      \field{journaltitle}{Science}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{6355}
+      \field{shortjournal}{Science}
+      \field{title}{Behavioral time scale synaptic plasticity underlies {CA}1 place fields}
+      \field{urlday}{9}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{357}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1033\bibrangedash 1036}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1126/science.aan3846
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/XSR5QAJC/Bittner et al. - 2017 - Behavioral time scale synaptic plasticity underlies CA1 place fields.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.science.org/doi/10.1126/science.aan3846
+      \endverb
+      \verb{url}
+      \verb https://www.science.org/doi/10.1126/science.aan3846
+      \endverb
+    \endentry
     \entry{chen_high_1986}{article}{}{}
       \name{author}{6}{}{%
         {{un=0,uniquepart=base,hash=3b06b756ee1a25a86f2fee86d6075060}{%
@@ -1120,66 +1264,6 @@
       \endverb
       \verb{file}
       \verb the_existence_of_persistent_states_in_the_brain:/home/connorh/Zotero/storage/IHHIZNBJ/the_existence_of_persistent_states_in_the_brain.pdf:application/pdf
-      \endverb
-    \endentry
-    \entry{little_analytic_1978}{article}{}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=6a71219a261c5c0c8432046c23bc3034}{%
-           family={Little},
-           familyi={L\bibinitperiod},
-           given={W.A.},
-           giveni={W\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=fcdae8d8f2177c960dfaaca2ab7a3be5}{%
-           family={Shaw},
-           familyi={S\bibinitperiod},
-           given={Gordon\bibnamedelima L.},
-           giveni={G\bibinitperiod\bibinitdelim L\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{fullhash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{fullhashraw}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{bibnamehash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{authorbibnamehash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{authornamehash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{authorfullhash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{authorfullhashraw}{9eca21352e6f880b22ad56aa336e67d3}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Previously, we developed a model of short and long term memory which was based on an analogy to the Ising spin system in a neural network. We assumed that the modification of the synaptic strengths was dependent upon the correlation of pre- and post-synaptic neuronal firing. This assumption we denote as the Hebb hypothesis. In this paper, we solve exact\& a linearized version of the model and explicitly show that the capacity of the memory is related to the number of synapses rather than the much smaller number of neurons. In addition, we show that in order to utilize this large capacity, the network must store the major part of the information in the capability to generate patterns which evolve with time. We are also led to a modified Hebb hypothesis.}
-      \field{issn}{00255564}
-      \field{journaltitle}{Mathematical Biosciences}
-      \field{langid}{english}
-      \field{month}{6}
-      \field{number}{3}
-      \field{shortjournal}{Mathematical Biosciences}
-      \field{title}{Analytic study of the memory storage capacity of a neural network}
-      \field{urlday}{2}
-      \field{urlmonth}{10}
-      \field{urlyear}{2025}
-      \field{volume}{39}
-      \field{year}{1978}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{281\bibrangedash 290}
-      \range{pages}{10}
-      \verb{doi}
-      \verb 10.1016/0025-5564(78)90058-5
-      \endverb
-      \verb{file}
-      \verb PDF:/home/connorh/Zotero/storage/WP99PWFU/Little and Shaw - 1978 - Analytic study of the memory storage capacity of a neural network.pdf:application/pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0025556478900585
-      \endverb
-      \verb{url}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0025556478900585
       \endverb
     \endentry
     \entry{marr_simple_1971}{article}{}{}
@@ -2194,6 +2278,150 @@
       \verb https://link.aps.org/doi/10.1103/PhysRevLett.55.1530
       \endverb
     \endentry
+    \entry{bao_capacity_2022}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=891f65259ec1b5f8827b3cbbfd9ecf13}{%
+           family={Bao},
+           familyi={B\bibinitperiod},
+           given={Han},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=407991508af70d8d4f43a43402ec4cb1}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Richong},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c5d80ab014ac992593f8643c9abf3d89}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Yongyi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b22c06a061f878256eb565394b9f0e47}
+      \strng{fullhash}{2a6ca52a9e27fd254a398b86aab754c9}
+      \strng{fullhashraw}{2a6ca52a9e27fd254a398b86aab754c9}
+      \strng{bibnamehash}{2a6ca52a9e27fd254a398b86aab754c9}
+      \strng{authorbibnamehash}{2a6ca52a9e27fd254a398b86aab754c9}
+      \strng{authornamehash}{b22c06a061f878256eb565394b9f0e47}
+      \strng{authorfullhash}{2a6ca52a9e27fd254a398b86aab754c9}
+      \strng{authorfullhashraw}{2a6ca52a9e27fd254a398b86aab754c9}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper revisits the dense associative memory ({DAM}) networks and studies rigorously the capacity of the {DAM} networks. We present the capacity theorem of the {DAM} networks with an attraction radius or a noise level from the messages and prove that the probe can converge to the targeted message just after the one-step update. Under this convergence, the capacity of {DAM} networks is between a lower bound and an upper bound. Although when the attraction radius is 0:0 away from the messages, i.e. noiseless, previous literature provides an approximate result. However, a rigorous proof is not given in this study. In addition, we consider a more general notion of capacity which allows the retrieval of messages from noisy probes (the attraction radius is not 0:0). We demonstrates that the convergence result can be acquired just after the one-step update when the probe is a corrupted version with a Gaussian noise from one message. We further provide simulated experiments to validate theorems herein.}
+      \field{issn}{09252312}
+      \field{journaltitle}{Neurocomputing}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{shortjournal}{Neurocomputing}
+      \field{title}{The capacity of the dense associative memory networks}
+      \field{urlday}{9}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{469}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{198\bibrangedash 208}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/j.neucom.2021.10.058
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/P2NSIYPP/Bao et al. - 2022 - The capacity of the dense associative memory networks.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0925231221015447
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0925231221015447
+      \endverb
+    \endentry
+    \entry{bittner_behavioral_2017}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=ba630826a54304187758dc10a5e32377}{%
+           family={Bittner},
+           familyi={B\bibinitperiod},
+           given={Katie\bibnamedelima C.},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f4788db62aeec0fb399545c661f49b89}{%
+           family={Milstein},
+           familyi={M\bibinitperiod},
+           given={Aaron\bibnamedelima D.},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=93676a8e2956901f2e282a9f15164927}{%
+           family={Grienberger},
+           familyi={G\bibinitperiod},
+           given={Christine},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0a3d7cd05914859062f36d0686191850}{%
+           family={Romani},
+           familyi={R\bibinitperiod},
+           given={Sandro},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=79a235a5c6869647eda4042e6cf48abc}{%
+           family={Magee},
+           familyi={M\bibinitperiod},
+           given={Jeffrey\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{abf75a92234989701a19970a1ca9131c}
+      \strng{fullhash}{75506c396b86fb170adb8b8066f8c0e2}
+      \strng{fullhashraw}{75506c396b86fb170adb8b8066f8c0e2}
+      \strng{bibnamehash}{75506c396b86fb170adb8b8066f8c0e2}
+      \strng{authorbibnamehash}{75506c396b86fb170adb8b8066f8c0e2}
+      \strng{authornamehash}{abf75a92234989701a19970a1ca9131c}
+      \strng{authorfullhash}{75506c396b86fb170adb8b8066f8c0e2}
+      \strng{authorfullhashraw}{75506c396b86fb170adb8b8066f8c0e2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A different form of synaptic plasticity How do synaptic or other neuronal changes support learning? This subject has been dominated by Hebb's postulate of synaptic change. Although there is strong experimental support for Hebbian plasticity in a number of preparations, alternative ideas have also been developed over the years. Bittner et al. provide in vivo, in vitro, and modeling data to support the view that non-Hebbian plasticity may underlie the formation of hippocampal place fields (see the Perspective by Krupic). Instead of multiple pairings, a single strong Ca 2+ plateau potential in neuronal dendrites paired with spatial inputs may be sufficient to produce place cells. Science , this issue p. 1033 ; see also p. 974 , A particular type of long–time scale plasticity shapes the formation of stable place fields in the hippocampus. , Learning is primarily mediated by activity-dependent modifications of synaptic strength within neuronal circuits. We discovered that place fields in hippocampal area {CA}1 are produced by a synaptic potentiation notably different from Hebbian plasticity. Place fields could be produced in vivo in a single trial by potentiation of input that arrived seconds before and after complex spiking. The potentiated synaptic input was not initially coincident with action potentials or depolarization. This rule, named behavioral time scale synaptic plasticity, abruptly modifies inputs that were neither causal nor close in time to postsynaptic activation. In slices, five pairings of subthreshold presynaptic activity and calcium (Ca 2+ ) plateau potentials produced a large potentiation with an asymmetric seconds-long time course. This plasticity efficiently stores entire behavioral sequences within synaptic weights to produce predictive place cell activity.}
+      \field{day}{8}
+      \field{issn}{0036-8075, 1095-9203}
+      \field{journaltitle}{Science}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{6355}
+      \field{shortjournal}{Science}
+      \field{title}{Behavioral time scale synaptic plasticity underlies {CA}1 place fields}
+      \field{urlday}{9}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{357}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1033\bibrangedash 1036}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1126/science.aan3846
+      \endverb
+      \verb{file}
+      \verb PDF:/home/connorh/Zotero/storage/XSR5QAJC/Bittner et al. - 2017 - Behavioral time scale synaptic plasticity underlies CA1 place fields.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.science.org/doi/10.1126/science.aan3846
+      \endverb
+      \verb{url}
+      \verb https://www.science.org/doi/10.1126/science.aan3846
+      \endverb
+    \endentry
     \entry{chen_high_1986}{article}{}{}
       \name{author}{6}{}{%
         {{un=0,uniquepart=base,hash=3b06b756ee1a25a86f2fee86d6075060}{%
@@ -3175,66 +3403,6 @@
       \endverb
       \verb{file}
       \verb the_existence_of_persistent_states_in_the_brain:/home/connorh/Zotero/storage/IHHIZNBJ/the_existence_of_persistent_states_in_the_brain.pdf:application/pdf
-      \endverb
-    \endentry
-    \entry{little_analytic_1978}{article}{}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=6a71219a261c5c0c8432046c23bc3034}{%
-           family={Little},
-           familyi={L\bibinitperiod},
-           given={W.A.},
-           giveni={W\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=fcdae8d8f2177c960dfaaca2ab7a3be5}{%
-           family={Shaw},
-           familyi={S\bibinitperiod},
-           given={Gordon\bibnamedelima L.},
-           giveni={G\bibinitperiod\bibinitdelim L\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{fullhash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{fullhashraw}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{bibnamehash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{authorbibnamehash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{authornamehash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{authorfullhash}{9eca21352e6f880b22ad56aa336e67d3}
-      \strng{authorfullhashraw}{9eca21352e6f880b22ad56aa336e67d3}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Previously, we developed a model of short and long term memory which was based on an analogy to the Ising spin system in a neural network. We assumed that the modification of the synaptic strengths was dependent upon the correlation of pre- and post-synaptic neuronal firing. This assumption we denote as the Hebb hypothesis. In this paper, we solve exact\& a linearized version of the model and explicitly show that the capacity of the memory is related to the number of synapses rather than the much smaller number of neurons. In addition, we show that in order to utilize this large capacity, the network must store the major part of the information in the capability to generate patterns which evolve with time. We are also led to a modified Hebb hypothesis.}
-      \field{issn}{00255564}
-      \field{journaltitle}{Mathematical Biosciences}
-      \field{langid}{english}
-      \field{month}{6}
-      \field{number}{3}
-      \field{shortjournal}{Mathematical Biosciences}
-      \field{title}{Analytic study of the memory storage capacity of a neural network}
-      \field{urlday}{2}
-      \field{urlmonth}{10}
-      \field{urlyear}{2025}
-      \field{volume}{39}
-      \field{year}{1978}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{281\bibrangedash 290}
-      \range{pages}{10}
-      \verb{doi}
-      \verb 10.1016/0025-5564(78)90058-5
-      \endverb
-      \verb{file}
-      \verb PDF:/home/connorh/Zotero/storage/WP99PWFU/Little and Shaw - 1978 - Analytic study of the memory storage capacity of a neural network.pdf:application/pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0025556478900585
-      \endverb
-      \verb{url}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0025556478900585
       \endverb
     \endentry
     \entry{marr_simple_1971}{article}{}{}
