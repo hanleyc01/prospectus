@@ -176,9 +176,8 @@ associative memories have a maximum capacity of traces that they can store.
 \end{definition}
 
 In \textcite{krotov_dense_2016}, capacity is denoted by $N^{\max}$, where
-$N$ is the first dimension of the pattern matrix. In Correlation
-Matrix associative
-memories, capacity is affected by the (1) kind of data being stored,
+$N$ is the first dimension of the pattern matrix. Associative memory
+capacity is affected by the (1) kind of data being stored,
 i.e. if the data
 has a high pairwise correlation, which leads to ``cross-talk''
 \parencite{kohonen_correlation_1988},
@@ -192,72 +191,130 @@ further in \autoref{sec:dense-associative-memory}).
 
 Before Hopfield networks, there were Correlation Matrix associative memories.
 So-called, because they relied on dot-product correlations for recall.
-\begin{example}[Correlation Matrix associative memory]\label{example:correlation}
+\begin{example}[Correlation Matrix associative
+  memory]\label{example:correlation}
   Let us have a pattern matrix $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$ of
   vectors sampled from $\{1, -1\}^D$. The Correlation Matrix associative memory
   recall function is of the form:
   \begin{align}
-    T(x) &= g \left(\sum^N_{\mu=1} \xi^\mu \left( \sum^D_{i=1} \xi^\mu_i x_i \right)\right) \nonumber \\
-      &= g \left( \Xi^\top \Xi x  \right),
+    T(x) &= g \left(\sum^N_{\mu=1} \xi^\mu \left( \sum^D_{i=1}
+    \xi^\mu_i x_i \right)\right) \nonumber \\
+    &= g \left( \Xi^\top \Xi x  \right),
   \end{align}
-  where $g$ is an ``activation function'', typically \textit{signum} for binary vectors.
+  where $g$ is an ``activation function'', typically \textit{signum}
+  for binary vectors.
 \end{example}
 
 \begin{example}\label{example:argmax-am}
-  Like above, let us have a pattern matrix $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$ of
+  Like above, let us have a pattern matrix $\Xi = [\xi^1, \xi^2,
+  \dots, \xi^N]$ of
   vectors sampled from $\{1, -1\}^D$. Let our recall function $T$ be:
   \begin{equation}
-    T(x) = \xi^i,~\text{where}~i = \argmax_{i \in [1, N]} [\text{sim}(\xi^i, x)],
+    T(x) = \xi^i,~\text{where}~i = \argmax_{i \in [1, N]}
+    [\text{sim}(\xi^i, x)],
   \end{equation}
   where $\text{sim}$ is some similarity function \parencite{kelly_memory_2017},
   e.g. the cosine similarity or Hamming distance.
 \end{example}
 
 \begin{example}[Minerva2]
-  Minerva2 \parencite{hintzman_minerva_1984} is an associative memory used in cognitive
+  Minerva2 \parencite{hintzman_minerva_1984} is an associative memory
+  used in cognitive
   science which is about as old as Hopfield networks. As per usual, we have
   binary patterns $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$. The recall function is:
   \begin{equation}
-    T(x) = \text{sgn} \left[ \sum^N_{\mu=1} \xi^\mu \left( \frac{\sum^D_{i=1} \xi^\mu_i x_i}{\|\xi^\mu\| \|x\|} \right)^3 \right].
+    T(x) = \text{sgn} \left[ \sum^N_{\mu=1} \xi^\mu \left(
+    \frac{\sum^D_{i=1} \xi^\mu_i x_i}{\|\xi^\mu\| \|x\|} \right)^3 \right].
   \end{equation}
 \end{example}
 
 \subsection{Hopfield Networks}\label{sec:hopfield-networks}
 
-Hopfield networks \parencites{hopfield_neural_1982,hopfield_neurons_1984} are an associative
-memory with deep connections to \autoref{example:correlation}, except that they 
+Hopfield networks
+\parencites{hopfield_neural_1982,hopfield_neurons_1984} are an associative
+memory with deep connections to Example \ref{example:correlation},
+except that they
 understand their recall function in terms of an \textit{energy} function:
 
 \begin{definition}[Hopfield networks]
   Hopfield networks are single-layer neural networks of $D$ computational units
-  with full, lateral connections.
+  with full, lateral connections. The state of the network is described
+  by the state vector $\sigma$ at time $t$, denoted by $\sigma^{(t)}$.
+  The \textit{energy} of the network, $E (\sigma^{(t)})$ is:
+  \begin{equation}
+    E(\sigma^{(t)}) = - \frac{1}{2} \sum^N_{\mu=1} \left(\sum^D_{i=1}
+    \xi^\mu_i \sigma^{(t)}_i\right)^2.
+  \end{equation}
+  Let $\sigma[i := b]$ be the vector $\sigma$, with the $i$'th
+  component set to $b$. Then,
+  update rule for the state of the network is:
+  \begin{equation}
+    \sigma^{(t+1)}_i = \text{sgn} \left[ E(\sigma^{(t)}[i : = -1]) -
+    E(\sigma^{(t)}[i := 1]) \right].
+  \end{equation}
 \end{definition}
+
+After setting the initial state at time $t=0$, the network
+continuously updates random
+elements of the state vector depending upon whether the update lowers
+the energy of the
+network. The energy function, then, forms a ``landscape'', where
+local minima in the space
+(ideally) correspond with desired patterns to be stored.
+
+While the use of the energy function seems at odds with our definition
+of associative memories, we can align the two by considering a
+single-pass variant of the energy-minimization. It can be shown
+that updating every element $i$ of the state vector $\sigma^{(t)}$
+in a single pass (synchronously) corresponds with the update rule
+\parencite{krotov_modern_2025}:
+\begin{equation}
+  T(\sigma) = \text{sgn} \left[ \sum^N_\mu \xi^\mu \left(
+  \sum^D_{i=1} \xi^\mu_i \sigma_i \right) \right],
+\end{equation}
+which is just the update rule of Correlation Matrix associative memories
+(see, Example \ref{example:correlation}).
+
+%% NOTE: need to improve the discussion here:
+%% 1. linking to the next section
+%% 2. what's so cool about hopfield networks? what inspired continued work on them?
+%% 3. what are some applications of hopfield networks across the sciences, make sure
+%%    to name drop some cognitive applications
+In spite of their simplicity, Hopfield networks have a pitifully low
+storage capacity: the critical capacity $C$ being around $14\%$ to $15\%$
+of the number of neurons in the model
+\parencites{amit_statistical_1987,hopfield_neural_1982}. The low capacity
+as a function of the number of neurons inspired researchers to investigate
+alternatives to traditional Hopfield networks that maintain the same 
+energy-based insights.
 
 \subsection{Dense Associative Memories}\label{sec:dense-associative-memory}
 
 %% OUTLINE
 Dense Associative Memories generalize Hopfield networks, and improve
-capacity as a function of both the dimension of the network, and the 
+capacity as a function of both the dimension of the network, and the
 exponent used in their polynomial function. Talk about related
 work with single-pass networks (UHNs), as well as neuron-astrocyte memory.
 
 \subsection{Hebbian Learning Rules}\label{sec:hebbian-learning-rules}
 
 %% OUTLINE
-Hopfield networks learn with the Activity Product Rule \parencite{haykin_neural_2009}.
+Hopfield networks learn with the Activity Product Rule
+\parencite{haykin_neural_2009}.
 Talk about biological evidence for Hebbian learning rules. Stress simplicity.
 
 \section{Hebbian Dense Associative Memory}\label{sec:hebbian-dam}
 
 %% OUTLINE
-Outline of the project. Hopfield networks which, instead of manipulating a polynomial
+Outline of the project. Hopfield networks which, instead of
+manipulating a polynomial
 function, rather manipulate how patterns are stored to begin with.
 
 \subsection{Work Plan}\label{sec:work-plan}
 
 %% OUTLINE
 Two main components of the project: theoretical and experimental. Theoretical
-involves proving some theorems about the minimum and maximum capacity of 
+involves proving some theorems about the minimum and maximum capacity of
 Hopfield networks with different Hebbian learning rules. Experimental work
 means implementing the different networks and testing them on a task. Suggest
 testing them on classification of degraded inputs.
@@ -270,7 +327,7 @@ requires only a couple of months. Data science certification requires emphasis
 here on large-scale projects. So, I would like to rigorously examine
 each model on a variety of tasks. One to two papers arises from this project:
 one talking about the theory of Hebbian DAM, and the other part including
-the experimental work. It would be better for a single paper, but if that 
+the experimental work. It would be better for a single paper, but if that
 runs too long, then experimental work can be a part 2.
 
 \printbibliography
