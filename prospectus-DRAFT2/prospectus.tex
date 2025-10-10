@@ -8,9 +8,13 @@
 \usepackage{graphicx}
 \bibliography{sources.bib}
 
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
 \newtheorem{theorem}{Theorem}[subsection]
 \newtheorem{corollary}{Corollary}[subsection]
 \newtheorem{lemma}{Lemma}[subsection]
+\newtheorem{example}{Example}[subsection]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[subsection]
 
@@ -27,9 +31,9 @@
   they show that by increasing the separation of similarity scores
   between query patterns and stored patterns. The cost of increased
   capacity is simplicity and biological plausibility. We propose
-  to investigate the capacity characteristics of all Hebbian 
-  associative memories, to see if there exists any alternative to 
-  Dense Associative Memories which maintains the simplicity and 
+  to investigate the capacity characteristics of all Hebbian
+  associative memories, to see if there exists any alternative to
+  Dense Associative Memories which maintains the simplicity and
   appeal of Hopfield networks.
 \end{abstract}
 
@@ -48,6 +52,187 @@ architecture \parencites{vaswani_attention_2023, ramsauer_hopfield_2021},
 has led to drastic advances in the storage capacity of AMs
 \parencites{demircigil_model_2017,krotov_dense_2016,hu_provably_2024}.
 
+The foundational model for modern associative memory research is the
+\textit{Hopfield network}
+\parencites{hopfield_neural_1982,hopfield_neurons_1984}.
+Hopfield networks are single-layer neural networks with full, lateral
+connections.
+This means that each artificial neuron in the network is connected with every
+other neuron, except itself. Patterns that we wish to recall from the network
+are stored in the connection weights between every other unit. Hopfield
+networks learn new patterns to recall through a simple, biologically plausible
+learning rule called the \textit{Activity Product Rule}
+\parencite{haykin_neural_2009},
+which is a kind of Hebbian update rule \parencite{hebb_organization_1949}.
+The appeal of Hebbian update rules is that they are simple, in that they
+are totally defined by local interactions between layers in neural networks,
+and they are biologically plausible, having been observed in interactions
+between biological neurons
+\parencites{rolls_mechanisms_2013,bi_synaptic_1998,markram_regulation_1997}.
+
+In spite of their simplicity and biological plausibility, Hopfield networks
+are inherently flawed. The number of patterns that Hopfield networks
+can store is pitifully small: with estimates in the range of $14\%$ to $15\%$
+of the number of neurons in the network
+\parencites{hopfield_neural_1982,amit_statistical_1987}.
+In order to remedy the gap between the simplicity and plausibility of
+Hopfield networks
+and their child Dense Associative Memory models, we will theoretically derive
+and empirically test the storage capacities of all Hebbian update rules
+when used in single-layer neural networks with full lateral connections.
+
+Discovering the limits of Hebbian alternatives to Dense Associative Memories
+is not only desirable because of simplicity and biological plausibility
+(while those are both laudable goals). For example, the study of
+Vector-Symbolic Architectures, used for representing high-level cognitive-tasks
+\parencites{smolensky_tensor_1990,plate_holographic_1995,gayler_multiplicative_1998,kelly_encoding_2013},
+requires an auto-associative memory ``clean-up memory''. This means that
+the expressive capabilities of Vector-Symbolic Architectures are
+affected by the capacity of the associative memory used.
+
+In the following we will discuss the problem in more depth. To do
+this, we will first
+lay out the theoretical motivation: beginning with an introduction to
+the literature
+in \autoref{sec:background}, covering associative memories in
+\autoref{sec:associative-memories},
+Hopfield networks in \autoref{sec:hopfield-networks}, their generalization with
+Dense Associative Memories in \autoref{sec:dense-associative-memory},
+and Hebbian learning
+and learning rules in \autoref{sec:hebbian-learning-rules}. We will restate the
+problem of Hebbian Dense Associative Memories in \autoref{sec:hebbian-dam}, and
+provide a work plan in \autoref{sec:work-plan}. Finally, we will discuss
+the timeline for completing this project in \autoref{sec:timeline}.
+
+\section{Background}\label{sec:background}
+
+In order to understand the need for a Hebbian alternative to Dense Associative
+Memories, we must first familiarize ourselves with the literature up to this
+point. Associative Memory research has a wealth of literature and alternatives.
+In order to limit the scope of this research, we limit ourselves only to the
+family of models based on Hopfield networks \parencite{hopfield_neural_1982}.
+
+\subsection{Associative Memories}\label{sec:associative-memories}
+
+An associative memory, in particular an \textit{auto}-associative memory,
+is a general structure that can be implemented by many mathematical
+and computational objects. Broadly speaking, an associative memory is a
+tuple of a set of objects $\mathcal X$, called the set of
+\textit{traces} or \textit{stored patterns},
+and a (typically learned) identity map over the set of stored
+patterns, $T: \mathcal X \to \mathcal X$.
+More formally,
+
+\begin{definition}[Associative memories]
+  An (auto) \textit{associative memory} is a tuple $\langle \mathcal
+  X, T \rangle$, where
+  \begin{enumerate}[(a)]
+    \item $\mathcal X$ is a set of objects, called the
+      \textit{pattern} set, or set of \textit{traces}, typically
+      high-dimensional vectors; and,
+    \item $f$, called the \textit{recall function}, maps from the set
+      of traces back to
+      the set of traces, such that $T(x) \approx x$, for all $x \in
+      \mathcal{X}$,
+      and $T(\overline x) \approx x$, where $\overline x$ is a
+      perturbed, masked, or degraded form of $x \in \mathcal{X}$.
+  \end{enumerate}
+\end{definition}
+
+We will be assuming throughout that the pattern set is the set of rows
+of the \textit{pattern matrix} $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$,
+where each \textit{stored pattern} $\xi^i \in \{-1, 1\}^D$. It is sufficient
+to specify the pattern matrix, or the sequence of patterns, for an
+associative memory,
+and it should be assumed that the pattern set is just composed of the
+rows of the pattern matrix.
+Associative memories are \textit{content-addressable}, as their recall function
+is able to recover desired associated patterns from partial information
+\parencites{mcclelland_appeal_1986,haykin_neural_2009}. This is in
+contrast to memory models which recall information based on arbitrary
+associations, like indices into memory locations.
+
+While it is not essential to the most general definition of
+associative memories,
+we usually desire that the recall function be learned. Furthermore,
+associative memories have a maximum capacity of traces that they can store.
+
+\begin{definition}[Retrievability; Capacity]
+  Following \textcite{bao_capacity_2022}, let us have an associative
+  memory with patterns
+  $\xi^1, \xi^2, \dots, \xi^N$, where each element $\xi^i_j$ is
+  $-1$ or $1$ with equal likelihood. For any $\delta < 0.5$, we define
+  the $\delta$-perturbation of $\xi^i$, $\bar \xi^i$, as
+  the $D$-dimensional vector $\xi^i$ with each element flipped with a likelihood
+  of $\delta$. Then, we say that the set $\xi^1, \xi^2, \dots, \xi^N$ is
+  $(\delta, \varepsilon)$-retrievable if for every $\xi^i$, $i = 1, 2, \dots, N$
+  it is such that:
+  \begin{equation}
+    \mathbb{P}(T(\bar \xi^i) \neq \xi^i) < \varepsilon.
+  \end{equation}
+  The \textit{capacity} $C$ of the associative memory is the maximum
+  cardinality of the pattern set such that all patterns are $(\delta,
+  \epsilon)$-retrievable.
+\end{definition}
+
+In \textcite{krotov_dense_2016}, capacity is denoted by $N^{\max}$, where
+$N$ is the first dimension of the pattern matrix. In Correlation
+Matrix associative
+memories, capacity is affected by the (1) kind of data being stored,
+i.e. if the data
+has a high pairwise correlation, which leads to ``cross-talk''
+\parencite{kohonen_correlation_1988},
+(2) the dimensionality of the data, and (3) the implementation of the
+recall function $T$.
+For example, if the associative memory is a neural network with
+tensor weights \parencite{kelly_memory_2017},
+then the capacity scales with the number of the weights
+\parencite{little_analytic_1978} (expanded
+further in \autoref{sec:dense-associative-memory}).
+
+Before Hopfield networks, there were Correlation Matrix associative memories.
+So-called, because they relied on dot-product correlations for recall.
+\begin{example}[Correlation Matrix associative memory]
+  Let us have a pattern matrix $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$ of
+  vectors sampled from $\{1, -1\}^D$. The Correlation Matrix associative memory
+  recall function is of the form:
+  \begin{align}
+    T(x) &= g \left(\sum^N_{\mu=1} \xi^\mu \left( \sum^D_{i=1} \xi^\mu_i x_i \right)\right) \nonumber \\
+      &= g \left( \Xi^\top \Xi x  \right),
+  \end{align}
+  where $g$ is an ``activation function'', typically \textit{signum} for binary vectors.
+\end{example}
+
+\begin{example}\label{example:argmax-am}
+  Like above, let us have a pattern matrix $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$ of
+  vectors sampled from $\{1, -1\}^D$. Let our recall function $T$ be:
+  \begin{equation}
+    T(x) = \xi^i,~\text{where}~i = \argmax_{i \in [1, N]} [\text{sim}(\xi^i, x)],
+  \end{equation}
+  where $\text{sim}$ is some similarity function \parencite{kelly_memory_2017},
+  e.g. the cosine similarity or Hamming distance.
+\end{example}
+
+\begin{example}[Minerva2]
+  Minerva2 \parencite{hintzman_minerva_1984} is an associative memory used in cognitive
+  science which is about as old as Hopfield networks. As per usual, we have
+  binary patterns $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$. The recall function is:
+  \begin{equation}
+    T(x) = \text{sgn} \left[ \sum^N_{\mu=1} \xi^\mu \left( \frac{\sum^D_{i=1} \xi^\mu_i x_i}{\|\xi^\mu\| \|x\|} \right)^3 \right].
+  \end{equation}
+\end{example}
+
+\subsection{Hopfield Networks}\label{sec:hopfield-networks}
+
+\subsection{Dense Associative Memories}\label{sec:dense-associative-memory}
+
+\subsection{Hebbian Learning Rules}\label{sec:hebbian-learning-rules}
+
+\section{Hebbian Dense Associative Memory}\label{sec:hebbian-dam}
+
+\subsection{Work Plan}\label{sec:work-plan}
+
+\section{Timeline}\label{sec:timeline}
 
 \printbibliography
 \end{document}
