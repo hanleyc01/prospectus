@@ -217,7 +217,7 @@ So-called, because they relied on dot-product correlations for recall.
   e.g. the cosine similarity or Hamming distance.
 \end{example}
 
-\begin{example}[Minerva2]
+\begin{example}[Minerva2]\label{example:minerva2}
   Minerva2 \parencite{hintzman_minerva_1984} is an associative memory
   used in cognitive
   science which is about as old as Hopfield networks. As per usual, we have
@@ -236,7 +236,7 @@ memory with deep connections to Example \ref{example:correlation},
 except that they
 understand their recall function in terms of an \textit{energy} function:
 
-\begin{definition}[Hopfield networks]
+\begin{definition}[Hopfield networks]\label{def:hopfield-nets}
   Hopfield networks are single-layer neural networks of $D$ computational units
   with full, lateral connections. The state of the network is described
   by the state vector $\sigma$ at time $t$, denoted by $\sigma^{(t)}$.
@@ -268,7 +268,7 @@ single-pass variant of the energy-minimization. It can be shown
 that updating every element $i$ of the state vector $\sigma^{(t)}$
 in a single pass (synchronously) corresponds with the update rule
 \parencite{krotov_modern_2025}:
-\begin{equation}
+\begin{equation}\label{eq:hopfield-sync}
   T(\sigma) = \text{sgn} \left[ \sum^N_\mu \xi^\mu \left(
   \sum^D_{i=1} \xi^\mu_i \sigma_i \right) \right],
 \end{equation}
@@ -277,24 +277,123 @@ which is just the update rule of Correlation Matrix associative memories
 
 %% NOTE: need to improve the discussion here:
 %% 1. linking to the next section
-%% 2. what's so cool about hopfield networks? what inspired continued work on them?
-%% 3. what are some applications of hopfield networks across the sciences, make sure
+%% 2. what's so cool about hopfield networks? what inspired continued
+% work on them?
+%% 3. what are some applications of hopfield networks across the
+% sciences, make sure
 %%    to name drop some cognitive applications
-In spite of their simplicity, Hopfield networks have a pitifully low
+Hopfield networks unfortunately have a pitifully low
 storage capacity: the critical capacity $C$ being around $14\%$ to $15\%$
 of the number of neurons in the model
-\parencites{amit_statistical_1987,hopfield_neural_1982}. The low capacity
-as a function of the number of neurons inspired researchers to investigate
-alternatives to traditional Hopfield networks that maintain the same 
-energy-based insights.
+\parencites{amit_statistical_1987,hopfield_neural_1982}. As a computational
+model of human memory this will not do.  %% why?
+Likewise, this is unsuitable for machine learnings tasks involving large
+datasets, e.g. large language models. Capacity problems led researchers
+to investigate how one can improve the capacity of Hopfield networks,
+while maintaining the simplicity and interpretability of energy minimization.
 
 \subsection{Dense Associative Memories}\label{sec:dense-associative-memory}
 
-%% OUTLINE
-Dense Associative Memories generalize Hopfield networks, and improve
-capacity as a function of both the dimension of the network, and the
-exponent used in their polynomial function. Talk about related
-work with single-pass networks (UHNs), as well as neuron-astrocyte memory.
+Dense Associative Memory models are a generalization of Hopfield networks that
+maintain energy minimization in recall, but have a dramatically
+increased storage capacity \parencite{krotov_dense_2016,demircigil_model_2017}.
+Instead of relying on full lateral connections between units in a
+single dimension,
+Dense Associative Memories either have multiple connections between
+computational units, or, increase the number of layers present in the model.
+\textcite{krotov_large_2021} notes that this is to be expected, given the
+information limits of single neurons.
+
+\begin{definition}[Dense Associative Memory]
+  Given binary patterns $\xi^1, \xi^2$, $\dots, \xi^N$ sampled from
+  $\{-1, 1\}^D$,
+  a \textit{Dense Associative Memory} is characterized by:
+  \begin{enumerate}[(i)]
+    \item A $D$-dimensional \textit{state vector} at time $t$, $\sigma^{(t)}$
+    \item A \textit{polynomial transmission function} $F_n$, where:
+      \begin{equation}
+        F_n (x) = \frac{1}{n} (x)^n;
+      \end{equation}
+    \item An \textit{energy function} of the state of the network at time $t$,
+      \begin{equation}
+        E(\sigma^{(t)}) = \sum^N_{\mu=1} F \left( \sum^D_{i=1}
+        \xi^\mu_i \sigma^{(t)}_i \right),
+      \end{equation}
+    \item An update equation for the state of the network, such that:
+      \begin{equation}
+        \sigma^{(t+1)}_i = \text{sgn} \left[ E(\sigma^{(t)}[i := -1])
+        - E(\sigma^{(t)}[i := 1]) \right].
+      \end{equation}
+  \end{enumerate}
+\end{definition}
+
+Like Hopfield networks, the state vector update rule is typically
+performed asynchronously.
+However, we can define a synchronous update rule which makes the
+Dense Associative
+Memory an Associative Memory with update rule:
+\begin{equation}
+  T(\sigma) = \text{sgn} \left[\sum^N_{\mu=1} \xi^\mu F_n' \left(
+  \sum^D_{i=1} \xi^\mu_i \sigma_i \right)\right],
+\end{equation}
+where $F_n'$ is the derivative of $F_n$. From this definition we immediately
+see how this framework generalizes Hopfield networks.
+
+\begin{example}
+  Hopfield networks in Definition \ref{def:hopfield-nets} are Dense
+  Associative Memories
+  with polynomial transmission function $F_2$.
+\end{example}
+
+\begin{example}
+  Minerva2 (from Example \ref{example:minerva2}) are roughly Dense
+  Associative Networks,
+  assuming that all patterns $\xi^1, \xi^2, \dots, \xi^N$ and query
+  patterns are normalized,
+  and with polynomial transmission function $F_4$.
+\end{example}
+
+Knowing this, one can now see
+the relation between the state update rule of Hopfield networks in
+Definition \ref{def:hopfield-nets} and \autoref{eq:hopfield-sync}.
+
+Dense Associative Memories improve the storage capacity of Hopfield networks
+in that the capacity $C$ of a Dense Associative Memory, with
+polynomial function $F_n$,
+and dimensionality of patterns $D$ is:
+\begin{equation}
+  C \propto D^{n-1}
+\end{equation}
+\parencites{krotov_dense_2016,demircigil_model_2017,bao_capacity_2022}.
+The increased capacity comes from the ``steeper'' energy basins
+around minima corresponding to patterns stored in the network, which
+is brought about by the exponentiation of the dot product similarity
+between the stored patterns and the query pattern (for discussion, see
+\textcite{kelly_memory_2017}). Memory capacity for Dense Associative
+Memories can also be increased by making more domain sensitive
+similarity functions \parencite{millidge_universal_2022},
+e.g. with kernel estimation \parencite{hu_provably_2024,wu_uniform_2024}.
+
+In spite of the enormous gains in capacity using non-linear
+transmission functions, Dense Associative Memories lose the ability
+to be interpreted as simple one-layer networks with lateral connections
+and trained via Hebbian update rules
+\parencites{krotov_large_2021,mcalister_sequential_2025}.
+On the one hand, this is to their benefit: a continuous variant of
+Dense Associative
+Memory called \textit{Modern Hopfield Networks} has been shown to be
+equivalent to multi-head attention in Transformer neural networks
+\parencites{ramsauer_hopfield_2021,vaswani_attention_2023}. Likewise,
+the framework behind Dense Associative Memories has been developed for
+modular neural network architectures \parencite{krotov_hierarchical_2021},
+and has been used to define an \textit{Energy Based Transformer}
+\parencite{hoover_energy_2023}, as well as contribute to the interpretability
+of Diffusion Models \parencite{pham_memorization_2025}.
+
+But the cost is their simplicity. Correlation matrix memories
+trained with Hebbian update rules mimic observed phenomena in
+biological neural networks; meaning that they perform computations
+which are in principle achievable by biological systems.
 
 \subsection{Hebbian Learning Rules}\label{sec:hebbian-learning-rules}
 
@@ -302,6 +401,16 @@ work with single-pass networks (UHNs), as well as neuron-astrocyte memory.
 Hopfield networks learn with the Activity Product Rule
 \parencite{haykin_neural_2009}.
 Talk about biological evidence for Hebbian learning rules. Stress simplicity.
+
+The closest investigation to this proposed analysis is
+\textcite{lansner_benchmarking_2025}, which compares several
+extant Hebbian learning rules in the literature: namely, the Willshaw
+learning rule, the Activity Product Rule, the Covariance Learning rule,
+the Presynaptic Covariance learning rule, the Bayesian Confidence Propagation
+learning rule, and the Bayesian Optimal Memory learning rule.
+
+This work serves as an important comparison work between the theoretical
+results that we wish to derive.
 
 \section{Hebbian Dense Associative Memory}\label{sec:hebbian-dam}
 
