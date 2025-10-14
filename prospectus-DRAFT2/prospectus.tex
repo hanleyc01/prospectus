@@ -387,7 +387,8 @@ and has been used to define an \textit{Energy Based Transformer}
 of Diffusion Models \parencite{pham_memorization_2025}.
 
 %% EXPAND HERE
-But the cost is their simplicity. Correlation matrix memories
+But the cost is their simplicity and biological plausibility.
+Correlation matrix memories
 trained with Hebbian update rules mimic observed phenomena in
 biological neural networks; meaning that they perform computations
 which are in principle achievable by biological systems.
@@ -414,7 +415,7 @@ We can define Hebbian learning rules in the most general sense:
 Hebbian learning rules are \textit{entirely local}, as we can see from
 the requirement that the learning rule only affect layers $i$ and $j = i + 1$.
 In their simplest formulation, Hebbian learning rules are not
-all error-correcting \parencite{munakata_how_2006}, 
+all error-correcting \parencite{munakata_how_2006},
 which is in contrast to popular learning algorithms
 like back-propagation of error \parencite{rumelhart_learning_1986}. However,
 there is a local learning paradigm, called Predictive Coding (for review see
@@ -422,11 +423,12 @@ there is a local learning paradigm, called Predictive Coding (for review see
 has implemented associative memories in deep neural networks
 \parencite{salvatori_associative_2021}
 
-The simplest method for training Hopfield networks (and Correlation Matrix associative
+The simplest method for training Hopfield networks (and Correlation
+  Matrix associative
 memories) is to use the Activity Product Rule \parencite{haykin_neural_2009}.
 
-\begin{definition}
-  The \textit{Activity Product Rule} is a Hebbian learning rule defined 
+\begin{definition}\label{def:activity-product}
+  The \textit{Activity Product Rule} is a Hebbian learning rule defined
   for layers $x^i$ and $x^j$, $j = i+1$, with weights $W^{ij}$, such that:
   \begin{equation}
     \Delta W^{ij} = \eta x^i (x^j)^\top,
@@ -435,20 +437,22 @@ memories) is to use the Activity Product Rule \parencite{haykin_neural_2009}.
 \end{definition}
 \noindent
 To train Hopfield networks using the Activity Product Rule,
-let us have patterns $\xi^1, \xi^2, \dots, \xi^N$; a single 
+let us have patterns $\xi^1, \xi^2, \dots, \xi^N$; a single
 $D$-dimensional layer $\sigma$, and full lateral weights between $\sigma$
-and itself called $W$. At training step $t=0$, we initialize $W$ 
+and itself called $W$. At training step $t=0$, we initialize $W$
 to be all zeros:
 \begin{equation}
   W^{(t=0)}_{ij} = 0.
 \end{equation}
 Then, for each new time step from $t=1$ to $t = N$, we produce a new
-pattern to the weights for it to memorize, updating it with 
+pattern to the weights for it to memorize, updating it with
 the Activity Product Rule:
 \begin{equation}
   W^{(t+1)} \gets W^{(t)} + \eta \xi^{t+1} (\xi^{t+1})^\top.
-\end{equation}
-If $\eta = 1$, then we get a weight matrix $W$ which is a 
+\end{equation}Hopfield networks learn with the Activity Product Rule
+\parencite{haykin_neural_2009}.
+Talk about biological evidence for Hebbian learning rules. Stress simplicity.
+If $\eta = 1$, then we get a weight matrix $W$ which is a
 linear combination of all the desired patterns we wish to store:
 \begin{equation}
   W^{(t=N)} = \sum^N_{\mu=1} \xi^\mu (\xi^\mu)^\top.
@@ -457,33 +461,92 @@ Weights trained in this way makes the synchronous recall function $T$
 for the Hopfield network a linear combination of the stored patterns
 weighted by their dot product similarity with the query pattern:
 \begin{equation}
-  T(\sigma) = W^{(t=N)} \sigma = \sum^N_{\mu=1} \xi^\mu (\xi^\mu)^\top \sigma.
+  T(\sigma) = \text{sgn}\left[W^{(t=N)} \sigma \right] =
+  \text{sgn}\left[ \sum^N_{\mu=1} \xi^\mu (\xi^\mu)^\top \sigma\right].
 \end{equation}
 
+In principle, auto-associative memories could be trained with
+\textit{other} Hebbian update rules, as long as the Hebbian update
+rule was additive and can be understood as reducing the energy of the network
+(according to some rule). More strictly, a learning rule is additive when,
+after training, the weights are of the form:
+\begin{equation}
+  W^{(t_\text{final})} = \sum^N_{\mu = 1} f(W; \xi^\mu (\xi^\mu)^\top).
+\end{equation}
+This property is required in order to maintain the neural interpretation
+of recall, as post-multiplication distributes over element-wise addition.
+The second important property of the weight update rule is that it reduces
+some natural energy function for the update rule. For example, if we derive the
+energy rule through the relation from \textcite{krotov_hierarchical_2021}.
 
-%% OUTLINE
-Hopfield networks learn with the Activity Product Rule
-\parencite{haykin_neural_2009}.
-Talk about biological evidence for Hebbian learning rules. Stress simplicity.
+Given that $f$ in
+Definition \ref{def:hebbian-learning-rule} is a large class of functions,
+we will restrain ourselves to only functions of the following form:
+\begin{definition}
+  The \textit{expanded} Hebbian learning rule is the Taylor expansion
+  of the weight update rule about $(0, 0)$
+  \parencite{gerstner_mathematical_2002}:
+  \begin{align*}
+    \Delta W_{ij} &= f(W_{ij}; x_i, x_j) \\
+    &= f(W_{ij}; 0, 0) + \frac{\partial f}{\partial x_i} \big|_{(0,
+    0)} x_i + \frac{\partial f}{\partial x_j}
+    \big|_{(0, 0)} x_j \\
+    &+ \frac{1}{2} \frac{\partial^2 f}{\partial v^2_i} \big|_{(0, 0)}
+    x_i^2 + \frac{1}{2} \frac{\partial^2 f}{\partial v^2_j}\big|_{(0,
+    0)} x_j^2 \\
+    &+ \frac{\partial^2 f}{\partial x_i \partial x_j}\big|_{(0, 0)}
+    x_i x_j + \mathcal{O}(x).
+  \end{align*}
+  We denote the Taylor coefficients by
+  $c_n^{\{\text{corr},~\text{pre},~\text{post}\}}$, with
+  $n$ denoting the order of the coefficient, $\text{corr}$ denoting
+  the coefficient
+  weighting the correlation between the pre- and post-synaptic neural
+  layers, and
+  $\text{pre}$ and $\text{post}$ to denote the coefficients of the
+  pre- and post-synaptic
+  layers themselves (respectively).
+  This gets us:
+  \begin{align*}
+    \Delta W_{ij} &= f(W_{ij}; x_i, x_j) =
+    c_0 (W_{ij}) + c_1^\text{pre} (W_{ij}) x_j + c_1^\text{post} x_i \\
+    &+ c_2^\text{pre} (W_{ij}) x_j^2 + c_2^\text{post} (W_{ij}) x_i^2
+    + c_2^\text{corr} (W_{ij}) x_i x_j \\
+    &+ \mathcal{O} (x).
+  \end{align*}
+\end{definition}
 
-The closest investigation to this proposed analysis is
-\textcite{lansner_benchmarking_2025}, which compares several
-extant Hebbian learning rules in the literature: namely, the Willshaw
-learning rule, the Activity Product Rule, the Covariance Learning rule,
-the Presynaptic Covariance learning rule, the Bayesian Confidence Propagation
-learning rule, and the Bayesian Optimal Memory learning rule.
+This definition immediately gives us the following:
+\begin{example}
+  The Activity Product Rule (Definition \ref{def:activity-product}) is
+  just the expanded Hebbian learning rule with $c_2^\text{corr}$
+  set to some constant, and all other constants set to $0$.
+\end{example}
 
-This work serves as an important comparison work between the theoretical
-results that we wish to derive.
+\begin{example}
+  \textit{Oja's Rule} \parencite{oja_simplified_1982}
+  by setting $c_2^\text{corr} = \eta_0 > 0$,
+  and $c_2^\text{post} = - \eta_0 w_{ij}$, with all other
+  coefficients set to $0$.
+\end{example}
 
 \section{Hebbian Dense Associative Memory}\label{sec:hebbian-dam}
 
-%% OUTLINE
-Outline of the project. Hopfield networks which, instead of
-manipulating a polynomial
-function, rather manipulate how patterns are stored to begin with.
+Instead of manipulating the similarity kernel, can we use different
+Hebbian learning rules for single-layer associative memories to
+achieve similar capacities to Dense Associative Memories? Preliminary
+investigation into a subset of Hebbian learning rules
+found that the capacity characteristics broadly followed the
+derived capacity of traditional Hopfield networks
+\parencite{lansner_benchmarking_2025}. But does this result
+hold true for all Hebbian learning rules?
 
 \subsection{Work Plan}\label{sec:work-plan}
+
+In order to clarify this question, we propose to undertake a theoretical
+and experimental investigation into the capacity characteristics of
+Hebbian networks.
+Estimating the capacity of Hebbian networks
 
 %% OUTLINE
 Two main components of the project: theoretical and experimental. Theoretical
