@@ -353,10 +353,6 @@ see how this framework generalizes Hopfield networks.
   and with polynomial transmission function $F_4$.
 \end{example}
 
-Knowing this, one can now see
-the relation between the state update rule of Hopfield networks in
-Definition \ref{def:hopfield-nets} and \autoref{eq:hopfield-sync}.
-
 Dense Associative Memories improve the storage capacity of Hopfield networks
 in that the capacity $C$ of a Dense Associative Memory, with
 polynomial function $F_n$,
@@ -390,12 +386,80 @@ and has been used to define an \textit{Energy Based Transformer}
 \parencite{hoover_energy_2023}, as well as contribute to the interpretability
 of Diffusion Models \parencite{pham_memorization_2025}.
 
+%% EXPAND HERE
 But the cost is their simplicity. Correlation matrix memories
 trained with Hebbian update rules mimic observed phenomena in
 biological neural networks; meaning that they perform computations
 which are in principle achievable by biological systems.
 
 \subsection{Hebbian Learning Rules}\label{sec:hebbian-learning-rules}
+
+Hebbian learning rules are a family of weight update rules for both
+artificial and spiking neural networks which posit that
+the weights connecting two local layers are determined entirely
+by the activity of just those two layers
+\parencites{hebb_organization_1949,sejnowski_hebb_1989}.
+We can define Hebbian learning rules in the most general sense:
+\begin{definition}[Hebbian learning rule]\label{def:hebbian-learning-rule}
+  Consider a neural network with layers with $N$ layers $x_{1}, x_2,
+  \dots, x_N$,
+  and for each layer and the layer above ($i$ and $i + 1$, $i \neq N)$, there
+  is a \textit{weight matrix} $W_{ij}$. Then, a Hebbian learning rule for this
+  network is an update rule for layers $i, j$, where $j = i + 1$, such that:
+  \begin{equation}
+    \Delta W^{ij} = F(W^{ij}; x^i, x^j).
+  \end{equation}
+\end{definition}
+
+Hebbian learning rules are \textit{entirely local}, as we can see from
+the requirement that the learning rule only affect layers $i$ and $j = i + 1$.
+In their simplest formulation, Hebbian learning rules are not
+all error-correcting \parencite{munakata_how_2006}, 
+which is in contrast to popular learning algorithms
+like back-propagation of error \parencite{rumelhart_learning_1986}. However,
+there is a local learning paradigm, called Predictive Coding (for review see
+\textcite{spratling_review_2017}), which
+has implemented associative memories in deep neural networks
+\parencite{salvatori_associative_2021}
+
+The simplest method for training Hopfield networks (and Correlation Matrix associative
+memories) is to use the Activity Product Rule \parencite{haykin_neural_2009}.
+
+\begin{definition}
+  The \textit{Activity Product Rule} is a Hebbian learning rule defined 
+  for layers $x^i$ and $x^j$, $j = i+1$, with weights $W^{ij}$, such that:
+  \begin{equation}
+    \Delta W^{ij} = \eta x^i (x^j)^\top,
+  \end{equation}
+  where we call $\eta$ the \textit{learning rate}.
+\end{definition}
+\noindent
+To train Hopfield networks using the Activity Product Rule,
+let us have patterns $\xi^1, \xi^2, \dots, \xi^N$; a single 
+$D$-dimensional layer $\sigma$, and full lateral weights between $\sigma$
+and itself called $W$. At training step $t=0$, we initialize $W$ 
+to be all zeros:
+\begin{equation}
+  W^{(t=0)}_{ij} = 0.
+\end{equation}
+Then, for each new time step from $t=1$ to $t = N$, we produce a new
+pattern to the weights for it to memorize, updating it with 
+the Activity Product Rule:
+\begin{equation}
+  W^{(t+1)} \gets W^{(t)} + \eta \xi^{t+1} (\xi^{t+1})^\top.
+\end{equation}
+If $\eta = 1$, then we get a weight matrix $W$ which is a 
+linear combination of all the desired patterns we wish to store:
+\begin{equation}
+  W^{(t=N)} = \sum^N_{\mu=1} \xi^\mu (\xi^\mu)^\top.
+\end{equation}
+Weights trained in this way makes the synchronous recall function $T$
+for the Hopfield network a linear combination of the stored patterns
+weighted by their dot product similarity with the query pattern:
+\begin{equation}
+  T(\sigma) = W^{(t=N)} \sigma = \sum^N_{\mu=1} \xi^\mu (\xi^\mu)^\top \sigma.
+\end{equation}
+
 
 %% OUTLINE
 Hopfield networks learn with the Activity Product Rule
