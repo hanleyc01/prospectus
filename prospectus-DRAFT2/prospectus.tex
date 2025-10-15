@@ -6,7 +6,10 @@
 \usepackage[style=apa]{biblatex}
 \usepackage[shortlabels]{enumitem}
 \usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
 \bibliography{sources.bib}
+\usepackage{setspace}
+\doublespacing
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -36,6 +39,8 @@
   Dense Associative Memories which maintains the simplicity and
   appeal of Hopfield networks.
 \end{abstract}
+
+\section{Introduction}
 
 Humans are able to recognize and retrieve patterns of data using distorted,
 noisy, and partial patterns \parencite{rumelhart_general_1986}. This
@@ -482,7 +487,7 @@ energy rule through the relation from \textcite{krotov_hierarchical_2021}.
 Given that $f$ in
 Definition \ref{def:hebbian-learning-rule} is a large class of functions,
 we will restrain ourselves to only functions of the following form:
-\begin{definition}
+\begin{definition}\label{def:expanded-learning}
   The \textit{expanded} Hebbian learning rule is the Taylor expansion
   of the weight update rule about $(0, 0)$
   \parencite{gerstner_mathematical_2002}:
@@ -532,8 +537,10 @@ This definition immediately gives us the following:
 
 \section{Hebbian Dense Associative Memory}\label{sec:hebbian-dam}
 
-Instead of manipulating the similarity kernel, can we use different
-Hebbian learning rules for single-layer associative memories to
+Instead of manipulating the similarity kernel to increase
+memory capacity (as in \textcite{hoover_dense_2024,hu_provably_2024}),
+can we use different Hebbian learning rules for
+single-layer associative memories to
 achieve similar capacities to Dense Associative Memories? Preliminary
 investigation into a subset of Hebbian learning rules
 found that the capacity characteristics broadly followed the
@@ -543,21 +550,109 @@ hold true for all Hebbian learning rules?
 
 \subsection{Work Plan}\label{sec:work-plan}
 
-In order to clarify this question, we propose to undertake a theoretical
-and experimental investigation into the capacity characteristics of
-Hebbian networks.
-Estimating the capacity of Hebbian networks
+Determining the capacity characteristics of Hebbian networks
+involves two components. The first is to provide theoretical reasoning
+as to the capacity of associative memories. The second is to
+provide experimental evidence of the theoretical reasoning on
+large-scale associative memory tasks: namely, pattern reconstruction
+and utility in a larger network.
 
-%% OUTLINE
-Two main components of the project: theoretical and experimental. Theoretical
-involves proving some theorems about the minimum and maximum capacity of
-Hopfield networks with different Hebbian learning rules. Experimental work
-means implementing the different networks and testing them on a task. Suggest
-testing them on classification of degraded inputs.
+\subsubsection{Theoretical Work}
+
+We have seen above that we have proofs of the capacity of
+Hopfield networks and Dense Associative Memory. A contemporary
+example of this kind of proof can be found in \parencite{bao_capacity_2022},
+which proves capacity with respect to a perturbation of a query
+and a lower probability bound of error in recall.
+
+Proving the capacity characteristics of Hebbian networks ought to
+follow the same formula. Given that the class of Hebbian update rules
+is large, we will focus in on a few learning rules: namely,
+the learning rules which were experimentally tested in
+\textcite{lansner_benchmarking_2025}, and then the expanded
+form in Definition \ref{def:expanded-learning}. The goal of this
+part of the project is to come up with a theorem that shows that,
+with coefficients $c_1, c_2, \dots, c_n$, that the Hebbian
+auto-associative memory has a capacity $C$ which is some
+function of the dimensionality of the patterns stored
+(see Equations (1-6) in \textcite{lansner_benchmarking_2025}, or
+Theorem 1 from \textcite{bao_capacity_2022}).
+
+The proof strategy is the following: suppose
+that we have a learning rule with coefficients $c_1, c_2, \dots, c_n$,
+denoted by $\mathcal{L}_{c_1, c_2, \dots, c_n}$. Further, suppose
+that we have patterns $\xi^1, \xi^2, \dots, \xi^N$, where
+each element of $\xi^\mu$ is either $-1$ or $1$ with equal probability.
+Let $T(x)$ be the recall function of an associative memory with learning
+rule $\mathcal{L}_{c_1, c_2, \dots, c_n}$. We define capacity in
+the same way as \textcite{bao_capacity_2022}, i.e., in relation
+to a perturbation constant $\delta < 0.5$ and an error threshold $\varepsilon$.
+We must prove the maximum $N$ (number of patterns) which are
+all one-step $(\delta, \varepsilon)$-recoverable. This means that
+$N$ is the maximum number of patterns such that, for every pattern stored,
+the probability of a one-step recall of perturbation of the pattern
+not being equivalent to the pattern itself is less than $\varepsilon$:
+\begin{equation}
+  \mathbb{P}(T(\bar \xi^i) \neq \xi^i) < \varepsilon, ~\forall i \in [1, N],
+\end{equation}
+with $\bar \xi^i$ denoting the $\delta$-perturbation of $\xi^i$.
+
+Having a proof of this form is desirable as it allows to fairly compare
+Hebbian associative memories with other kinds of associative memories.
+Merely providing estimated scaling characteristics for
+the capacity of networks, as in \textcite{lansner_benchmarking_2025}, does
+not account for potential problematic elements in the kinds of patterns
+being memorized. For example, MNIST \parencite{lecun_mnist_2010}
+images, naively represented, are all highly correlated with one another.
+This ``cross-talk'' \parencite{kohonen_correlation_1988} can lead
+to spurious similarity measures between query patterns and estimated
+patterns.
+
+\subsubsection{Experimental Work}
+
+Purely theoretical work is well and good. But the proof of the
+pudding is in the eating,
+and it is important to test the derived results for their accuracy to
+the real world.
+In order to verify our estimates, the goal will be to subject generated Hebbian
+associative memories to large-scale tasks. The most intuitive and popular
+task for associative memories is pattern reconstruction. Likewise, in order
+to see how these networks fair in real-world scenarios, integrating
+derived models in a larger architecture for the same task will provide
+an equal playing field for comparison.
+
+Pattern reconstruction tasks are often included in the demonstration of
+associative memory capacities. Oftentimes, however, the demonstrations
+are merely qualitative. If the model can produce estimated patterns that
+look sufficiently similar to our eyes to the original query, then they succeed.
+But this is hardly objective, and so we require a better measure of
+reconstruction.
+In order to have an objective pattern reconstruction test, we need to
+have a shared basis in order to compare results. This is some
+distance metric for patterns, a function which gives us the similarity
+between a presented pattern and its output from the network. One common
+measure of similarity in Vector-Symbolic Architectures 
+\parencites{smolensky_tensor_1990,plate_holographic_1995,gayler_multiplicative_1998}
+is \textit{cosine similarity}:
+\begin{equation}
+  \text{sim}(x, y) = \frac{x \cdot y}{\|x \| \|y \|},
+\end{equation}
+which is the normalized dot-product between two vectors. This gives us the 
+angle in $D$-dimensional space between the two vectors, where $\text{sim}(x, y) = 1$
+means that the vectors are \textit{orthogonal}. Preliminary experimentation
+with traditional Hopfield networks showed that, at or above critical capacity
+with the MNIST dataset, Hopfield models produce spurious states which have
+a high cosine similarity to all memorized patterns.
+To overcome this, it seems prudent to test similarity using a battery of 
+similarity measures: for review, we can use those listed in 
+\textcite{kelly_memory_2017}. 
+
+%% I think it would be cool to insert the associative memory in 
+%% one of the models that u use minerva2 in? What are your thoughts
 
 \section{Timeline}\label{sec:timeline}
 
-%% OUTLINE
+%% Going to create a Gantt chart here, I think?
 Theoretical work should be done by Christmas. Experimental work likewise
 requires only a couple of months. Data science certification requires emphasis
 here on large-scale projects. So, I would like to rigorously examine
