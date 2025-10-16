@@ -30,12 +30,11 @@
 
 \begin{abstract}
   Dense Associative Memories generalize traditional Hopfield networks
-  while providing a substantially increased capacity. To do this,
-  they show that by increasing the separation of similarity scores
-  between query patterns and stored patterns. The cost of increased
-  capacity is simplicity and biological plausibility. We propose
-  to investigate the capacity characteristics of all Hebbian
-  associative memories, to see if there exists any alternative to
+  while providing a substantially increased capacity. This is achieved by increasing
+  the separation of similarity scores between query patterns and stored patterns.
+  The cost of increased capacity is simplicity and biological plausibility. We propose
+  to investigate the capacity characteristics of a large subset of feasible Hebbian
+  associative memories to see if there exists any alternative to
   Dense Associative Memories which maintains the simplicity and
   appeal of Hopfield networks.
 \end{abstract}
@@ -70,8 +69,8 @@ learning rule called the \textit{Activity Product Rule}
 \parencite{haykin_neural_2009},
 which is a kind of Hebbian update rule \parencite{hebb_organization_1949}.
 The appeal of Hebbian update rules is that they are simple, in that they
-are totally defined by local interactions between layers in neural networks,
-and they are biologically plausible, having been observed in interactions
+are totally defined by local interactions between layers in neural networks
+and they are biologically plausible, meaning that they have been observed in interactions
 between biological neurons
 \parencites{rolls_mechanisms_2013,bi_synaptic_1998,markram_regulation_1997}.
 
@@ -90,7 +89,7 @@ Discovering the limits of Hebbian alternatives to Dense Associative Memories
 is not only desirable because of simplicity and biological plausibility
 (while those are both laudable goals). For example, the study of
 Vector-Symbolic Architectures, used for representing high-level cognitive-tasks
-\parencites{smolensky_tensor_1990,plate_holographic_1995,gayler_multiplicative_1998,kelly_encoding_2013},
+\parencites{smolensky_tensor_1990,plate_holographic_1995,gayler_multiplicative_1998},
 requires an auto-associative memory ``clean-up memory''. This means that
 the expressive capabilities of Vector-Symbolic Architectures are
 affected by the capacity of the associative memory used.
@@ -103,8 +102,7 @@ in \autoref{sec:background}, covering associative memories in
 \autoref{sec:associative-memories},
 Hopfield networks in \autoref{sec:hopfield-networks}, their generalization with
 Dense Associative Memories in \autoref{sec:dense-associative-memory},
-and Hebbian learning
-and learning rules in \autoref{sec:hebbian-learning-rules}. We will restate the
+and Hebbian learning rules in \autoref{sec:hebbian-learning-rules}. We will restate the
 problem of Hebbian Dense Associative Memories in \autoref{sec:hebbian-dam}, and
 provide a work plan in \autoref{sec:work-plan}. Finally, we will discuss
 the timeline for completing this project in \autoref{sec:timeline}.
@@ -128,7 +126,7 @@ and a (typically learned) identity map over the set of stored
 patterns, $T: \mathcal X \to \mathcal X$.
 More formally,
 
-\begin{definition}[Associative memories]
+\begin{definition}
   An (auto) \textit{associative memory} is a tuple $\langle \mathcal
   X, T \rangle$, where
   \begin{enumerate}[(a)]
@@ -167,7 +165,7 @@ associative memories have a maximum capacity of traces that they can store.
   memory with patterns
   $\xi^1, \xi^2, \dots, \xi^N$, where each element $\xi^i_j$ is
   $-1$ or $1$ with equal likelihood. For any $\delta < 0.5$, we define
-  the $\delta$-perturbation of $\xi^i$, $\bar \xi^i$, as
+  the $\delta$-perturbation of $\xi^i$, denoted by $\bar \xi^i$, as
   the $D$-dimensional vector $\xi^i$ with each element flipped with a likelihood
   of $\delta$. Then, we say that the set $\xi^1, \xi^2, \dots, \xi^N$ is
   $(\delta, \varepsilon)$-retrievable if for every $\xi^i$, $i = 1, 2, \dots, N$
@@ -206,7 +204,7 @@ So-called, because they relied on dot-product correlations for recall.
     \xi^\mu_i x_i \right)\right) \nonumber \\
     &= g \left( \Xi^\top \Xi x  \right),
   \end{align}
-  where $g$ is an ``activation function'', typically \textit{signum}
+  where $g$ is an ``activation function'', typically \textit{signum} %% need to define signum
   for binary vectors.
 \end{example}
 
@@ -241,8 +239,8 @@ memory with deep connections to Example \ref{example:correlation},
 except that they
 understand their recall function in terms of an \textit{energy} function:
 
-\begin{definition}[Hopfield networks]\label{def:hopfield-nets}
-  Hopfield networks are single-layer neural networks of $D$ computational units
+\begin{definition}\label{def:hopfield-nets}
+  \textit{Hopfield networks} are single-layer neural networks of $D$ computational units
   with full, lateral connections. The state of the network is described
   by the state vector $\sigma$ at time $t$, denoted by $\sigma^{(t)}$.
   The \textit{energy} of the network, $E (\sigma^{(t)})$ is:
@@ -309,12 +307,12 @@ computational units, or, increase the number of layers present in the model.
 \textcite{krotov_large_2021} notes that this is to be expected, given the
 information limits of single neurons.
 
-\begin{definition}[Dense Associative Memory]
+\begin{definition}
   Given binary patterns $\xi^1, \xi^2$, $\dots, \xi^N$ sampled from
   $\{-1, 1\}^D$,
   a \textit{Dense Associative Memory} is characterized by:
   \begin{enumerate}[(i)]
-    \item A $D$-dimensional \textit{state vector} at time $t$, $\sigma^{(t)}$
+    \item A $D$-dimensional \textit{state vector} at time $t$, denoted by $\sigma^{(t)}$;
     \item A \textit{polynomial transmission function} $F_n$, where:
       \begin{equation}
         F_n (x) = \frac{1}{n} (x)^n;
@@ -322,7 +320,7 @@ information limits of single neurons.
     \item An \textit{energy function} of the state of the network at time $t$,
       \begin{equation}
         E(\sigma^{(t)}) = \sum^N_{\mu=1} F \left( \sum^D_{i=1}
-        \xi^\mu_i \sigma^{(t)}_i \right),
+        \xi^\mu_i \sigma^{(t)}_i \right);
       \end{equation}
     \item An update equation for the state of the network, such that:
       \begin{equation}
@@ -399,6 +397,7 @@ biological neural networks; meaning that they perform computations
 which are in principle achievable by biological systems.
 
 \subsection{Hebbian Learning Rules}\label{sec:hebbian-learning-rules}
+
 
 Hebbian learning rules are a family of weight update rules for both
 artificial and spiking neural networks which posit that
@@ -652,7 +651,7 @@ similarity measures: for review, we can use those listed in
 
 \section{Timeline}\label{sec:timeline}
 
-%% Going to create a Gantt chart here, I think?
+%% Going to create a Gantt chart here, I think? Still under work
 Theoretical work should be done by Christmas. Experimental work likewise
 requires only a couple of months. Data science certification requires emphasis
 here on large-scale projects. So, I would like to rigorously examine
