@@ -263,7 +263,14 @@ elements of the state vector depending upon whether the update lowers
 the energy of the
 network. The energy function, then, forms a ``landscape'', where
 local minima in the space
-(ideally) correspond with desired patterns to be stored.
+(ideally) correspond with desired patterns to be stored (see \autoref{fig:energy-landscape}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{energy_landscape.png}
+    \caption{Energy landscape of Hopfield network storing $[-1,-1]$ and $[1,1]$.}
+    \label{fig:energy-landscape}
+\end{figure}
 
 While the use of the energy function seems at odds with our definition
 of associative memories, we can align the two by considering a
@@ -290,7 +297,7 @@ storage capacity: the critical capacity $C$ being around $14\%$ to $15\%$
 of the number of neurons in the model
 \parencites{amit_statistical_1987,hopfield_neural_1982}. As a computational
 model of human memory this will not do.  %% why?
-Likewise, this is unsuitable for machine learnings tasks involving large
+Likewise, this is unsuitable for machine learning tasks involving large
 datasets, e.g. large language models. Capacity problems led researchers
 to investigate how one can improve the capacity of Hopfield networks,
 while maintaining the simplicity and interpretability of energy minimization.
@@ -372,6 +379,13 @@ between the stored patterns and the query pattern (for discussion, see
 Memories can also be increased by making more domain sensitive
 similarity functions \parencite{millidge_universal_2022},
 e.g. with kernel estimation \parencite{hu_provably_2024,wu_uniform_2024}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{energy_landscape_minerva.png}
+    \caption{Energy landscape of Dense Associative Memory with $F_4$.}
+    \label{fig:energy-landscape-minerva}
+\end{figure}
 
 In spite of the enormous gains in capacity using non-linear
 transmission functions, Dense Associative Memories lose the ability
