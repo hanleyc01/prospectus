@@ -7,6 +7,7 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
+\usepackage{subcaption}
 \bibliography{sources.bib}
 \usepackage{setspace}
 \doublespacing
@@ -82,8 +83,10 @@ of the number of neurons in the network
 In order to remedy the gap between the simplicity and plausibility of
 Hopfield networks
 and their child Dense Associative Memory models, we will theoretically derive
-and empirically test the storage capacities of all Hebbian update rules
-when used in single-layer neural networks with full lateral connections.
+and empirically test the storage capacities of restricted subset Hebbian update rules
+when used in single-layer neural networks with full lateral connections. The goal
+is that the subset of Hebbian learning rules tested will be representative of
+the entire class.
 
 Discovering the limits of Hebbian alternatives to Dense Associative Memories
 is not only desirable because of simplicity and biological plausibility
@@ -133,9 +136,8 @@ More formally,
     \item $\mathcal X$ is a set of objects, called the
       \textit{pattern} set, or set of \textit{traces}, typically
       high-dimensional vectors; and,
-    \item The \textit{recall function}, $T$, maps from the set
-      of traces back to
-      the set of traces, such that $T(x) \approx x$, for all $x \in
+    \item The \textit{recall function}, $T$, maps from the set $\Omega \supseteq \mathcal{X}$ back to
+      the set of traces $\mathcal{X},$ such that $T(x) \approx x$, for all $x \in
       \mathcal{X}$,
       and $T(\overline x) \approx x$, where $\overline x$ is a
       perturbed, masked, or degraded form of $x \in \mathcal{X}$.
@@ -143,7 +145,7 @@ More formally,
 \end{definition}
 
 We will be assuming throughout that the pattern set is the set of rows
-of the \textit{pattern matrix} $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$,
+of the $N \times D$ \textit{pattern matrix} $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$,
 where each \textit{stored pattern} $\xi^i \in \{-1, 1\}^D$. It is sufficient
 to specify the pattern matrix, or the sequence of patterns, for an
 associative memory,
@@ -196,7 +198,7 @@ Before Hopfield networks, there were Correlation Matrix associative memories.
 So-called, because they relied on dot-product correlations for recall.
 \begin{example}[Correlation Matrix associative
   memory]\label{example:correlation}
-  Let us have a pattern matrix $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$ of
+  Let us have an $N \times D$ pattern matrix $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$ of
   vectors sampled from $\{1, -1\}^D$. The Correlation Matrix associative memory
   recall function is of the form:
   \begin{align}
@@ -209,7 +211,7 @@ So-called, because they relied on dot-product correlations for recall.
 \end{example}
 
 \begin{example}\label{example:argmax-am}
-  Like above, let us have a pattern matrix $\Xi = [\xi^1, \xi^2,
+  Like above, let us have an $N \times D$ pattern matrix $\Xi = [\xi^1, \xi^2,
   \dots, \xi^N]$ of
   vectors sampled from $\{1, -1\}^D$. Let our recall function $T$ be:
   \begin{equation}
@@ -255,6 +257,8 @@ understand their recall function in terms of an \textit{energy} function:
     \sigma^{(t+1)}_i = \text{sgn} \left[ E(\sigma^{(t)}[i : = -1]) -
     E(\sigma^{(t)}[i := 1]) \right].
   \end{equation}
+  We ignore $W_{ii}$, as there are no self-connections between units: and hence,
+  there is no change on update.
 \end{definition}
 
 After setting the initial state at time $t=0$, the network
@@ -268,6 +272,7 @@ local minima in the space
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{energy_landscape.png}
+   
     \caption{Energy landscape of Hopfield network storing $[-1,-1]$ and $[1,1]$.}
     \label{fig:energy-landscape}
 \end{figure}
@@ -326,7 +331,7 @@ information limits of single neurons.
       \end{equation}
     \item An \textit{energy function} of the state of the network at time $t$,
       \begin{equation}
-        E(\sigma^{(t)}) = \sum^N_{\mu=1} F \left( \sum^D_{i=1}
+        E(\sigma^{(t)}) = - \sum^N_{\mu=1} F \left( \sum^D_{i=1}
         \xi^\mu_i \sigma^{(t)}_i \right);
       \end{equation}
     \item An update equation for the state of the network, such that:
@@ -380,11 +385,23 @@ Memories can also be increased by making more domain sensitive
 similarity functions \parencite{millidge_universal_2022},
 e.g. with kernel estimation \parencite{hu_provably_2024,wu_uniform_2024}.
 
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{energy_landscape_minerva.png}
+%     \caption{Energy landscape of Dense Associative Memory with $F_4$.}
+%     \label{fig:energy-landscape-minerva}
+% \end{figure}
 \begin{figure}
-    \centering
-    \includegraphics[width=0.5\linewidth]{energy_landscape_minerva.png}
-    \caption{Energy landscape of Dense Associative Memory with $F_4$.}
-    \label{fig:energy-landscape-minerva}
+\begin{minipage}[c]{0.4\linewidth}
+\includegraphics[width=\linewidth]{energy_landscape_minerva.png}
+\caption{Energy landscape of Dense Associative Memory with $F_4$ storing $2$D patterns.}
+\label{fig:energy-landscape-minerva}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.4\linewidth}
+\includegraphics[width=\linewidth]{energy_landscape_20d_minerva.png}
+\caption{Energy landscape of Dense Associative Memory with $F_4$ storing $3$ $20$D patterns.}
+\end{minipage}%
 \end{figure}
 
 In spite of the enormous gains in capacity using non-linear
@@ -489,13 +506,18 @@ rule was additive and can be understood as reducing the energy of the network
 (according to some rule). More strictly, a learning rule is additive when,
 after training, the weights are of the form:
 \begin{equation}
-  W^{(t_\text{final})} = \sum^N_{\mu = 1} f(W; \xi^\mu (\xi^\mu)^\top).
+  W^{(t_\text{final})} = \sum^N_{\mu = 1} f(W^{(t_\mu - 1)}; \xi^\mu (\xi^\mu)^\top),
 \end{equation}
+where $t_\mu$ is the time of presentation of the $\mu$'th pattern to the network.
 This property is required in order to maintain the neural interpretation
 of recall, as post-multiplication distributes over element-wise addition.
 The second important property of the weight update rule is that it reduces
 some natural energy function for the update rule. For example, if we derive the
-energy rule through the relation from \textcite{krotov_hierarchical_2021}.
+energy rule through the relation from \textcite{krotov_hierarchical_2021}, which relates
+the ``Lagrangian'' energy function as the anti-derivative of the 
+synchronous update rule: e.g., for Hopfield networks it is $F_2$ and $F'_2$,
+and for Modern Hopfield Networks \parencite{ramsauer_hopfield_2021} it is 
+\textit{logsumexp}, which has \textit{softmax} as its derivative.
 
 Given that $f$ in
 Definition \ref{def:hebbian-learning-rule} is a large class of functions,
@@ -509,8 +531,8 @@ we will restrain ourselves to only functions of the following form:
     &= f(W_{ij}; 0, 0) + \frac{\partial f}{\partial x_i} \big|_{(0,
     0)} x_i + \frac{\partial f}{\partial x_j}
     \big|_{(0, 0)} x_j \\
-    &+ \frac{1}{2} \frac{\partial^2 f}{\partial v^2_i} \big|_{(0, 0)}
-    x_i^2 + \frac{1}{2} \frac{\partial^2 f}{\partial v^2_j}\big|_{(0,
+    &+ \frac{1}{2} \frac{\partial^2 f}{\partial x^2_i} \big|_{(0, 0)}
+    x_i^2 + \frac{1}{2} \frac{\partial^2 f}{\partial x^2_j}\big|_{(0,
     0)} x_j^2 \\
     &+ \frac{\partial^2 f}{\partial x_i \partial x_j}\big|_{(0, 0)}
     x_i x_j + \mathcal{O}(x).
@@ -651,8 +673,9 @@ is \textit{cosine similarity}:
   \text{sim}(x, y) = \frac{x \cdot y}{\|x \| \|y \|},
 \end{equation}
 which is the normalized dot-product between two vectors. This gives us the 
-angle in $D$-dimensional space between the two vectors, where $\text{sim}(x, y) = 1$
-means that the vectors are \textit{orthogonal}. Preliminary experimentation
+angle in $D$-dimensional space between the two vectors, where $\text{sim}(x, y) \approx 1$
+means that $x$ and $y$ are near-parallel, and $\text{sim}(x, y) \approx 0$ means that the 
+vectors are near-orthogonal. Preliminary experimentation
 with traditional Hopfield networks showed that, at or above critical capacity
 with the MNIST dataset, Hopfield models produce spurious states which have
 a high cosine similarity to all memorized patterns.
