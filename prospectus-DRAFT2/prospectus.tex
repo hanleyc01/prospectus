@@ -31,10 +31,14 @@
 
 \begin{abstract}
   Dense Associative Memories generalize traditional Hopfield networks
-  while providing a substantially increased capacity. This is achieved by increasing
-  the separation of similarity scores between query patterns and stored patterns.
-  The cost of increased capacity is simplicity and biological plausibility. We propose
-  to investigate the capacity characteristics of a large submoset of feasible Hebbian
+  while providing a substantially increased capacity. This is
+  achieved by increasing
+  the separation of similarity scores between query patterns and
+  stored patterns.
+  The cost of increased capacity is simplicity and biological
+  plausibility. We propose
+  to investigate the capacity characteristics of a large submoset of
+  feasible Hebbian
   associative memories to see if there exists any alternative to
   Dense Associative Memories which maintains the simplicity and
   appeal of Hopfield networks.
@@ -71,7 +75,8 @@ learning rule called the \textit{Activity Product Rule}
 which is a kind of Hebbian update rule \parencite{hebb_organization_1949}.
 The appeal of Hebbian update rules is that they are simple, in that they
 are totally defined by local interactions between layers in neural networks
-and they are biologically plausible, meaning that they have been observed in interactions
+and they are biologically plausible, meaning that they have been
+observed in interactions
 between biological neurons
 \parencites{rolls_mechanisms_2013,bi_synaptic_1998,markram_regulation_1997}.
 
@@ -83,8 +88,10 @@ of the number of neurons in the network
 In order to remedy the gap between the simplicity and plausibility of
 Hopfield networks
 and their child Dense Associative Memory models, we will theoretically derive
-and empirically test the storage capacities of restricted subset Hebbian update rules
-when used in single-layer neural networks with full lateral connections. The goal
+and empirically test the storage capacities of restricted subset
+Hebbian update rules
+when used in single-layer neural networks with full lateral
+connections. The goal
 is that the subset of Hebbian learning rules tested will be representative of
 the entire class.
 
@@ -105,7 +112,8 @@ in \autoref{sec:background}, covering associative memories in
 \autoref{sec:associative-memories},
 Hopfield networks in \autoref{sec:hopfield-networks}, their generalization with
 Dense Associative Memories in \autoref{sec:dense-associative-memory},
-and Hebbian learning rules in \autoref{sec:hebbian-learning-rules}. We will restate the
+and Hebbian learning rules in \autoref{sec:hebbian-learning-rules}.
+We will restate the
 problem of Hebbian Dense Associative Memories in \autoref{sec:hebbian-dam}, and
 provide a work plan in \autoref{sec:work-plan}. Finally, we will discuss
 the timeline for completing this project in \autoref{sec:timeline}.
@@ -136,8 +144,10 @@ More formally,
     \item $\mathcal X$ is a set of objects, called the
       \textit{pattern} set, or set of \textit{traces}, typically
       high-dimensional vectors; and,
-    \item The \textit{recall function}, $T$, maps from the set $\Omega \supseteq \mathcal{X}$ back to
-      the set of traces $\mathcal{X},$ such that $T(x) \approx x$, for all $x \in
+    \item The \textit{recall function}, $T$, maps from the set
+      $\Omega \supseteq \mathcal{X}$ back to
+      the set of traces $\mathcal{X},$ such that $T(x) \approx x$,
+      for all $x \in
       \mathcal{X}$,
       and $T(\overline x) \approx x$, where $\overline x$ is a
       perturbed, masked, or degraded form of $x \in \mathcal{X}$.
@@ -145,7 +155,8 @@ More formally,
 \end{definition}
 
 We will be assuming throughout that the pattern set is the set of rows
-of the $N \times D$ \textit{pattern matrix} $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$,
+of the $N \times D$ \textit{pattern matrix} $\Xi = [\xi^1, \xi^2,
+\dots, \xi^N]$,
 where each \textit{stored pattern} $\xi^i \in \{-1, 1\}^D$. It is sufficient
 to specify the pattern matrix, or the sequence of patterns, for an
 associative memory,
@@ -198,7 +209,8 @@ Before Hopfield networks, there were Correlation Matrix associative memories.
 So-called, because they relied on dot-product correlations for recall.
 \begin{example}[Correlation Matrix associative
   memory]\label{example:correlation}
-  Let us have an $N \times D$ pattern matrix $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$ of
+  Let us have an $N \times D$ pattern matrix $\Xi = [\xi^1, \xi^2,
+  \dots, \xi^N]$ of
   vectors sampled from $\{1, -1\}^D$. The Correlation Matrix associative memory
   recall function is of the form:
   \begin{align}
@@ -206,7 +218,8 @@ So-called, because they relied on dot-product correlations for recall.
     \xi^\mu_i x_i \right)\right) \nonumber \\
     &= g \left( \Xi^\top \Xi x  \right),
   \end{align}
-  where $g$ is an ``activation function'', typically \textit{signum} %% need to define signum
+  where $g$ is an ``activation function'', typically \textit{signum}
+  %% need to define signum
   for binary vectors.
 \end{example}
 
@@ -242,7 +255,8 @@ except that they
 understand their recall function in terms of an \textit{energy} function:
 
 \begin{definition}\label{def:hopfield-nets}
-  \textit{Hopfield networks} are single-layer neural networks of $D$ computational units
+  \textit{Hopfield networks} are single-layer neural networks of $D$
+  computational units
   with full, lateral connections. The state of the network is described
   by the state vector $\sigma$ at time $t$, denoted by $\sigma^{(t)}$.
   The \textit{energy} of the network, $E (\sigma^{(t)})$ is:
@@ -267,14 +281,15 @@ elements of the state vector depending upon whether the update lowers
 the energy of the
 network. The energy function, then, forms a ``landscape'', where
 local minima in the space
-(ideally) correspond with desired patterns to be stored (see \autoref{fig:energy-landscape}).
+(ideally) correspond with desired patterns to be stored (see
+\autoref{fig:energy-landscape}).
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.5\linewidth]{energy_landscape.png}
-   
-    \caption{Energy landscape of Hopfield network storing $[-1,-1]$ and $[1,1]$.}
-    \label{fig:energy-landscape}
+  \centering
+  \includegraphics[width=0.5\linewidth]{energy_landscape.png}
+
+  \caption{Energy landscape of Hopfield network storing $[-1,-1]$ and $[1,1]$.}
+  \label{fig:energy-landscape}
 \end{figure}
 
 While the use of the energy function seems at odds with our definition
@@ -324,7 +339,8 @@ information limits of single neurons.
   $\{-1, 1\}^D$,
   a \textit{Dense Associative Memory} is characterized by:
   \begin{enumerate}[(i)]
-    \item A $D$-dimensional \textit{state vector} at time $t$, denoted by $\sigma^{(t)}$;
+    \item A $D$-dimensional \textit{state vector} at time $t$,
+      denoted by $\sigma^{(t)}$;
     \item A \textit{polynomial transmission function} $F_n$, where:
       \begin{equation}
         F_n (x) = \frac{1}{n} (x)^n;
@@ -372,7 +388,7 @@ Dense Associative Memories improve the storage capacity of Hopfield networks
 in that the capacity $C$ of a Dense Associative Memory, with
 polynomial function $F_n$,
 and dimensionality of patterns $D$ is:
-\begin{equation}
+\begin{equation}\label{eq:capacity}
   C \propto D^{n-1}
 \end{equation}
 \parencites{krotov_dense_2016,demircigil_model_2017,bao_capacity_2022}.
@@ -392,16 +408,18 @@ e.g. with kernel estimation \parencite{hu_provably_2024,wu_uniform_2024}.
 %     \label{fig:energy-landscape-minerva}
 % \end{figure}
 \begin{figure}
-\begin{minipage}[c]{0.4\linewidth}
-\includegraphics[width=\linewidth]{energy_landscape_minerva.png}
-\caption{Energy landscape of Dense Associative Memory with $F_4$ storing $2$D patterns.}
-\label{fig:energy-landscape-minerva}
-\end{minipage}
-\hfill
-\begin{minipage}[c]{0.4\linewidth}
-\includegraphics[width=\linewidth]{energy_landscape_20d_minerva.png}
-\caption{Energy landscape of Dense Associative Memory with $F_4$ storing $3$ $20$D patterns.}
-\end{minipage}%
+  \begin{minipage}[c]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{energy_landscape_minerva.png}
+    \caption{Energy landscape of Dense Associative Memory with $F_4$
+    storing $2$D patterns.}
+    \label{fig:energy-landscape-minerva}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{energy_landscape_20d_minerva.png}
+    \caption{Energy landscape of Dense Associative Memory with $F_4$
+    storing $3$ $20$D patterns.}
+  \end{minipage}%
 \end{figure}
 
 In spite of the enormous gains in capacity using non-linear
@@ -428,7 +446,6 @@ biological neural networks; meaning that they perform computations
 which are in principle achievable by biological systems.
 
 \subsection{Hebbian Learning Rules}\label{sec:hebbian-learning-rules}
-
 
 Hebbian learning rules are a family of weight update rules for both
 artificial and spiking neural networks which posit that
@@ -506,17 +523,20 @@ rule was additive and can be understood as reducing the energy of the network
 (according to some rule). More strictly, a learning rule is additive when,
 after training, the weights are of the form:
 \begin{equation}
-  W^{(t_\text{final})} = \sum^N_{\mu = 1} f(W^{(t_\mu - 1)}; \xi^\mu (\xi^\mu)^\top),
+  W^{(t_\text{final})} = \sum^N_{\mu = 1} f(W^{(t_\mu - 1)}; \xi^\mu
+  (\xi^\mu)^\top),
 \end{equation}
-where $t_\mu$ is the time of presentation of the $\mu$'th pattern to the network.
+where $t_\mu$ is the time of presentation of the $\mu$'th pattern to
+the network.
 This property is required in order to maintain the neural interpretation
 of recall, as post-multiplication distributes over element-wise addition.
 The second important property of the weight update rule is that it reduces
 some natural energy function for the update rule. For example, if we derive the
-energy rule through the relation from \textcite{krotov_hierarchical_2021}, which relates
-the ``Lagrangian'' energy function as the anti-derivative of the 
+energy rule through the relation from
+\textcite{krotov_hierarchical_2021}, which relates
+the ``Lagrangian'' energy function as the anti-derivative of the
 synchronous update rule: e.g., for Hopfield networks it is $F_2$ and $F'_2$,
-and for Modern Hopfield Networks \parencite{ramsauer_hopfield_2021} it is 
+and for Modern Hopfield Networks \parencite{ramsauer_hopfield_2021} it is
 \textit{logsumexp}, which has \textit{softmax} as its derivative.
 
 Given that $f$ in
@@ -572,9 +592,24 @@ This definition immediately gives us the following:
 
 \subsubsection{Benchmarking Hebbian Learning Rules}
 
-The capacity of Hebbian learning rules applied for
-auto-associative memories has been investigated
-before in \textcite{lansner_benchmarking_2025}. 
+An interesting subset of Hebbian learning rules for
+single-layer auto-associative memories with real values
+has alow-degree polynomial function describing
+its capacity scaling as a function of the number of computational
+units in the network \parencite{lansner_benchmarking_2025}:
+namely a Willshaw network update rule \parencite{willshaw_non-holographic_1969},
+a sparse update rule \parencite{hopfield_neural_1982}, the Activity Product
+Rule \parencite{haykin_neural_2009}, covariance learning rules
+\parencites{tsodyks_enhanced_1988,minai_covariance_1997},
+and Bayesian rules \parencites{lansner_higher_1996,knoblauch_neural_2011}.
+This differs from the linear scaling of critical capacity predicted
+for binary pattern Dense Associative Memories with polynomial
+transmission function $F_2$ (see \autoref{eq:capacity}, with empirical
+  values at around $15\%$ of the number of computational units in the model
+\parencite{hopfield_neural_1982,amit_statistical_1987}).
+The method which predicts this capacity differs from the approach
+we will be using, as it calculates uses information theoretic
+notions of bits-per-neuron and bits-per-weight.
 
 \section{Hebbian Dense Associative Memory}\label{sec:hebbian-dam}
 
@@ -672,24 +707,46 @@ In order to have an objective pattern reconstruction test, we need to
 have a shared basis in order to compare results. This is some
 distance metric for patterns, a function which gives us the similarity
 between a presented pattern and its output from the network. One common
-measure of similarity in Vector-Symbolic Architectures 
+measure of similarity in Vector-Symbolic Architectures
 \parencites{smolensky_tensor_1990,plate_holographic_1995,gayler_multiplicative_1998}
 is \textit{cosine similarity}:
 \begin{equation}
   \text{sim}(x, y) = \frac{x \cdot y}{\|x \| \|y \|},
 \end{equation}
-which is the normalized dot-product between two vectors. This gives us the 
-angle in $D$-dimensional space between the two vectors, where $\text{sim}(x, y) \approx 1$
-means that $x$ and $y$ are near-parallel, and $\text{sim}(x, y) \approx 0$ means that the 
+which is the normalized dot-product between two vectors. This gives us the
+angle in $D$-dimensional space between the two vectors, where
+$\text{sim}(x, y) \approx 1$
+means that $x$ and $y$ are near-parallel, and $\text{sim}(x, y)
+\approx 0$ means that the
 vectors are near-orthogonal. Preliminary experimentation
 with traditional Hopfield networks showed that, at or above critical capacity
 with the MNIST dataset, Hopfield models produce spurious states which have
 a high cosine similarity to all memorized patterns.
-To overcome this, it seems prudent to test similarity using a battery of 
-similarity measures: for review, we can use those listed in 
-\textcite{kelly_memory_2017}. 
+To overcome this, it seems prudent to test similarity using a battery of
+similarity measures: for review, we can use those listed in
+\textcite{kelly_memory_2017}.
 
-%% I think it would be cool to insert the associative memory in 
+But pattern reconstruction does not tell the whole store of the use of
+generated associative memory tasks. In order to make the evaluation of
+the models objective, we will subject the models to large scale data
+tasks (a kind of ``stress test''). In particular, we will test the models
+contribution to cognitive models which require large associative memories.
+Three models in particular which require large associative memories are:
+the Minerva-Q model \parencite{ozen_minerva-q_2022}, which implements
+the Q-Learning algorithm for reinforcement learning; a
+generative model which learns artificial grammars
+\parencite{johns_generating_2015};
+and, an instance-based model for word embeddings
+\parencite{jamieson_instance_2018}.
+Hebbian associative memory models will be generated per each task using
+random hyperparameter search, treating the Taylor coefficients in
+Definition \ref{def:expanded-learning} as hyperparameters. This method
+is not an attempt to posit a general or plausible model of associative
+memory which can be used on multiple tasks: rather, the goal is to
+see what is the best-case performance of the capacity scaling
+of Hebbian networks.
+
+%% I think it would be cool to insert the associative memory in
 %% one of the models that u use minerva2 in? What are your thoughts
 
 \section{Timeline}\label{sec:timeline}
