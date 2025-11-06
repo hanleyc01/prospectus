@@ -1,11 +1,14 @@
 \documentclass[]{beamer}
 \usetheme{Boadilla}
 \usepackage{amsmath}
+\usepackage{MnSymbol, bbding, pifont}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage[style=apa]{biblatex}
 \usepackage[shortlabels]{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz}
 
 \bibliography{sources.bib}
 
@@ -17,268 +20,440 @@
 \begin{document}
 
 \begin{frame}
-    \maketitle
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Two Motivations}
-
-    \begin{enumerate}[(a)]
-        \item Human cognition requires easily easily appendable associative memory capacities which does not grow unreasonably large;
-        \item Cognitive modelling needs high capacity associative memories for large-scale tasks (e.g., \parencite{ozen_minerva-q_2022}) that
-        respects biological constraints
-    \end{enumerate}
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Motivations; continued}
-    \begin{enumerate}[(a)]
-    \item Hopfield networks \parencites{hopfield_neural_1982,hopfield_neurons_1984} are a fruitful abstraction that 
-    captures associative memory behaviour, and has productive generalizations \parencites{krotov_dense_2016,ramsauer_hopfield_2021,hoover_energy_2023}
-    
-    \item But these generalizations trade Hebbian learning rules for back-propagation, and have non-biologically plausible architectures \parencite{cox_dynamic_2024}.
-    \end{enumerate}
+  \maketitle
 \end{frame}
 
 \begin{frame}
-    \frametitle{This leads us to the question...}
+  \frametitle{$\filledstar$ Motivations}
+  \begin{enumerate}[(a)]
+    \item Hopfield networks
+      \parencites{hopfield_neural_1982,hopfield_neurons_1984} are a
+      fruitful abstraction that
+      captures associative memory behaviour, and has productive
+      generalizations
+      \parencites{krotov_dense_2016,ramsauer_hopfield_2021,hoover_energy_2023}
 
-    \begin{quote}
-        How much can we get out of a Hopfield-like network?
-    \end{quote}
+    \item But these generalizations trade Hebbian learning rules for
+      back-propagation, and have non-biologically plausible
+      architectures \parencite{cox_dynamic_2024}.
+  \end{enumerate}
 \end{frame}
 
 \begin{frame}
-    \tableofcontents
+  \frametitle{$\filledstar$ This leads us to the question...}
+
+  \begin{quote}
+    How much can we get out of a Hopfield-like network using Hebbian learning?
+  \end{quote}
+\end{frame}
+
+\begin{frame}
+  \tableofcontents
 \end{frame}
 
 \section{Hopfield Networks}
-\begin{frame}{Hopfield Networks}
-    \begin{definition}[Hopfield Networks]\label{def:hopfield-networks}
 
-        A \textit{Hopfield network} \parencite{hopfield_neural_1982} is a single-layer neural network of $D$ binary neurons,
-        (typically from the set $\{-1, 1\}$)
-        with full lateral connections (no self-connections). The weights between each neuron
-        and the others is the $D \times D$ symmetric matrix $W$, with the diagonal all zeros.
-    \end{definition}
+\begin{frame}{$\filledstar$ Hopfield Networks}
+  \begin{definition}[Hopfield Networks]\label{def:hopfield-networks}
 
-    This network architecture is simple, and can be reformulated as a feedforward network: but what do 
-    we even do with it?
+    A \textbf{Hopfield network} \parencite{hopfield_neural_1982} is a
+    single-layer neural network of $D$ binary neurons,
+    (typically from the set $\{-1, 1\}$)
+    with full lateral connections (no self-connections). The weights
+    between each neuron
+    and the others is the $D \times D$ symmetric matrix $W$, with the
+    diagonal all zeros.
+  \end{definition}
+
+  This network architecture is simple, and can be reformulated as a
+  feedforward network: but what do
+  we even do with it?
+\end{frame}
+
+\begin{frame}{Hopfield Network Architecture}
+  \centering
+  \begin{tikzpicture}[
+      neuron/.style={circle, draw, minimum size=1cm, thick}
+    ]
+
+    % Define the number of neurons
+    \def\D{12}
+    \def\radius{3cm}
+
+    % Draw the neurons on a circle
+    \foreach \i in {1,...,\D} {
+      \node[neuron] (N\i) at ({\i*360/\D - 90}:\radius) {$\sigma_{\i}$};
+    }
+
+    % Draw connections between all pairs of neurons (no self-connections)
+    \foreach \i in {1,...,\D} {
+      \foreach \j in {1,...,\D} {
+        \ifnum\i=\j
+        \else
+        \draw (N\i) -- (N\j);
+        \fi
+      }
+    }
+
+  \end{tikzpicture}
+
+  \vspace{0.5cm}
+  Fully connected network with $D=12$ neurons
 \end{frame}
 
 \begin{frame}{Hopfield recall}
-    \begin{definition}[Hopfield energy; pattern matrix]\label{def:hopfield-energy}
-        The \textit{energy} of a Hopfield network is a function of the current state of the 
-        neurons in the Hopfield network at a time $t$, and the stored patterns in the matrix at time $t$,
-        which are the rows of the $N \times D$ \textit{pattern matrix} $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$:
-        $$
-        E_\Xi (\sigma^t) = - \frac{1}{2} \sum^N_{\mu = 1} \left( \sum^D_{i=1} \xi^\mu_i \sigma_i^t \right)
-        $$
-    \end{definition}
+  \begin{definition}[Hopfield energy; pattern matrix]\label{def:hopfield-energy}
+    The \textbf{energy} of a Hopfield network is a function of the
+    current state of the
+    neurons in the Hopfield network at a time $t$, and the stored
+    patterns in the matrix at time $t$,
+    which are the rows of the $N \times D$ \textbf{pattern matrix}
+    $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$:
+    $$
+    E_\Xi (\sigma^t) = - \frac{1}{2} \sum^N_{\mu = 1} \left(
+    \sum^D_{i=1} \xi^\mu_i \sigma_i^t \right)
+    $$
+  \end{definition}
 
-    The intuition here is that the energy describes how similar the current state of the network is to 
-    the desired patterns. Recall is \textit{energy minimization}, where, ideally, local energy minima correspond
-    with stored patterns.
+  The intuition here is that the energy describes how similar the
+  current state of the network is to
+  the desired patterns. Recall is \textbf{energy minimization},
+  where, ideally, local energy minima correspond
+  with stored patterns.
 \end{frame}
 
-\begin{frame}{Hopfield recall}
-    \begin{definition}[Asynchronous and synchronous Hopfield recall]\label{def:hopfield-recall}
-        Given an initial Hopfield network state $\sigma^{(t=0)}$, recall is either performed asynchronously or 
-        synchronously. The asynchronous definition updates each index of the state at random such that:
-        $$
-        \sigma^{(t+1)}_i = \text{sgn}\left[ E(\sigma^t_{i^-}) - E(\sigma^{t}_{i^+}) \right],
-        $$
-        where $\sigma^{t}_{i\pm}$ is the state vector $\sigma^t$ with the $i$'th set to $+1$ or $-1$.
-        This can be reformulated synchronously \parencite{krotov_modern_2025}, as:
-        $$
-        \sigma^{(t=T)} = \text{sgn} \left[ W \sigma^{t=0} \right],
-        $$
-        with $T$ being the final state of the network.
-    \end{definition}
+\begin{frame}{$\filledstar$ Hopfield recall}
+  \begin{definition}[Asynchronous and synchronous Hopfield
+    recall]\label{def:hopfield-recall}
+    Given an initial Hopfield network state $\sigma^{(t=0)}$, recall
+    is either performed asynchronously or
+    synchronously. The asynchronous definition updates each index of
+    the state at random such that:
+    $$
+    \sigma^{(t+1)}_i = \text{sgn}\left[ E(\sigma^t_{i^-}) -
+    E(\sigma^{t}_{i^+}) \right],
+    $$
+    where $\sigma^{t}_{i\pm}$ is the state vector $\sigma^t$ with the
+    $i$'th set to $+1$ or $-1$.
+    This can be reformulated synchronously \parencite{krotov_modern_2025}, as:
+    $$
+    \sigma^{(t=T)} = \text{sgn} \left[ W \sigma^{t=0} \right],
+    $$
+    with $T$ being the final state of the network.
+  \end{definition}
+\end{frame}
+
+\begin{frame}{$\filledstar$ Alternative Formulation}
+  \begin{block}{Hopfield recall (reformulated)}
+    Let us have $N \times D$ pattern matrix $\Xi = [\xi^1, \xi^2,
+    \dots, \xi^N]$.
+    Then, synchronous Hopfield recall is:
+    $$
+    \sigma^{(t=T)} = \text{sgn} \left[ \xi^1 (\xi^1)^\top
+    \sigma^{(0)} + \dots + \xi^N (\xi^N)^\top \sigma^{(0)} \right]
+    $$
+  \end{block}
+
+  While recall and training are \textbf{distinct} modes of the network, this
+  alternative formulation makes clear what using the \textbf{Activity
+  Product Rule}
+  for updating weights does; i.e. $\Delta W = \xi^\mu (\xi^\mu)^\top$.
 \end{frame}
 
 \section{Dense Associative Memory}
-\begin{frame}{Dense Associative Memory}
-    \begin{definition}\label{def:dam}
-        \textit{Dense Associative Memories} generalize Hopfield networks \parencites{krotov_dense_2016,demircigil_model_2017}.
-        Let us have an $N \times D$ pattern matrix $\Xi = [\xi^1, \xi^2, \dots, \xi^N]$, where each $\xi^\mu$, $\mu = 1, 2, \dots, N$
-        is a pattern we wish to store. Let $F_n$ be a \textit{polynomial transmission function} of the form:
-        $$
-        F_n (x) = \frac{1}{n} (x)^n.
-        $$
-        Then, the energy of the Dense Associative Memory is:
-        $$
-        E(\sigma^t) = - \sum^N_{\mu = 1} F_n \left( \sum^N_{i = 1} \xi^\mu_i \sigma_i \right).
-        $$
-    \end{definition}
+\begin{frame}{$\filledstar$ Dense Associative Memory}
+  \begin{definition}\label{def:dam}
+    \textbf{Dense Associative Memories} generalize Hopfield networks
+    \parencites{krotov_dense_2016,demircigil_model_2017}.
+    Let us have an $N \times D$ pattern matrix $\Xi = [\xi^1, \xi^2,
+    \dots, \xi^N]$, where each $\xi^\mu$, $\mu = 1, 2, \dots, N$
+    is a pattern we wish to store. Let $F_n$ be a \textbf{polynomial
+    transmission function} of the form:
+    $$
+    F_n (x) = \frac{1}{n} (x)^n.
+    $$
+    Then, the energy of the Dense Associative Memory is:
+    $$
+    E(\sigma^t) = - \sum^N_{\mu = 1} F_n \left( \sum^N_{i = 1}
+    \xi^\mu_i \sigma_i \right).
+    $$
+  \end{definition}
+\end{frame}
+
+\begin{frame}{Dense Associative Memory Architecture}
+  \centering
+  \begin{tikzpicture}[
+      neuron/.style={circle, draw, minimum size=0.8cm, thick},
+      scale=1.2
+    ]
+
+    \def\D{6}
+    \def\radius{1.2cm}
+
+    % ========== BOTTOM NETWORK ==========
+    \begin{scope}[xshift=-1.5cm, yshift=-1cm, scale=0.9, opacity=0.9]
+      \foreach \i in {1,...,\D} {
+        \node[neuron, fill=blue!10] (N1-\i) at ({\i*360/\D -
+        90}:\radius) {$x_{\i}$};
+      }
+      \foreach \i in {1,...,\D} {
+        \foreach \j in {1,...,\D} {
+          \ifnum\i=\j
+          \else
+          \draw[blue!30] (N1-\i) -- (N1-\j);
+          \fi
+        }
+      }
+    \end{scope}
+
+    % ========== TOP NETWORK ==========
+    \begin{scope}[xshift=1.5cm, yshift=1cm, scale=1.1, opacity=0.9]
+      \foreach \i in {1,...,\D} {
+        \node[neuron, fill=red!10] (N2-\i) at ({\i*360/\D -
+        90}:\radius) {$y_{\i}$};
+      }
+      \foreach \i in {1,...,\D} {
+        \foreach \j in {1,...,\D} {
+          \if\i=\j
+          \else
+          \draw[red!30] (N2-\i) -- (N2-\j);
+          \fi
+        }
+      }
+    \end{scope}
+
+    % ========== CONNECTING LINES FOR 3D EFFECT ==========
+    % Draw some lines connecting corresponding neurons to enhance 3D effect
+    \foreach \i in {1,...,\D} {
+      \draw[dashed, gray, opacity=0.4] (N1-\i) -- (N2-\i);
+    }
+  \end{tikzpicture}
+
+  \vspace{0.5cm}
+  The Memory Tesseract \parencite{kelly_memory_2017}.
 \end{frame}
 
 \begin{frame}{Dense Associative Memory recall}
-    \begin{definition}[DAM recall]
-        Asynchronously, we update the state vector in the same way as the Hopfield network (Def. \ref{def:hopfield-recall}).
-        But, with the polynomial transmission function $F_n$ so defined, can be put in terms of the derivative of $F_n$ \parencite{krotov_modern_2025}:
-        $$
-        \sigma^{(t=T)} = \text{sgn} \left[\sum^\mu_{i=1} \xi^\mu F'_n \left(\sum^N_{i=1} \xi^\mu_i \sigma^{(t=0)}_i \right) \right].
-        $$
-    \end{definition}
+  \begin{definition}[DAM recall]
+    Asynchronously, we update the state vector in the same way as the
+    Hopfield network (Def. \ref{def:hopfield-recall}).
+    But, with the polynomial transmission function $F_n$ so defined,
+    can be put in terms of the derivative of $F_n$
+    \parencite{krotov_modern_2025}:
+    $$
+    \sigma^{(t=T)} = \text{sgn} \left[\sum^N_{\mu=1} \xi^\mu F'_n
+    \left(\sum^D_{i=1} \xi^\mu_i \sigma^{(t=0)}_i \right) \right].
+    $$
+  \end{definition}
 \end{frame}
 
 \begin{frame}{Examples of DAM generalization}
-    \begin{example}
+  \begin{example}
     Hopfield networks are Dense
     Associative Memories
     with polynomial transmission function $F_2$.
-    \end{example}
+  \end{example}
 
-    \begin{example}
+  \begin{example}
     Minerva2 models \parencite{hintzman_minerva_1984} are roughly Dense
     Associative Networks,
     assuming that all patterns $\xi^1, \xi^2, \dots, \xi^N$ and query
     patterns are normalized,
     and with polynomial transmission function $F_4$.
-    \end{example}
+  \end{example}
 \end{frame}
 
 \section{Capacity}
-\begin{frame}{Capacity Proofs}
-    \begin{block}{DAM Capacity}
-        The critical capacity $C$ of a Dense Associative Memory is the number of patterns that the network can store 
-        and reasonably recall with minimal error. The maximum capacity $C$ is a function of the dimension of the 
-        state vector, to the power of $n-1$ from $F_n$ \parencites{demircigil_model_2017,krotov_dense_2016,bao_capacity_2022}:
-        $$
-        C = \alpha D^{n-1},
-        $$
-        where $\alpha$ is some constant.
-    \end{block}
+\begin{frame}{$\filledstar$ Capacity Proofs}
+  \begin{block}{DAM Capacity}
+    The \textbf{critical capacity} $C$ of a Dense Associative Memory is the
+    number of patterns that the network can store
+    and reasonably recall with minimal error. The maximum capacity
+    $C$ is a function of the dimension of the
+    state vector, to the power of $n-1$ from $F_n$
+    \parencites{demircigil_model_2017,krotov_dense_2016,bao_capacity_2022}:
+    $$
+    C = \alpha D^{n-1},
+    $$
+    where $\alpha$ is some constant.
+  \end{block}
 \end{frame}
 
 \begin{frame}{Capacities}
-    \begin{example}
-        The capacity of a Hopfield network $C \approx 0.14 * D$ \parencites{amit_statistical_1987,hopfield_neural_1982}.
-    \end{example}
-    
-    \begin{example}
-        The capacity of Minerva2 is $C = \alpha D^3$.
-    \end{example}
-\end{frame}
+  \begin{example}
+    The capacity of a Hopfield network $C \approx 0.14 * D$
+    \parencites{amit_statistical_1987,hopfield_neural_1982}.
+  \end{example}
 
+  \begin{example}
+    The capacity of Minerva2 is $C = \alpha D^3$.
+  \end{example}
+\end{frame}
 
 \section{Hebbian Learning}
 \begin{frame}{Hebbian Learning}
-    \begin{enumerate}[(a)]
-        \item Dense Associative Memories have been shown to be equivalent to mutli-head attention in the transformer architecture
-        \parencite{ramsauer_hopfield_2021,vaswani_attention_2023}
-        \item But they achieve this power at the cost of their Hebbian plausibility
-        \item Hopfield networks are usually trained using the Activity Product Rule \parencite{haykin_neural_2009}
-    \end{enumerate}
+  \begin{enumerate}[(a)]
+    \item Dense Associative Memories have been shown to be \textbf{equivalent
+      to multi-head attention} in the transformer architecture
+      \parencite{ramsauer_hopfield_2021,vaswani_attention_2023}
+    \item But they achieve this power at the cost of their Hebbian plausibility
+    \item Hopfield networks are usually trained using the Activity
+      Product Rule \parencite{haykin_neural_2009}
+  \end{enumerate}
 
-    \begin{definition}[Activity Product Rule]
-        The \textit{Activity Product Rule} updates the weights $W$ of a network by the outer product of the pre-
-        and post-synaptic layers $x_i$ and $x_j$ (respectively), multiplied by some learning rate $\eta$:
-        $$
-        \Delta W = \eta x_i x_j^\top.
-        $$
-    \end{definition}
+  \begin{definition}[Activity Product Rule]
+    The \textbf{Activity Product Rule} updates the weights $W$ of a
+    network by the outer product of the pre-
+    and post-synaptic layers $x_i$ and $x_j$ (respectively),
+    multiplied by some learning rate $\eta$:
+    $$
+    \Delta W = \eta x_i x_j^\top.
+    $$
+  \end{definition}
 \end{frame}
 
-\begin{frame}{General Hebbian update rule}
-    \begin{definition}[General Hebbian Form]
-        A \textit{Hebbian} learning rule for pre-synaptic layer $x_i$ and post-synaptic layer $x_j$, with weights $W$
-        is of the form:
-        $$
-        \Delta W = f(W; x_i, x_j).
-        $$
-    \end{definition}
+\begin{frame}{$\filledstar$ General Hebbian update rule}
+  \begin{definition}[General Hebbian Form]
+    A \textbf{Hebbian} learning rule for pre-synaptic layer $x_i$ and
+    post-synaptic layer $x_j$, with weights $W$
+    is of the form:
+    $$
+    \Delta W_{ij} = f(W_{ij}; x_i, x_j).
+    $$
+  \end{definition}
 
-    This definition contains an incredibly large class of functions: what is an interesting subset?
+  This definition contains an incredibly large class of functions:
+  what is an interesting subset?
 \end{frame}
 
 \begin{frame}
-    \begin{definition}[\textcite{gerstner_mathematical_2002}]
-        If one expands $\Delta W = f(W; x_i, x_j)$ about $(0, 0)$, we get:
-          \begin{align*}
-            \Delta W_{ij} &= f(W_{ij}; x_i, x_j) =
-            c_0 (W_{ij}) + c_1^\text{pre} (W_{ij}) x_j + c_1^\text{post} x_i \\
-            &+ c_2^\text{pre} (W_{ij}) x_j^2 + c_2^\text{post} (W_{ij}) x_i^2
-            + c_2^\text{corr} (W_{ij}) x_i x_j \\
-            &+ \mathcal{O} (x),
-        \end{align*}
-        which captures many interesting Hebbian learning rules for binary patterns.
-    \end{definition}
-    \begin{example}
+  \begin{definition}[\textcite{gerstner_mathematical_2002}]\label{def:general-hebb}
+    If one expands $\Delta W_{ij} = f(W_{ij}; x_i, x_j)$ about $(0, 0)$, we get:
+    \begin{align*}
+      \Delta W_{ij} &= f(W_{ij}; x_i, x_j) =
+      c_0 (W_{ij}) + c_1^\text{pre} (W_{ij}) x_j + c_1^\text{post} x_i \\
+      &+ c_2^\text{pre} (W_{ij}) x_j^2 + c_2^\text{post} (W_{ij}) x_i^2
+      + c_2^\text{corr} (W_{ij}) x_i x_j \\
+      &+ \mathcal{O} (x),
+    \end{align*}
+    which captures many interesting Hebbian learning rules for binary patterns.
+  \end{definition}
+  \begin{example}
     The Activity Product Rule is
     just the expanded Hebbian learning rule with $c_2^\text{corr}$
     set to some constant, and all other constants set to $0$.
-    \end{example}
+  \end{example}
 
-    \begin{example}
-    \textit{Oja's Rule} \parencite{oja_simplified_1982}
+  \begin{example}
+    \textbf{Oja's Rule} \parencite{oja_simplified_1982}
     by setting $c_2^\text{corr} = \eta_0 > 0$,
     and $c_2^\text{post} = - \eta_0 w_{ij}$, with all other
     coefficients set to $0$.
-    \end{example}
+  \end{example}
 \end{frame}
 
 \section{Project Proposal}
-\begin{frame}{Project Proposal}
-    \begin{enumerate}[(a)]
-        \item In order to answer the question that was initially proposed, we will take a two-pronged approach:
-        \item The first is task is a capacity proof approach: given the general Hebbian form just formulated: what is the capacity of a 
-        single-layer neural network of $D$ neurons with full, lateral connections, and which \textit{learns} via the general form?
-        \begin{enumerate}[(1)]
-            \item Sources of inspiration here are the original papers \parencites{krotov_modern_2025,krotov_dense_2016,demircigil_model_2017,bao_capacity_2022}
-        \end{enumerate}
-        \item The second task is the experimentally determine the maximum capacity for real-world datasets; in particular, using them in cognitive models
-        which deal with heavy memorization loads
-    \end{enumerate}
+
+\begin{frame}{$\smallstar$ Project Proposal}
+  \begin{block}{Binary Hebbian Associative Memories}
+    Consider a network $\mathcal{M}$ with units $\sigma_i \in \{-1,
+    1\}$, $i = 1, 2, \dots, D$,
+    and weight $D \times D$ weight matrix:
+    $$
+    W_{ij}^{(t+1)} =
+    \begin{cases}
+      f(W_{ij}^{(t)}; \xi^\mu_i, \xi^\mu_j),~\text{if}~i \neq j, \\
+      0,~\text{otherwise},
+    \end{cases}
+    $$
+    with Hebbian learning rule $f$ of the form
+    described in Definition \ref{def:general-hebb}. Assume
+    that the synchronous recall of $\mathcal{M}$ is just:
+    $$
+    \mathcal{M}(\sigma) = \text{sgn} \left[ W \sigma \right].
+    $$
+    \textbf{What is the maximum capacity $C$ of patterns that
+    $\mathcal{M}$ can reliably store and retrieve?}
+  \end{block}
 \end{frame}
 
-\begin{frame}{Proofs}
-    \begin{enumerate}[(a)]
-        \item The richest proof approach mentioned above is from \textcite{bao_capacity_2022}
-        \item We consider an associative memory's ability to recall a pattern $x$ after some ``$\delta$-perturbation'', with accuracy 
-        bounded by a constant $\eta$
-        \item What is the largest set of patterns that the network can store where the probability of error in recall of a $\delta$-perturbed
-        pattern is less than $\eta$?
-    \end{enumerate}
+\begin{frame}{Hebbian Network Recall...}
+    \begin{block}{}
+        With $W$ formulated as above: this makes synchronous recall
+        $$
+        \mathcal{M}(\sigma) = \text{sgn}\left[ f(W^{(1)}; \xi^1, \xi^1)(\sigma) + \dots + f(W^{(t=\mu)}; \xi^\mu, \xi^\mu)(\sigma) \right],
+        $$
+        for $\mu = 1, \dots, N$.
+    \end{block}
 \end{frame}
 
-\begin{frame}{Cognitive models}
-    \begin{enumerate}[(a)]
-        \item For empirical testing of the scaling function of Hopfield-like networks, the intention is to pursue a novel method
-        \item Using the general form of the Hebbian learning rule in \textcite{gerstner_mathematical_2002}, we will treat 
-        each Taylor coefficient as a hyperparameter of the model
-        \item For each task, we will do random hyperparameter search, and then measure the performance, considering only the top 
-        performing models
-        \item The ideal tasks are ones which scale quickly: e.g., reinforcement learning models \textcite{ozen_minerva-q_2022},
-        or language learning models \textcite{johns_generating_2015} and \textcite{jamieson_instance_2018}.
-    \end{enumerate}
+\begin{frame}{$\smallstar$ How can we solve this problem}
+  \begin{figure}
+    \centering
+    \includegraphics[height=5cm]{Sintay_SVG.svg.png}
+    \caption{Taylor series approximation of $\sin(x)$ \parencite{ikamusumefan_english_2013}.}
+  \end{figure}
+  \begin{enumerate}[(a)]
+    \item Demonstrating, in general, how the capacity $C$ of $\mathcal{M}$ scales
+    as a function of the dimension of the network $D$ and the coefficients
+  \end{enumerate}
 \end{frame}
 
-\section{Expected Timeline}
-\begin{frame}{Timeline}
-    \begin{enumerate}[(a)]
-        \item The two goals of the project are relatively segregated: meaning that each can be pursued independently without much problems
-        \item The easiest to perform, though probably the most time consuming, is the experimental task: given that we are doing hyperparameter
-        search and measuring best performance, this can take a while
-        \item Goal date for the proof are mid-January
-        \item Goal date for the experimental evidence is by Christmas
-    \end{enumerate}
+\begin{frame}{$\smallstar$ Theoretical Approach}
+  \begin{enumerate}[(a)]
+    \item We assume the definition of $\mathcal{M}$ above, and then 
+    provide a general function for how capacity grows
+    \item No need for proof to be too specific (e.g., \textcites{amit_statistical_1987,bao_capacity_2022,robert_j_mceliece_capacity_1987})
+    \item Rather, proof strategy is more informal: \textcites{krotov_modern_2025,demircigil_model_2017}
+  \end{enumerate}
+  \begin{block}{Proof Strategy}
+    Assume binary patterns $\xi^1, \xi^2, \dots, \xi^N$ with each element sampled indifferently
+    from $\{-1, 1\}$. Train a network $\mathcal{M}$ with the function $f$. 
+    Assume we are trying to recall $\xi^1$. \textbf{What is the maximum number $N$ where
+    the noise overtakes true signal in recall?}
+  \end{block}
 \end{frame}
 
-\section{Concluding Remarks}
-\begin{frame}{Concluding Remarks}
-    \begin{enumerate}[(a)]
-        \item This project is weak in that I am only considering binary-valued, single-layer neural networks with full lateral connections;
-        given the recent surge of interest in spiking neural networks, what can this tell us about more biologically plausible neural models?
-    \end{enumerate}
+\begin{frame}
+  \begin{block}{Signal-to-noise}
+    Overview of \textcite{krotov_modern_2025} applied to $\mathcal{M}$:
+    \begin{align*}
+    \mathcal{M}(\sigma) &= \text{sgn} \left[\sum^N_{\mu=1} f(W^\mu; \xi^\mu, \xi^\mu)(\sigma) \right] \\
+    &= \text{sgn} \left[ \underbrace{f(W^1; \xi^1, \xi^1)(\sigma)}_{\text{signal}} + \underbrace{\dots + f(W^N; \xi^N, \xi^N)(\sigma)}_{\text{noise}}  \right].
+    \end{align*}
+  \end{block}
+\end{frame}
+
+\begin{frame}{$\smallstar$ Experimental Approach}
+  \begin{block}{\textcite{lansner_benchmarking_2025}}
+    An interesting subset of Hebbian learning rules is analyzed 
+    in \textcite{lansner_benchmarking_2025}, \textbf{showing that some 
+    Hebbian learning rules have low-power polynomial capacity scaling}.
+
+    Capacity was estimated by fitting a curve to experimental 
+    evidence.
+  \end{block}
+\end{frame}
+\begin{frame}{\textcite{lansner_benchmarking_2025}}
+  \begin{figure}
+    \centering
+    \includegraphics[width=10cm]{lansner.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{$\smallstar$ Generating Hebbian Networks}
+  \begin{block}{}
+  \begin{enumerate}[(a)]
+    \item Treat coefficients as hyperparameters, and perform hyperparameter search
+    \item Measure best performance on a collection of tasks
+    \item Large-scale cognitive models: \parencites{ozen_minerva-q_2022,johns_generating_2015,jamieson_instance_2018}
+  \end{enumerate}
+  \end{block}
 \end{frame}
 
 \section{Bibliography}
 \begin{frame}[allowframebreaks]
-    \printbibliography
+  \printbibliography
 \end{frame}
 
 \end{document}
